@@ -179,4 +179,44 @@ return {
       }
     )
   ),
+  s(
+    'struct',
+    fmta(
+      [[
+    type <> struct {
+      <>
+    }
+    ]],
+      {
+        i(1),
+        i(0),
+      }
+    )
+  ),
+  s(
+    'iface',
+    fmta(
+      [[
+      type <> interface {
+        <>
+      }
+    ]],
+      {
+        i(1),
+        i(0),
+      }
+    )
+  ),
+  s(
+    'talias',
+    fmta(
+      [[
+    type <> = <>
+    ]],
+      {
+        i(1),
+        i(0),
+      }
+    )
+  ),
 }
