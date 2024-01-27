@@ -1,0 +1,2 @@
+[lints]
+mixed_table = "allow" -- it's not the best practice to allow mixed tables, but lazy.nvim api uses they
