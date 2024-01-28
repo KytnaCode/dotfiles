@@ -41,6 +41,42 @@ require("lazy").setup({
     priority = 1000,
     config = function()
       vim.cmd.colorscheme("catppuccin-mocha")
+      require("catppuccin").setup({
+        integrations = {
+          aerial = true,
+          fidget = true,
+          gitsigns = true,
+          lsp_saga = true,
+          mason = true,
+          cmp = true,
+          dap = true,
+          dap_ui = true,
+          native_lsp = {
+            enabled = true,
+            virtual_text = {
+              errors = { "italic" },
+              hints = { "italic" },
+              warnings = { "italic" },
+              information = { "italic" },
+            },
+            underlines = {
+              errors = { "underline" },
+              hints = { "underline" },
+              warnings = { "underline" },
+              information = { "underline" },
+            },
+            inlay_hints = {
+              background = true,
+            },
+          },
+          treesitter = true,
+          telescope = {
+            enabled = true,
+            -- style = "nvchad"
+          },
+          lsp_trouble = true,
+        },
+      })
     end,
   },
   {
@@ -258,6 +294,7 @@ require("lualine").setup({
   options = {
     theme = "catppuccin-mocha", -- set lualine theme, commonly the same set in catppucin theme config
   },
+  extensions = { "aerial", "lazy", "mason", "nvim-dap-ui", "trouble" },
 })
 
 -- listen lsp-progress event and refresh lualine
