@@ -76,6 +76,12 @@ require("lazy").setup({
   "b0o/schemastore.nvim",
   "nvim-treesitter/nvim-treesitter",
   {
+    "aznhe21/actions-preview.nvim",
+    config = function()
+      vim.keymap.set({ "v", "n" }, "<C-space>", require("actions-preview").code_actions)
+    end,
+  },
+  {
     "nvimdev/lspsaga.nvim",
     config = function()
       require("lspsaga").setup({
@@ -238,7 +244,6 @@ end)
 vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
 
 -- LSP Keymaps
-vim.keymap.set({ "n", "i" }, "<C-space>", vim.lsp.buf.code_action)
 
 -- Lua line --
 require("lualine").setup({
