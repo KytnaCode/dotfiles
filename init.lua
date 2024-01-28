@@ -21,6 +21,19 @@ require("lazy").setup({
   "junegunn/fzf.vim",
   "ray-x/navigator.lua",
   "nvim-lualine/lualine.nvim",
+  "danilamihailov/beacon.nvim",
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {},
+  },
+  {
+    "goolord/alpha-nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("alpha").setup(require("alpha.themes.dashboard").config)
+    end,
+  },
   {
     "nvim-tree/nvim-web-devicons",
     config = function()
@@ -40,10 +53,12 @@ require("lazy").setup({
     name = "catppuccin",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme("catppuccin-mocha")
+      vim.cmd.colorscheme("catppuccin-latte")
       require("catppuccin").setup({
         integrations = {
           aerial = true,
+          alpha = true,
+          beacon = true,
           fidget = true,
           gitsigns = true,
           lsp_saga = true,
@@ -111,6 +126,17 @@ require("lazy").setup({
   -- Editor
   "b0o/schemastore.nvim",
   "nvim-treesitter/nvim-treesitter",
+  {
+    "akinsho/bufferline.nvim",
+    version = "*",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    config = function()
+      vim.opt.termguicolors = true
+      require("bufferline").setup({
+        highlights = require("catppuccin.groups.integrations.bufferline").get(),
+      })
+    end,
+  },
   {
     "aznhe21/actions-preview.nvim",
     config = function()
@@ -292,7 +318,7 @@ require("lualine").setup({
     },
   },
   options = {
-    theme = "catppuccin-mocha", -- set lualine theme, commonly the same set in catppucin theme config
+    theme = "catppuccin-latte", -- set lualine theme, commonly the same set in catppucin theme config
   },
   extensions = { "aerial", "lazy", "mason", "nvim-dap-ui", "trouble" },
 })
@@ -518,3 +544,7 @@ require("lspconfig").yamlls.setup({
     },
   },
 })
+
+local colors = require("catppuccin.palettes").get_palette("latte")
+
+vim.api.nvim_set_hl(0, "Beacon", { bg = colors.blue })
