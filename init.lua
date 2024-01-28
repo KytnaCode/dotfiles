@@ -60,7 +60,7 @@ require("lazy").setup({
   -- Config Util
   {
     "folke/neodev.nvim",
-    opts = {}
+    opts = {},
     --config = function()
     --  require("neodev").setup({
     --    override = function(_, library)
@@ -78,7 +78,7 @@ require("lazy").setup({
     "soulis-1256/hoverhints.nvim",
     config = function()
       require("hoverhints").setup({})
-    end
+    end,
   },
   {
     "lewis6991/gitsigns.nvim",
@@ -99,6 +99,7 @@ require("lazy").setup({
   "hrsh7th/nvim-cmp",
   "L3MON4D3/LuaSnip",
   "saadparwaiz1/cmp_luasnip",
+  "onsails/lspkind.nvim",
   {
     "williamboman/mason.nvim",
     config = function()
@@ -131,12 +132,24 @@ vim.keymap.set("n", "gY", "<CMD>Glance type_definitions<CR>")
 vim.keymap.set("n", "gM", "<CMD>Glance implementations<CR>")
 
 -- Trouble keymaps
-vim.keymap.set("n", "<leader>xx", function() require("trouble").toggle() end)
-vim.keymap.set("n", "<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end)
-vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document_diagnostics") end)
-vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
-vim.keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
-vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
+vim.keymap.set("n", "<leader>xx", function()
+  require("trouble").toggle()
+end)
+vim.keymap.set("n", "<leader>xw", function()
+  require("trouble").toggle("workspace_diagnostics")
+end)
+vim.keymap.set("n", "<leader>xd", function()
+  require("trouble").toggle("document_diagnostics")
+end)
+vim.keymap.set("n", "<leader>xq", function()
+  require("trouble").toggle("quickfix")
+end)
+vim.keymap.set("n", "<leader>xl", function()
+  require("trouble").toggle("loclist")
+end)
+vim.keymap.set("n", "gR", function()
+  require("trouble").toggle("lsp_references")
+end)
 
 -- LSP Keymaps
 vim.keymap.set({ "n", "i" }, "<C-space>", vim.lsp.buf.code_action)
@@ -258,13 +271,14 @@ o.tabstop = 2 -- num of space characters per tab
 o.shiftwidth = 2 -- spaces per indentation level
 
 local cmp = require("cmp")
+local lspkind = require("lspkind")
 
 cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
       -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
       -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
       -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
     end,
@@ -283,12 +297,32 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     -- { name = "vsnip" }, -- For vsnip users.
-    { name = 'luasnip' }, -- For luasnip users.
+    { name = "luasnip" }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
   }, {
     { name = "buffer" },
   }),
+  formatting = {
+
+    expandable_indicator = true,
+    fields = { "menu", "abbr", "kind" },
+    format = lspkind.cmp_format({
+      mode = "symbol_text", -- show only symbol annotations
+      maxwidth = 70,
+      ellipsis_char = "...",
+      show_labelDetails = true,
+      before = function(_, vim_item)
+        -- Add a space after variable kind as a right margin,
+        -- yes, it's not the most elegant way to do it, but it works
+        if vim_item.kind then
+          vim_item.kind = vim_item.kind .. " "
+        end
+
+        return vim_item
+      end,
+    }),
+  },
 })
 
 -- Set configuration for specific filetype.
