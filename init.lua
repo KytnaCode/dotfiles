@@ -64,6 +64,7 @@ require("lazy").setup({
           beacon = true,
           fidget = true,
           gitsigns = true,
+          leap = true,
           lsp_saga = true,
           mason = true,
           cmp = true,
@@ -130,6 +131,9 @@ require("lazy").setup({
   "b0o/schemastore.nvim",
   "nvim-treesitter/nvim-treesitter",
   {
+    "ggandor/leap.nvim",
+  }, -- a super fast motion plugin
+  {
     "akinsho/bufferline.nvim",
     version = "*",
     dependencies = "nvim-tree/nvim-web-devicons",
@@ -178,55 +182,6 @@ require("lazy").setup({
         end,
       })
     end,
-  },
-  {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    ---@type Flash.Config
-    opts = {},
-    keys = {
-      {
-        "s",
-        mode = { "n", "x", "o" },
-
-        function()
-          require("flash").jump()
-        end,
-        desc = "Flash",
-      },
-      {
-        "S",
-        mode = { "n", "x", "o" },
-        function()
-          require("flash").treesitter()
-        end,
-        desc = "Flash Treesitter",
-      },
-      {
-        "r",
-        mode = "o",
-        function()
-          require("flash").remote()
-        end,
-        desc = "Remote Flash",
-      },
-      {
-        "R",
-        mode = { "o", "x" },
-        function()
-          require("flash").treesitter_search()
-        end,
-        desc = "Treesitter Search",
-      },
-      {
-        "<c-s>",
-        mode = { "c" },
-        function()
-          require("flash").toggle()
-        end,
-        desc = "Toggle Flash Search",
-      },
-    },
   },
   {
     "soulis-1256/hoverhints.nvim",
@@ -560,3 +515,6 @@ require("lspconfig").yamlls.setup({
 local colors = require("catppuccin.palettes").get_palette("latte")
 
 vim.api.nvim_set_hl(0, "Beacon", { bg = colors.blue })
+
+require("leap").create_default_mappings()
+
