@@ -130,6 +130,8 @@ require("lazy").setup({
   -- Editor
   "b0o/schemastore.nvim",
   "nvim-treesitter/nvim-treesitter",
+  "tpope/vim-repeat",
+  "tpope/vim-surround",
   {
     "ggandor/leap.nvim",
   }, -- a super fast motion plugin
