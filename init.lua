@@ -64,6 +64,11 @@ require("lazy").setup({
           beacon = true,
           fidget = true,
           gitsigns = true,
+          indent_blankline = {
+            enabled = true,
+            scope_color = "pink", -- catppuccin color (eg. `lavender`) Default: text
+            colored_indent_levels = false,
+          },
           leap = true,
           lsp_saga = true,
           mason = true,
