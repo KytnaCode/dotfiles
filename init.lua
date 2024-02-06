@@ -133,6 +133,17 @@ require("lazy").setup({
   "tpope/vim-repeat",
   "tpope/vim-surround",
   {
+    "s1n7ax/nvim-window-picker",
+    name = "window-picker",
+    event = "VeryLazy",
+    version = "2.*",
+    config = function()
+      require("window-picker").setup({
+        hint = "floating-big-letter",
+      })
+    end,
+  },
+  {
     "ggandor/leap.nvim",
   }, -- a super fast motion plugin
   {
@@ -520,3 +531,11 @@ vim.api.nvim_set_hl(0, "Beacon", { bg = colors.blue })
 
 require("leap").create_default_mappings()
 
+local function windowGoTo()
+  local picked_window_id = require("window-picker").pick_window()
+  if type(picked_window_id) == "number" then
+    vim.api.nvim_set_current_win(picked_window_id)
+  end
+end
+
+vim.keymap.set("n", "<leader>sw", windowGoTo)
