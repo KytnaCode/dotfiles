@@ -307,6 +307,32 @@ require("lazy").setup({
   "hrsh7th/cmp-cmdline",
   "hrsh7th/nvim-cmp",
   {
+    "leoluz/nvim-dap-go", -- configure easily go's DAP
+  },
+  {
+    "ray-x/go.nvim",
+    dependencies = { -- optional packages
+      "ray-x/guihua.lua",
+      "neovim/nvim-lspconfig",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = "*.go",
+        callback = function()
+          require("go.format").goimport()
+        end,
+        group = format_sync_grp,
+      })
+
+      require("go").setup()
+    end,
+    event = { "CmdlineEnter" },
+    ft = { "go", "gomod" },
+    build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+  },
+  {
     "L3MON4D3/LuaSnip",
     -- follow latest release.
     version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
@@ -464,6 +490,7 @@ require("symbol-usage").setup({
 -- Setup Linters
 require("lint").linters_by_ft = {
   lua = { "selene" },
+  go = { "golangcilint" },
 }
 
 -- configure nvim-linter
@@ -473,10 +500,16 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   end,
 })
 
+-- Configure nvim-formatter
 require("formatter").setup({
   filetype = {
     lua = {
       require("formatter.filetypes.lua").stylua,
+    },
+    go = {
+      require("formatter.filetypes.go").gofmt(),
+      require("formatter.filetypes.go").golines(),
+      require("formatter.filetypes.go").goimports(),
     },
   },
 })
@@ -648,6 +681,12 @@ require("lspconfig").yamlls.setup({
     },
   },
 })
+
+-- Go Languae Server (LS) (LSP)
+require("lspconfig").gopls.setup({})
+
+--- Debuger Adapter Protocol (DAP) Configuration
+require("dap-go").setup({})
 
 local colors = require("catppuccin.palettes").get_palette("latte")
 
