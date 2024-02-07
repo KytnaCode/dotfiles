@@ -11,12 +11,24 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- disable netrw at the very start for custom file explorer usage
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 -- Add Plugins --
 require("lazy").setup({
   -- UI
   "j-hui/fidget.nvim",
   "dnlhc/glance.nvim",
   "stevearc/dressing.nvim",
+  {
+    "nvim-tree/nvim-tree.lua",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("nvim-tree").setup()
+    end,
+  },
   {
     "nvim-telescope/telescope.nvim",
     opts = {},
