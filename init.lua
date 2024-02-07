@@ -171,6 +171,12 @@ require("lazy").setup({
     "ggandor/leap.nvim",
   }, -- a super fast motion plugin
   {
+    "sitiom/nvim-numbertoggle",
+    config = function()
+      vim.o.number = true
+    end,
+  },
+  {
     "akinsho/bufferline.nvim",
     version = "*",
     dependencies = "nvim-tree/nvim-web-devicons",
