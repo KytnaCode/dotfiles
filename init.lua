@@ -151,6 +151,12 @@ require("lazy").setup({
   "tpope/vim-surround",
   "tpope/vim-fugitive",
   {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup({})
+    end,
+  },
+  {
     "aserowy/tmux.nvim",
     config = function()
       return require("tmux").setup()
@@ -365,6 +371,8 @@ require("lazy").setup({
 
 -- clipboard --
 vim.o.clipboard = "unnamedplus"
+--- Telescope extensions
+require("telescope").load_extension("projects")
 
 --- Keymaps ---
 
@@ -374,6 +382,7 @@ vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fc", builtin.git_commits, {})
+vim.keymap.set("n", "<leader>fp", require("telescope").extensions.projects.projects, {})
 
 -- Glance Keymaps
 vim.keymap.set("n", "gD", "<CMD>Glance definitions<CR>")
