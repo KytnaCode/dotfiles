@@ -21,6 +21,23 @@ require("lazy").setup({
   "dnlhc/glance.nvim",
   "stevearc/dressing.nvim",
   {
+    "yamatsum/nvim-cursorline",
+    config = function()
+      require("nvim-cursorline").setup({
+        cursorline = {
+          enable = true,
+          timeout = 0,
+          number = true,
+        },
+        cursorword = {
+          enable = true,
+          min_lenght = 3,
+          hl = { underline = true },
+        },
+      })
+    end,
+  },
+  {
     "nvim-tree/nvim-tree.lua",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
@@ -133,23 +150,81 @@ require("lazy").setup({
   -- Config Util
   {
     "folke/neodev.nvim",
-    opts = {},
+    opts = {
+      library = {
+        plugins = { "plenary.nvim", "formatter.nvim" },
+      },
+    },
+    priority = 900,
     --config = function()
     --  require("neodev").setup({
-    --    override = function(_, library)
-    --      library.enabled = true
-    --      library.plugins = true
-    --    end,
+    --override = function(root_dir, library)
+    --  if root_dir:find(vim.fn.expand("~/.local/share/nvim/lazy"), 1, true) == 1 then
+    --    library.enabled = true
+    --    library.plugins = { "plenary.nvim" }
+    --  end
+    --end,
     --  })
     --end,
-  }, -- TODO: fix or remove this plugin, does not work as expected
+  },
 
   -- Editor
   "b0o/schemastore.nvim",
-  "nvim-treesitter/nvim-treesitter",
+  {
+    "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = { "lua" },
+        auto_install = true,
+
+        highlight = {
+          enable = true,
+        },
+      })
+    end,
+  },
   "tpope/vim-repeat",
   "tpope/vim-surround",
   "tpope/vim-fugitive",
+  "ActivityWatch/aw-watcher-vim",
+  "andweeb/presence.nvim",
+  "famiu/bufdelete.nvim",
+  { "chrisgrieser/nvim-genghis", dependencies = "stevearc/dressing.nvim" },
+  {
+    "sontungexpt/url-open",
+    branch = "mini",
+    event = "VeryLazy",
+    cmd = "URLOpenUnderCursor",
+    config = function()
+      local status_ok, url_open = pcall(require, "url-open")
+      if not status_ok then
+        return
+      end
+      url_open.setup({})
+    end,
+  },
+  {
+    "olimorris/persisted.nvim",
+    config = function()
+      require("persisted").setup({
+        autoload = true,
+        autosave = true,
+        should_autosave = function()
+          print(vim.bo.filetype)
+          if vim.bo.filetype == "alpha" then
+            return false
+          end
+          if vim.bo.filetype == "NvimTree" then
+            return false
+          end
+          if vim.bo.filetype == "Trouble" then
+            return false
+          end
+          return true
+        end,
+      })
+    end,
+  },
   {
     "ahmedkhalf/project.nvim",
     config = function()
