@@ -443,6 +443,19 @@ require("telescope").load_extension("projects")
 
 --- Keymaps ---
 
+-- File Keymaps
+local genghis = require("genghis")
+vim.keymap.set("n", "<leader>yp", genghis.copyFilepath)
+vim.keymap.set("n", "<leader>yn", genghis.copyFilename)
+vim.keymap.set("n", "<leader>cx", genghis.chmodx)
+vim.keymap.set("n", "<leader>rf", genghis.renameFile)
+vim.keymap.set("n", "<leader>mf", genghis.moveAndRenameFile)
+vim.keymap.set("n", "<leader>mc", genghis.moveToFolderInCwd)
+vim.keymap.set("n", "<leader>nf", genghis.createNewFile)
+vim.keymap.set("n", "<leader>yf", genghis.duplicateFile)
+vim.keymap.set("n", "<leader>df", genghis.trashFile)
+vim.keymap.set("x", "<leader>x", genghis.moveSelectionToNewFile)
+
 -- Telescope keymaps --
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
