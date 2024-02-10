@@ -594,6 +594,7 @@ require("symbol-usage").setup({
 require("lint").linters_by_ft = {
   lua = { "selene" },
   go = { "golangcilint" },
+  vim = { "vint" },
 }
 
 -- configure nvim-linter
@@ -794,6 +795,9 @@ require("lspconfig").yamlls.setup({
 
 -- Go Languae Server (LS) (LSP)
 require("lspconfig").gopls.setup({})
+
+-- Vimscript Language Server (LS) (LSP)
+require("lspconfig").vimls.setup({})
 
 --- Debuger Adapter Protocol (DAP) Configuration
 require("dap-go").setup({})
