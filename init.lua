@@ -436,8 +436,6 @@ require("lazy").setup({
   "nvim-lua/plenary.nvim", -- TODO: mark this as a telescope dependency
 }, {})
 
--- clipboard --
-vim.o.clipboard = "unnamedplus"
 --- Telescope extensions
 require("telescope").load_extension("projects")
 
@@ -610,16 +608,23 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   command = ":FormatWrite",
 })
 
--- set indentation options
+--- Options
 -- For filetype-specific configuration create a file named ftplugin/<file-type>.lua and set options there
 local o = vim.o
 
+-- set indentation options
 o.expandtab = true -- expand tab input with spaces characters
 o.smartindent = true -- syntax aware indentations for newline inserts
 o.tabstop = 2 -- num of space characters per tab
 o.shiftwidth = 2 -- spaces per indentation level
---- setup cmp ---
 
+-- set sessions options
+o.sessionoptions = "buffers,curdir,tabpages,winsize"
+
+-- vim options
+o.clipboard = "unnamedplus"
+
+--- setup cmp ---
 local cmp = require("cmp")
 local lspkind = require("lspkind")
 local luasnip = require("luasnip")
