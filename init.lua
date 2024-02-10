@@ -50,7 +50,6 @@ require("lazy").setup({
     "nvim-telescope/telescope.nvim",
     opts = {},
   },
-  "junegunn/fzf.vim",
   "ray-x/navigator.lua",
   "nvim-lualine/lualine.nvim",
   "danilamihailov/beacon.nvim",
