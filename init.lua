@@ -442,6 +442,9 @@ require("telescope").load_extension("persisted")
 
 --- Keymaps ---
 
+-- Vim Keymaps
+vim.keymap.set("n", "d", '"_d') -- now delete doesn't put text in t he clipboard, this is true in all maps that use d, d$, dd, dl, etc
+
 -- File Keymaps
 local genghis = require("genghis")
 vim.keymap.set("n", "<leader>yp", genghis.copyFilepath)
