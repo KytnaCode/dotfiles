@@ -464,6 +464,11 @@ vim.keymap.set("n", "<leader>tt", tree_api.tree.toggle, {})
 vim.keymap.set("n", "<leader>to", tree_api.tree.open, {})
 vim.keymap.set("n", "<leader>tc", tree_api.tree.close, {})
 
+-- Buffer keymaps
+vim.keymap.set("n", "bn", "<CMD>bnext<CR>")
+vim.keymap.set("n", "bp", "<CMD>bprevious<CR>")
+vim.keymap.set("n", "bd", "<CMD>Bdelete<CR>") -- use Bdelete provided by bufdelete.nvim instead of built-in bdelete to avoid losing window layout
+
 -- Telescope keymaps --
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
