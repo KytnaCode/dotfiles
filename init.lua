@@ -458,6 +458,12 @@ vim.keymap.set("n", "<leader>yf", genghis.duplicateFile)
 vim.keymap.set("n", "<leader>df", genghis.trashFile)
 vim.keymap.set("x", "<leader>x", genghis.moveSelectionToNewFile)
 
+-- Nvim Tree Keymaps
+local tree_api = require("nvim-tree.api")
+vim.keymap.set("n", "<leader>tt", tree_api.tree.toggle, {})
+vim.keymap.set("n", "<leader>to", tree_api.tree.open, {})
+vim.keymap.set("n", "<leader>tc", tree_api.tree.close, {})
+
 -- Telescope keymaps --
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
