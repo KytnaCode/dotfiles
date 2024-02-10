@@ -307,12 +307,6 @@ require("lazy").setup({
     end,
   },
   {
-    "soulis-1256/hoverhints.nvim",
-    config = function()
-      require("hoverhints").setup({})
-    end,
-  },
-  {
     "lewis6991/gitsigns.nvim",
     config = function()
       require("gitsigns").setup({
