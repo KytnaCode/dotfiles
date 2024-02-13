@@ -188,6 +188,13 @@ require("lazy").setup({
         enabled = true,
         plugins = { "plenary.nvim", "formatter.nvim" },
       },
+      override = function(root_dir, library)
+        print(root_dir)
+        if root_dir:find("dotfiles", 1, true) == 1 then
+          library.enabled = true
+          library.plugins = true
+        end
+      end,
     },
     priority = 900,
   },
