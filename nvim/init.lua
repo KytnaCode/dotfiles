@@ -501,12 +501,13 @@ vim.keymap.set("n", "<leader>to", tree_api.tree.open, {})
 vim.keymap.set("n", "<leader>tc", tree_api.tree.close, {})
 -- }}}
 
--- Buffer keymaps
+-- Buffer keymaps {{{
 vim.keymap.set("n", "bn", "<CMD>bnext<CR>")
 vim.keymap.set("n", "bp", "<CMD>bprevious<CR>")
 vim.keymap.set("n", "bd", "<CMD>Bdelete<CR>") -- use Bdelete provided by bufdelete.nvim instead of built-in bdelete to avoid losing window layout
+-- }}}
 
--- Telescope keymaps --
+-- Telescope keymaps {{{
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
@@ -514,14 +515,16 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fc", builtin.git_commits, {})
 vim.keymap.set("n", "<leader>fb", builtin.current_buffer_fuzzy_find, {})
 vim.keymap.set("n", "<leader>fp", require("telescope").extensions.projects.projects, {})
+-- }}}
 
--- Glance Keymaps
+-- Glance Keymaps {{{
 vim.keymap.set("n", "gD", "<CMD>Glance definitions<CR>")
 vim.keymap.set("n", "gR", "<CMD>Glance references<CR>")
 vim.keymap.set("n", "gY", "<CMD>Glance type_definitions<CR>")
 vim.keymap.set("n", "gM", "<CMD>Glance implementations<CR>")
+-- }}}
 
--- Trouble keymaps
+-- Trouble keymaps {{{
 vim.keymap.set("n", "<leader>xx", function()
   require("trouble").toggle()
 end)
@@ -540,11 +543,13 @@ end)
 vim.keymap.set("n", "gR", function()
   require("trouble").toggle("lsp_references")
 end)
+-- }}}
 
--- Aerial keymaps
+-- Aerial keymaps {{{
 vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
+-- }}}
 
--- DAP keymaps
+-- DAP keymaps {{{
 local dap, dapui = require("dap"), require("dapui")
 
 vim.keymap.set("n", "<leader>bb", function()
