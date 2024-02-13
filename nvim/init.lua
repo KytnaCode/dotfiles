@@ -585,6 +585,12 @@ dap.listeners.before.event_exited.dapui_config = function()
   vim.g.debug_mode = false
   dapui.close()
 end
+-- }}}
+
+-- LSP Keympas {{{
+vim.keymap.set("n", "<C-Space>", vim.lsp.buf.code_action)
+-- }}}
+
 --- }}}
 
 --- Linters {{{
