@@ -209,4 +209,12 @@ bar {
   swaybar_command waybar
 }
 
+### Windows Configuration {{{
+default_border pixel 1
+gaps inner 8
+gaps outer 6
+### }}}
+
 include /etc/sway/config.d/*
+
+# vim: foldmethod=marker foldlevel=0
