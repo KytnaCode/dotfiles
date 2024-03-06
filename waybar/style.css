@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  font-family: "AnonymicePro Nerd Font Mono"; 
+}
+
+window#waybar {
+  background: #EFF1F5;
+}
+
+#workspaces, #clock, #cpu {
+  background: #CCD0DA;
+  border-radius: 1rem;
+  padding: 0 .6rem;
+  margin: 0 .3rem;
+}
+
+#workspaces button.visible {
+  background: #FE640B;
+  border-radius: 1rem;
+  padding: .2rem .2rem;
+  margin: 0 10px;
+  color: #EFF1F5; 
+}
+
