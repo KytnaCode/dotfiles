@@ -2,7 +2,7 @@
     "layer": "top",
     "modules-left": ["sway/mode"],
     "modules-center": ["sway/workspaces"],
-    "modules-right": ["cpu", "clock"],
+    "modules-right": ["cpu", "sway/language", "clock"],
     "reload_style_on_change": true,
     "height": 24,
     "margin": "4 0",

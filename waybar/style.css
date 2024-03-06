@@ -7,13 +7,13 @@ window#waybar {
   background: #EFF1F5;
 }
 
-#workspaces, #clock, #cpu {
+#workspaces, #clock, #cpu, #language {
   border-radius: 1rem;
   padding: 0 .8rem;
   margin: 0 0rem;
 }
 
-#workspaces, #cpu {
+#workspaces, #cpu, #language {
   background: #CCD0DA;
 }
 
