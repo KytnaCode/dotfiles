@@ -4,6 +4,8 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+include catppuccin-latte
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -210,9 +212,21 @@ bar {
 }
 
 ### Windows Configuration {{{
-default_border pixel 1
+default_border pixel 2
+
 gaps inner 8
 gaps outer 6
+
+### }}}
+
+### Colors Configuration {{{
+# target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
 ### }}}
 
 include /etc/sway/config.d/*
