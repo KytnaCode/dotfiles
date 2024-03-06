@@ -1,8 +1,8 @@
 {
     "layer": "top",
-    "modules-left": ["sway/mode"],
+    "modules-left": ["group/hardware", "sway/mode"],
     "modules-center": ["sway/workspaces"],
-    "modules-right": ["cpu", "sway/language", "clock"],
+    "modules-right": ["sway/language", "clock"],
     "reload_style_on_change": true,
     "height": 24,
     "margin": "4 0",
@@ -11,9 +11,19 @@
     "sway/window": {
         "max-length": 50
     },
+    "group/hardware": {
+      "orientation": "horizontal",
+      "modules": [
+        "cpu",
+        "memory"
+      ]
+    },
     "cpu": {
       "format": "CPU: {usage}%"
-    }, 
+    },
+    "memory": {
+      "format": "Mem: {used}GiB"
+    },
     "clock": {
         "format-alt": "{:%a, %d. %b  %H:%M}"
     }

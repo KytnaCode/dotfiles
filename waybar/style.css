@@ -7,13 +7,17 @@ window#waybar {
   background: #EFF1F5;
 }
 
-#workspaces, #clock, #cpu, #language {
+#workspaces, #clock, #cpu, #language, #memory, #hardware {
   border-radius: 1rem;
   padding: 0 .8rem;
   margin: 0 0rem;
 }
 
-#workspaces, #cpu, #language {
+#cpu, #memory {
+  background: rgba(255, 255, 255, 0);
+}
+
+#workspaces, #language {
   background: #CCD0DA;
 }
 
@@ -26,10 +30,18 @@ window#waybar {
   font-weight: bold;
 }
 
-#clock {
+#clock, #hardware {
   background: #1E66F5;
   color: #EFF1F5;
+  font-weight: bold;
+}
+
+#clock {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  font-weight: bold;
+}
+
+#hardware {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
