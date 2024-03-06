@@ -5,9 +5,9 @@
     "modules-right": ["sway/language", "clock"],
     "reload_style_on_change": true,
     "height": 24,
-    "margin": "4 0",
+    "margin": "0 0",
     "spacing": 12,
-    "mode": "overlay",
+    "mode": "dock",
     "sway/window": {
         "max-length": 50
     },
