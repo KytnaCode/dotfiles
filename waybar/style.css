@@ -14,10 +14,10 @@ window#waybar {
   margin: 0 .3rem;
 }
 
-#workspaces button.visible {
+#workspaces button.focused {
   background: #FE640B;
   border-radius: 1rem;
-  padding: .2rem .2rem;
+  padding: 0rem .2rem;
   margin: 0 10px;
   color: #EFF1F5; 
 }
