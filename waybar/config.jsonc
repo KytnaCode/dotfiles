@@ -5,7 +5,8 @@
     "modules-right": ["cpu", "clock"],
     "reload_style_on_change": true,
     "height": 24,
-    "margin": "4 15",
+    "margin": "4 0",
+    "spacing": 12,
     "sway/window": {
         "max-length": 50
     },

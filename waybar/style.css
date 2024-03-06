@@ -8,10 +8,13 @@ window#waybar {
 }
 
 #workspaces, #clock, #cpu {
-  background: #CCD0DA;
   border-radius: 1rem;
-  padding: 0 .6rem;
-  margin: 0 .3rem;
+  padding: 0 .8rem;
+  margin: 0 0rem;
+}
+
+#workspaces, #cpu {
+  background: #CCD0DA;
 }
 
 #workspaces button.focused {
@@ -20,4 +23,13 @@ window#waybar {
   padding: 0rem .2rem;
   margin: 0 10px;
   color: #EFF1F5; 
+  font-weight: bold;
+}
+
+#clock {
+  background: #1E66F5;
+  color: #EFF1F5;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-weight: bold;
 }
