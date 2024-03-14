@@ -68,7 +68,7 @@ require("lazy").setup({
       require("lualine").setup({
         sections = {
           lualine_a = { "mode" },
-          lualine_b = { "filename" },
+          lualine_b = { "filename", "branch" },
           lualine_c = {
             -- invoke `progress` here.
             require("lsp-progress").progress,
