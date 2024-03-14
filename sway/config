@@ -28,7 +28,8 @@ font Lato 11
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+exec swaybg -i /usr/share/backgrounds/sway/catppuccin-latte.png
+#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 output HDMI-A-1 resolution 1920x1080 position 0,0
 output DVI-D-1 resolution 1920x1080 position 0,1080 scale 1
 #
