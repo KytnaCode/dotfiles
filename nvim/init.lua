@@ -202,6 +202,13 @@ require("lazy").setup({
 
   -- Editor {{{
   {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    opts = {
+      open_mapping = "<leader>p",
+    },
+  },
+  {
     "b0o/schemastore.nvim",
   },
   {
