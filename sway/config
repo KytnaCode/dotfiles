@@ -63,6 +63,12 @@ output DVI-D-1 resolution 1920x1080 position 0,1080 scale 1
 #       middle_emulation enabled
 #   }
 #
+
+input * {
+  xkb_layout "us,es"
+  xkb_options "grp:win_space_toggle"
+}
+
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
@@ -160,10 +166,10 @@ output DVI-D-1 resolution 1920x1080 position 0,1080 scale 1
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym Mod1+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym Mod1+space focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
