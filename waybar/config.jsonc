@@ -1,11 +1,11 @@
-{
+[{
     "layer": "top",
     "modules-left": ["group/hardware", "sway/mode"],
     "modules-center": ["sway/workspaces"],
     "modules-right": ["sway/language", "clock"],
     "reload_style_on_change": true,
     "height": 24,
-    "margin": "0 0",
+    "margin": "0 0 0 8",
     "spacing": 12,
     "mode": "dock",
     "sway/window": {
@@ -26,5 +26,19 @@
     },
     "clock": {
         "format-alt": "{:%a, %d. %b  %H:%M}"
+    } 
+},  {
+  "layer": "top",
+  "modules-right": ["pulseaudio/slider"],
+  "reload_style_on_change": true,
+  "width": 14,
+  "margin": "0 0 10 10",
+  "spacing": 12,
+  "mode": "dock",
+  "position": "left",
+  "pulseaudio/slider": {
+      "min": 0,
+      "max": 100,
+      "orientation": "vertical"
     }
-}
+}]
