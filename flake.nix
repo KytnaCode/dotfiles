@@ -5,14 +5,18 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }: let
+  outputs = {nixpkgs}: let
     system = "x86_64-linux";
-    pkgs = import nixpkgs { inherit system; };
+    pkgs = import nixpkgs {inherit system;};
   in {
+    formatter.default = pkgs.alejandra;
+
     devShells.${system}.default = pkgs.mkShellNoCC {
       buildInputs = with pkgs; [
         git
         git-credential-oauth
+        nixd
+        alejandra
       ];
     };
   };
