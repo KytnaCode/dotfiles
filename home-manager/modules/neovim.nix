@@ -47,6 +47,9 @@ in {
         leap-nvim
         blink-cmp
       ];
+
+      withPython3 = false;
+      withRuby = false;
     };
 
     home.file.".config/nvim".source = apps.nvim;
