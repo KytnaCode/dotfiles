@@ -53,6 +53,7 @@ in {
 
         # Utils
         neo-tree-nvim
+	vim-fugitive
 
         # Misc
         nui-nvim
