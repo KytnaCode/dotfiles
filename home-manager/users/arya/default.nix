@@ -1,11 +1,16 @@
 {modules, ...}: {...}: {
   imports = [
     modules.neovim
+    modules.kitty
   ];
 
-  custom.programs.neovim = {
-    enable = true;
-    defaultEditor = true;
+  custom.programs = {
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
+
+    kitty.enable = true;
   };
 
   programs.home-manager.enable = true;
