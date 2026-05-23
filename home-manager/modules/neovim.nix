@@ -44,8 +44,17 @@ in {
       vimAlias = cfg.vimAlias;
 
       plugins = with pkgs.vimPlugins; [
+        # Motion
         leap-nvim
+
+        # Lsp
         blink-cmp
+        nvim-lspconfig
+      ];
+
+      extraPackages = with pkgs; [
+        lua-language-server
+        nixd
       ];
 
       withPython3 = false;
