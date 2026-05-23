@@ -1,4 +1,13 @@
-{
+{modules, ...}: {...}: {
+  imports = [
+    modules.neovim
+  ];
+
+  custom.programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
+
   programs.home-manager.enable = true;
 
   # This value determines the Home Manager release that your configuration is
