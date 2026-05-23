@@ -5,7 +5,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -19,19 +19,6 @@ vim.opt.rtp:prepend(lazypath)
 -- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-
-local function is_nixos()
-  local f = io.open('/etc/NIXOS', 'r')
-  if f then f:close(); return true end
-  -- Fallback: check /etc/os-release for NixOS
-  local f2 = io.open('/etc/os-release', 'r')
-  if f2 then
-    local content = f2:read("*all")
-    f2:close()
-    if content:match("ID=nixos") then return true end
-  end
-  return false
-end
 
 local lazy_opts = {
   spec = {
