@@ -6,6 +6,16 @@
 }:
 with lib; let
   cfg = config.custom.programs.neovim;
+  my-neovim = pkgs.symlinkJoin {
+    inherit (pkgs.neovim-unwrapped) meta;
+
+    name = "neovim-unwrapped";
+    paths = [pkgs.neovim-unwrapped];
+    nativeBuildInputs = [pkgs.makeBinaryWrapper];
+    postBuild = ''
+      wrapProgram $out/bin/nvim --set NEOVIM_SYSTEM_MANAGED_PLUGINS_PATH "${pkgs.vimUtils.packDir config.programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start"
+    '';
+  };
 in {
   options.custom.programs.neovim = {
     enable = mkEnableOption "use dotfiles' neovim configuration";
@@ -26,15 +36,7 @@ in {
     programs.neovim = {
       enable = true;
 
-      package = pkgs.neovim-unwrapped.overrideAttrs (oldAttrs: {
-        nativeBuildInputs = (oldAttrs.nativeBuildInputs or []) ++ [pkgs.makeBinaryWrapper];
-
-        postInstall =
-          (oldAttrs.postInstall or "")
-          + ''
-            wrapProgram $out/bin/nvim --set NEOVIM_SYSTEM_MANAGED_PLUGINS_PATH "${pkgs.vimUtils.packDir config.programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start"
-          '';
-      });
+      package = my-neovim;
 
       defaultEditor = cfg.defaultEditor;
 
@@ -43,6 +45,7 @@ in {
 
       plugins = with pkgs.vimPlugins; [
         leap-nvim
+        blink-cmp
       ];
     };
 

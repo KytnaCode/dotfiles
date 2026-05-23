@@ -17,6 +17,7 @@
         git-credential-oauth
         nixd
         alejandra
+        lua-language-server
       ];
     };
   };
