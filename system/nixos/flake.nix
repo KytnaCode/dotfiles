@@ -11,11 +11,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    apps.url = "../../apps";
+
     dotfiles-hm = {
       url = "../../home-manager";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
+        apps.follows = "apps";
       };
     };
   };

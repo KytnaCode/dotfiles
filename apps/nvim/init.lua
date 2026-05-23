@@ -1,1 +1,58 @@
-print("hello")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- Make sure to setup `mapleader` and `maplocalleader` before
+-- loading lazy.nvim so that mappings are correct.
+-- This is also a good place to setup other settings (vim.opt)
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+local function is_nixos()
+  local f = io.open('/etc/NIXOS', 'r')
+  if f then f:close(); return true end
+  -- Fallback: check /etc/os-release for NixOS
+  local f2 = io.open('/etc/os-release', 'r')
+  if f2 then
+    local content = f2:read("*all")
+    f2:close()
+    if content:match("ID=nixos") then return true end
+  end
+  return false
+end
+
+local lazy_opts = {
+  spec = {
+    { import = "plugins" }
+  },
+  checker = { enabled = true },
+  install = { missing = true },
+}
+
+if vim.env.NEOVIM_SYSTEM_MANAGED_PLUGINS_PATH ~= "" then
+  lazy_opts.install.missing = false
+  lazy_opts.checker.enabled = false
+  lazy_opts.performance = {
+    reset_packpath = false,
+    rtp = { reset = false },
+  }
+  lazy_opts.dev = {
+    path = vim.env.NEOVIM_SYSTEM_MANAGED_PLUGINS_PATH,
+    patterns = { "" },
+  }
+end
+
+-- Setup lazy.nvim
+require("lazy").setup(lazy_opts)
