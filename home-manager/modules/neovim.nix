@@ -7,7 +7,7 @@
 with lib; let
   cfg = config.custom.programs.neovim;
   my-neovim = pkgs.symlinkJoin {
-    inherit (pkgs.neovim-unwrapped) meta;
+    inherit (pkgs.neovim-unwrapped) meta passthru lua;
 
     name = "neovim-unwrapped";
     paths = [pkgs.neovim-unwrapped];
@@ -50,6 +50,14 @@ in {
         # Lsp
         blink-cmp
         nvim-lspconfig
+
+        # Utils
+        neo-tree-nvim
+
+        # Misc
+        nui-nvim
+        plenary-nvim
+        nvim-web-devicons
       ];
 
       extraPackages = with pkgs; [
