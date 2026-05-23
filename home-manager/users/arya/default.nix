@@ -2,6 +2,7 @@
   imports = [
     modules.neovim
     modules.kitty
+    modules.hyprland
   ];
 
   custom.programs = {
@@ -11,6 +12,8 @@
     };
 
     kitty.enable = true;
+
+    hyprland.enable = true;
   };
 
   programs.home-manager.enable = true;
