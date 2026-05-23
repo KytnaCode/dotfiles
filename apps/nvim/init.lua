@@ -44,4 +44,4 @@ end
 -- Setup lazy.nvim
 require("lazy").setup(lazy_opts)
 
-require("lsp")
+require("config")
