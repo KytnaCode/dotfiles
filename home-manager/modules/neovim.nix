@@ -51,9 +51,12 @@ in {
         blink-cmp
         nvim-lspconfig
 
+        # UI
+        edgy-nvim
+
         # Utils
         neo-tree-nvim
-	vim-fugitive
+  	    vim-fugitive
 
         # Misc
         nui-nvim
