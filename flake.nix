@@ -13,11 +13,18 @@
 
     devShells.${system}.default = pkgs.mkShellNoCC {
       buildInputs = with pkgs; [
+        # Nix
+        alejandra
+        nixd
+
+        # Git
         git
         git-credential-oauth
-        nixd
-        alejandra
+        
+        # Lua
         lua-language-server
+
+        # Misc
         just
       ];
     };
