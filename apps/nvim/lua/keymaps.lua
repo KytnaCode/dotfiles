@@ -17,7 +17,7 @@ map({ 'n', 'x', 'o' }, 's', '<Plug>(leap)', opts({ desc = 'Leap within window' }
 map('n', 'S', '<Plug>(leap-from-window)', opts({ desc = 'Leap from window' }))
 
 -- Git
-map('n', '<leader>gc', '<CMD>Git commit<CR>', opts({ desc = 'Commit stagged changes' }))
+map('n', '<leader>gc', '<CMD>Git commit --verbose<CR>', opts({ desc = 'Commit stagged changes' }))
 map('n', '<leader>ga', '<CMD>Git commit --amend --no-edit<CR>', opts({ desc = 'Commit amend' }))
 map('n', '<leader>gl', '<CMD>Git log<CR>', opts({ desc = 'Open git logs' }))
 map('n', '<leader>ga', '<CMD>Git add %<CR>', opts({ desc = 'Git add current file' }))
