@@ -57,6 +57,7 @@ in {
         # Utils
         neo-tree-nvim
   	    vim-fugitive
+        toggleterm-nvim
 
         # Misc
         nui-nvim

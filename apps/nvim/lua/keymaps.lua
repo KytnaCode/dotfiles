@@ -9,3 +9,6 @@ map('n', 'S', '<Plug>(leap-from-window)')
 
 -- Git
 map('n', '<leader>gc', '<CMD>Git commit<CR>')
+
+-- Terminal
+map({ 'n', 't' }, [[<c-\>]], '<CMD>ToggleTerm direction=float<CR>')
