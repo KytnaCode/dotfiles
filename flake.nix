@@ -9,7 +9,7 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs {inherit system;};
   in {
-    formatter.default = pkgs.alejandra;
+    formatter.${system} = pkgs.alejandra;
 
     devShells.${system}.default = pkgs.mkShellNoCC {
       buildInputs = with pkgs; [
