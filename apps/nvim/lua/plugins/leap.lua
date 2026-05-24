@@ -1,3 +1,3 @@
 return {
-    "andyg/leap.nvim"
+  'andyg/leap.nvim',
 }

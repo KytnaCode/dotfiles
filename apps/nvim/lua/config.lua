@@ -1,3 +1,3 @@
-require("options")
-require("lsp")
-require("keymaps")
+require('options')
+require('lsp')
+require('keymaps')

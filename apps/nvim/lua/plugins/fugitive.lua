@@ -1,4 +1,4 @@
 return {
-  "tpope/vim-fugitive",
-  Cmd = { "Git", "G" },
+  'tpope/vim-fugitive',
+  Cmd = { 'Git', 'G' },
 }

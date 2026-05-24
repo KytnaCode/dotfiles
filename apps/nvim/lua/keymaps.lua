@@ -1,7 +1,7 @@
 local map = vim.keymap.set
 
 -- File tree.
-map("n", "<leader>tt", "<CMD>Neotree toggle<CR>")
+map('n', '<leader>tt', '<CMD>Neotree toggle<CR>')
 
 -- Motion.
 map({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')

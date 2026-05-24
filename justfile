@@ -6,3 +6,7 @@ nix-update-full:
 
 nix-reload: nix-update
   sudo nixos-rebuild switch
+
+fmt:
+  nix fmt .
+  stylua .

@@ -1,6 +1,6 @@
 local servers = {
-  "lua_ls",
-  "nixd",
+  'lua_ls',
+  'nixd',
 }
 
 vim.lsp.config('lua_ls', {
@@ -33,7 +33,7 @@ vim.lsp.config('lua_ls', {
         library = {
           vim.env.VIMRUNTIME,
           -- For LSP Settings Type Annotations: https://github.com/neovim/nvim-lspconfig#lsp-settings-type-annotations
-          vim.api.nvim_get_runtime_file("lua/lspconfig", false)[1],
+          vim.api.nvim_get_runtime_file('lua/lspconfig', false)[1],
         },
         -- Or pull in all of 'runtimepath'.
         -- NOTE: this is a lot slower and will cause issues when working on

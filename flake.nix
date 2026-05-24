@@ -20,9 +20,10 @@
         # Git
         git
         git-credential-oauth
-        
+
         # Lua
         lua-language-server
+        stylua
 
         # Misc
         just
