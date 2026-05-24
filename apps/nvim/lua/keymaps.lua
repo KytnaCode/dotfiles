@@ -20,6 +20,8 @@ map('n', 'S', '<Plug>(leap-from-window)', opts({ desc = 'Leap from window' }))
 map('n', '<leader>gc', '<CMD>Git commit<CR>', opts({ desc = 'Commit stagged changes' }))
 map('n', '<leader>ga', '<CMD>Git commit --amend --no-edit<CR>', opts({ desc = 'Commit amend' }))
 map('n', '<leader>gl', '<CMD>Git log<CR>', opts({ desc = 'Open git logs' }))
+map('n', '<leader>ga', '<CMD>Git add %<CR>', opts({ desc = 'Git add current file' }))
+map('n', '<leader>gr', '<CMD>Git reset %<CR>', opts({ desc = 'Git reset current file' }))
 
 -- Terminal
 map({ 'n', 't' }, [[<c-\>]], '<CMD>ToggleTerm direction=float<CR>', opts({ desc = 'toggle floating terminal' }))
