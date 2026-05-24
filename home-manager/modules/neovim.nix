@@ -70,6 +70,7 @@ in {
 
       extraPackages = with pkgs; [
         vscode-json-languageserver
+        taplo
         lua-language-server
         nixd
       ];
