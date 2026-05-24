@@ -1,8 +1,9 @@
 {modules, ...}: {...}: {
-  imports = [
-    modules.neovim
-    modules.kitty
-    modules.hyprland
+  imports = with modules; [
+    neovim
+    kitty
+    hyprland
+    zsh
   ];
 
   custom.programs = {
@@ -14,6 +15,8 @@
     kitty.enable = true;
 
     hyprland.enable = true;
+
+    zsh.enable = true;
   };
 
   programs.home-manager.enable = true;
