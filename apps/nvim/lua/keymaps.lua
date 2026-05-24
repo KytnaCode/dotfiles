@@ -9,6 +9,7 @@ map('n', 'S', '<Plug>(leap-from-window)')
 
 -- Git
 map('n', '<leader>gc', '<CMD>Git commit<CR>')
+map('n', '<leader>ga', '<CMD>Git commit --amend --no-edit<CR>')
 map('n', '<leader>gl', '<CMD>Git log<CR>')
 
 -- Terminal
