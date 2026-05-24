@@ -65,7 +65,7 @@ in {
         plenary-nvim
         nvim-web-devicons
         bufdelete-nvim
-        (SchemaStore-nvim.overrideAttrs (_: {pname = "schemastore.nvim";}))
+        SchemaStore-nvim
       ];
 
       extraPackages = with pkgs; [
