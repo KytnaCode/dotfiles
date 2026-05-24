@@ -18,6 +18,7 @@
         nixd
         alejandra
         lua-language-server
+        just
       ];
     };
   };
