@@ -4,6 +4,7 @@
     kitty
     hyprland
     zsh
+    starship
   ];
 
   custom.programs = {
@@ -17,6 +18,8 @@
     hyprland.enable = true;
 
     zsh.enable = true;
+
+    starship.enable = true;
   };
 
   programs.home-manager.enable = true;
