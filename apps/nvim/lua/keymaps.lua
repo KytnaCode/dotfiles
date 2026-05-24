@@ -16,6 +16,14 @@ map('n', '<leader>tt', '<CMD>Neotree toggle<CR>', opts({ desc = 'Toggle file tre
 map({ 'n', 'x', 'o' }, 's', '<Plug>(leap)', opts({ desc = 'Leap within window' }))
 map('n', 'S', '<Plug>(leap-from-window)', opts({ desc = 'Leap from window' }))
 
+-- Buffers.
+map('n', [[<c-,>]], '<CMD>BufferLineCyclePrev<CR>', opts({ desc = 'Previous buffer' }))
+map('n', [[<c-.>]], '<CMD>BufferLineCycleNext<CR>', opts({ desc = 'Next buffer' }))
+map('n', [[<c-m-,>]], '<CMD>BufferLineMovePrev<CR>', opts({ desc = 'Move current buffer left' }))
+map('n', [[<c-m-.>]], '<CMD>BufferLineMoveNext<CR>', opts({ desc = 'Move current buffer right' }))
+map('n', [[<c-x>]], '<CMD>Bdelete<CR>', opts({ desc = 'delete buffer' }))
+map('n', [[<c-X>]], '<CMD>Bwipeout<CR>', opts({ desc = 'wipeout buffer' }))
+
 -- Git
 map('n', '<leader>gc', '<CMD>Git commit --verbose<CR>', opts({ desc = 'Commit stagged changes' }))
 map('n', '<leader>ga', '<CMD>Git commit --amend --no-edit<CR>', opts({ desc = 'Commit amend' }))
