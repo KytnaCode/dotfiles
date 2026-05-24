@@ -1,16 +1,27 @@
 local map = vim.keymap.set
 
+--- @type vim.keymap.set.Opts
+local default_opts = {
+  noremap = true,
+}
+
+--- @param extend vim.keymap.set.Opts?
+--- @return vim.keymap.set.Opts
+local function opts(extend)
+  return vim.tbl_extend('force', default_opts, extend)
+end
+
 -- File tree.
-map('n', '<leader>tt', '<CMD>Neotree toggle<CR>')
+map('n', '<leader>tt', '<CMD>Neotree toggle<CR>', opts({ desc = "Toggle file tree" }))
 
 -- Motion.
-map({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')
-map('n', 'S', '<Plug>(leap-from-window)')
+map({ 'n', 'x', 'o' }, 's', '<Plug>(leap)', opts({ desc = "Leap within window" }))
+map('n', 'S', '<Plug>(leap-from-window)', opts({ desc = "Leap from window" }))
 
 -- Git
-map('n', '<leader>gc', '<CMD>Git commit<CR>')
-map('n', '<leader>ga', '<CMD>Git commit --amend --no-edit<CR>')
-map('n', '<leader>gl', '<CMD>Git log<CR>')
+map('n', '<leader>gc', '<CMD>Git commit<CR>', opts({ desc = "Commit stagged changes" }))
+map('n', '<leader>ga', '<CMD>Git commit --amend --no-edit<CR>', opts({ desc = "Commit amend" }))
+map('n', '<leader>gl', '<CMD>Git log<CR>', opts({ desc = "Open git logs" }))
 
 -- Terminal
-map({ 'n', 't' }, [[<c-\>]], '<CMD>ToggleTerm direction=float<CR>')
+map({ 'n', 't' }, [[<c-\>]], '<CMD>ToggleTerm direction=float<CR>', opts({ desc = "toggle floating terminal" }))
