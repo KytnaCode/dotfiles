@@ -63,9 +63,11 @@ in {
         nui-nvim
         plenary-nvim
         nvim-web-devicons
+        (SchemaStore-nvim.overrideAttrs (_: {pname = "schemastore.nvim";}))
       ];
 
       extraPackages = with pkgs; [
+        vscode-json-languageserver
         lua-language-server
         nixd
       ];
