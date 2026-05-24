@@ -53,6 +53,7 @@ in {
 
         # UI
         edgy-nvim
+        bufferline-nvim
 
         # Utils
         neo-tree-nvim
@@ -63,6 +64,7 @@ in {
         nui-nvim
         plenary-nvim
         nvim-web-devicons
+        bufdelete-nvim
         (SchemaStore-nvim.overrideAttrs (_: {pname = "schemastore.nvim";}))
       ];
 
