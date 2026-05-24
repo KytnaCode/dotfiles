@@ -1,0 +1,5 @@
+akash329d/zsh-alias-finder
+Tarrasch/zsh-bd
+JBarberU/zsh-justfile
+zsh-users/zsh-completions
+reegnz/jq-zsh-plugin

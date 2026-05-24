@@ -1,4 +1,5 @@
 {apps, ...}: {
+  pkgs,
   lib,
   config,
   ...
@@ -10,8 +11,15 @@
 
     home.file = {
       ".zshrc".source = apps.zsh.zshrc;
+
+      ".zsh_plugins.txt".source = apps.zsh.plugins;
+      
       ".nix-overrides.zshrc".text = ''
         export DISABLE_AUTO_UPDATE="true"
+      '';
+      
+      ".variables.zsh".text = ''
+        export ZSH_CUSTOM_ANTIDOTE_PATH="${pkgs.antidote}/share/antidote/antidote.zsh" 
       '';
     };
   };

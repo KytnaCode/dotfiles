@@ -22,7 +22,7 @@ map('n', [[<c-.>]], '<CMD>BufferLineCycleNext<CR>', opts({ desc = 'Next buffer' 
 map('n', [[<c-m-,>]], '<CMD>BufferLineMovePrev<CR>', opts({ desc = 'Move current buffer left' }))
 map('n', [[<c-m-.>]], '<CMD>BufferLineMoveNext<CR>', opts({ desc = 'Move current buffer right' }))
 map('n', [[<c-x>]], '<CMD>Bdelete<CR>', opts({ desc = 'delete buffer' }))
-map('n', [[<c-X>]], '<CMD>Bwipeout<CR>', opts({ desc = 'wipeout buffer' }))
+map('n', [[<c-m-x>]], '<CMD>Bwipeout<CR>', opts({ desc = 'wipeout buffer' }))
 
 -- Git
 map('n', '<leader>gc', '<CMD>Git commit --verbose<CR>', opts({ desc = 'Commit stagged changes' }))
