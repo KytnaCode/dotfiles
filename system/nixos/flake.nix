@@ -27,7 +27,9 @@
     home-manager,
     dotfiles-hm,
     ...
-  }: {
+  }: let
+    modules = import ./modules;
+  in {
     # NOTE: 'nixos' is the default hostname
     nixosConfigurations.arya-pc = let
       system = "x86_64-linux";
@@ -40,7 +42,7 @@
           ./systems/arya-pc/configuration.nix
         ];
 
-        specialArgs = {inherit system inputs dotfiles-hm;};
+        specialArgs = {inherit system inputs dotfiles-hm modules;};
       };
   };
 }
