@@ -54,6 +54,7 @@ in {
         # UI
         edgy-nvim
         bufferline-nvim
+        cyberdream-nvim
 
         # Utils
         neo-tree-nvim
