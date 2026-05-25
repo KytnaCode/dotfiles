@@ -14,6 +14,7 @@
     ./programs.nix
 
     modules.i18n
+    modules.sound
   ];
 
   home-manager = {
@@ -22,7 +23,10 @@
     users.arya = dotfiles-hm.homeManagerModules.arya;
   };
 
-  custom.i18n.enable = true;
+  custom = {
+    i18n.enable = true;
+    sound.enable = true;  
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
