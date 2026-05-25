@@ -14,6 +14,15 @@ hl.monitor({
   scale = 1,
 })
 
+-- Keyboard
+hl.config({
+  input = {
+    kb_layout = 'us,latam',
+  },
+})
+
+hl.bind('SUPER + SPACE', hl.dsp.exec_cmd('hyprctl switchxkblayout current next'))
+
 -- Apps
 hl.bind('SUPER + RETURN', hl.dsp.exec_cmd('kitty'))
 
