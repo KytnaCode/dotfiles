@@ -10,8 +10,8 @@ local default_opts = {
 local function opts(extend) return vim.tbl_extend('force', default_opts, extend) end
 
 -- Editing
-map('n', 'd', '"_d', opts({ desc = "delete" }))
-map({'n', 'o'}, 'x', 'd', opts({ desc = "cut" }))
+map('n', 'd', '"_d', opts({ desc = 'delete' }))
+map({ 'n', 'o' }, 'x', 'd', opts({ desc = 'cut' }))
 
 -- File tree.
 map('n', '<leader>tt', '<CMD>Neotree toggle<CR>', opts({ desc = 'Toggle file tree' }))

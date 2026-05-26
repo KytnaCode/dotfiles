@@ -1,4 +1,8 @@
-{lib, config, ...}: {
+{
+  lib,
+  config,
+  ...
+}: {
   options.custom.sound.enable = lib.mkEnableOption "enable dotfiles' sound config";
 
   config = lib.mkIf config.custom.sound.enable {

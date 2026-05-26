@@ -46,4 +46,4 @@ require('lazy').setup(lazy_opts)
 
 require('config')
 
-Util = require("utils")
+Util = require('utils')
