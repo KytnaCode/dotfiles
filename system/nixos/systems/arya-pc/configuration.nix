@@ -25,7 +25,7 @@
 
   custom = {
     i18n.enable = true;
-    sound.enable = true;  
+    sound.enable = true;
   };
 
   # Use the systemd-boot EFI boot loader.
@@ -76,8 +76,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
-  programs.zsh.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.arya = {
     isNormalUser = true;
@@ -87,8 +85,6 @@
       vim
     ];
   };
-
-  environment.pathsToLink = [ "/share/zsh" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
