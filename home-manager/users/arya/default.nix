@@ -1,4 +1,4 @@
-{modules, ...}: {...}: {
+{modules, ...}: {pkgs, ...}: {
   imports = with modules; [
     neovim
     kitty
@@ -23,6 +23,10 @@
   };
 
   programs.home-manager.enable = true;
+
+  home.packages = with pkgs; [
+    brave
+  ];
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
