@@ -26,6 +26,7 @@
 
   home.packages = with pkgs; [
     brave
+    zotero
   ];
 
   # This value determines the Home Manager release that your configuration is
