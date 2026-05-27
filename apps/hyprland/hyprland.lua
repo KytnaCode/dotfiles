@@ -24,7 +24,11 @@ hl.config({
 hl.bind('SUPER + SPACE', hl.dsp.exec_cmd('hyprctl switchxkblayout current next'))
 
 -- Apps
-hl.bind('SUPER + RETURN', hl.dsp.exec_cmd('kitty'))
+local terminal = 'kitty'
+local browser = 'brave'
+
+hl.bind('SUPER + RETURN', hl.dsp.exec_cmd(terminal))
+hl.bind('SUPER + b', hl.dsp.exec_cmd(browser))
 
 -- Windows
 hl.bind('SUPER + h', hl.dsp.focus({ direction = 'l' }))
