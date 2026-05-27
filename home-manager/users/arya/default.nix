@@ -1,11 +1,11 @@
 {modules, ...}: {pkgs, ...}: {
   imports = with modules; [
     direnv
-    neovim
-    kitty
     hyprland
-    zsh
+    kitty
+    neovim
     starship
+    zsh
   ];
 
   custom.programs = {
