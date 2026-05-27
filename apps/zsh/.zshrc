@@ -22,6 +22,9 @@ if (( $+commands[direnv] )); then
   eval "$(direnv hook zsh)"
 fi
 
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
 COMPLETION_WAITING_DOTS="true"
 
 source_if_exists "$overridesFile"
