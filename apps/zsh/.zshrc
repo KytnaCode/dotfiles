@@ -18,6 +18,10 @@ if [[ -f "$ZSH_CUSTOM_ANTIDOTE_PATH" ]]; then
   antidote load
 fi
 
+if (( $+commands[direnv] )); then
+  eval "$(direnv hook zsh)"
+fi
+
 COMPLETION_WAITING_DOTS="true"
 
 source_if_exists "$overridesFile"
