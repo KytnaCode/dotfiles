@@ -1,36 +1,18 @@
-{modules, ...}: {pkgs, ...}: {
-  imports = with modules; [
-    direnv
-    hyprland
-    kitty
-    neovim
-    starship
-    zsh
-  ];
-
-  custom.programs = {
-    direnv.enable = true;
-
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-    };
-
-    kitty.enable = true;
-
-    hyprland.enable = true;
-
-    zsh.enable = true;
-
-    starship.enable = true;
-  };
+{modules, ...}: {...}: {
+  imports = with modules;
+    [
+      direnv
+      hyprland
+      kitty
+      neovim
+      starship
+      zsh
+    ]
+    ++ [
+      ./programs.nix
+    ];
 
   programs.home-manager.enable = true;
-
-  home.packages = with pkgs; [
-    brave
-    zotero
-  ];
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
