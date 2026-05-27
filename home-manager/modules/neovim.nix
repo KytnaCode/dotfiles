@@ -60,6 +60,7 @@ in {
         neo-tree-nvim
         vim-fugitive
         toggleterm-nvim
+        conform-nvim
 
         # Misc
         nui-nvim
@@ -70,10 +71,15 @@ in {
       ];
 
       extraPackages = with pkgs; [
+        # Language Servers
         vscode-json-languageserver
         taplo
         lua-language-server
         nixd
+
+        # Formatters & Linters
+        stylua
+        alejandra
       ];
 
       withPython3 = false;
