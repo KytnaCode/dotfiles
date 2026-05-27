@@ -22,8 +22,15 @@ if (( $+commands[direnv] )); then
   eval "$(direnv hook zsh)"
 fi
 
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+bindkey "^[OA" up-line-or-beginning-search
+bindkey "^[OB" down-line-or-beginning-search
 
 COMPLETION_WAITING_DOTS="true"
 
