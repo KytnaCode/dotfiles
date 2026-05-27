@@ -26,8 +26,10 @@
 
   custom = {
     i18n.enable = true;
-    sound.enable = true;
-    hardware.bluetooth.enable = true;
+    hardware = {
+      bluetooth.enable = true;
+      sound.enable = true;
+    };
   };
 
   # Use the systemd-boot EFI boot loader.

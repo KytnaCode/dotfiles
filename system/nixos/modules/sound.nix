@@ -3,9 +3,9 @@
   config,
   ...
 }: {
-  options.custom.sound.enable = lib.mkEnableOption "enable dotfiles' sound config";
+  options.custom.hardware.sound.enable = lib.mkEnableOption "enable dotfiles' sound config";
 
-  config = lib.mkIf config.custom.sound.enable {
+  config = lib.mkIf config.custom.hardware.sound.enable {
     services.pipewire = {
       enable = true;
       pulse.enable = true;
