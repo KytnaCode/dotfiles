@@ -1,5 +1,6 @@
 {modules, ...}: {pkgs, ...}: {
   imports = with modules; [
+    direnv
     neovim
     kitty
     hyprland
@@ -8,6 +9,8 @@
   ];
 
   custom.programs = {
+    direnv.enable = true;
+
     neovim = {
       enable = true;
       defaultEditor = true;
