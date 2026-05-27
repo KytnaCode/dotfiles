@@ -15,6 +15,7 @@
 
     modules.i18n
     modules.sound
+    modules.bluetooth
   ];
 
   home-manager = {
@@ -26,6 +27,7 @@
   custom = {
     i18n.enable = true;
     sound.enable = true;
+    hardware.bluetooth.enable = true;
   };
 
   # Use the systemd-boot EFI boot loader.
