@@ -46,4 +46,6 @@ require('lazy').setup(lazy_opts)
 
 require('config')
 
+-- selene: allow(unscoped_variables)
+-- selene: allow(unused_variable)
 Util = require('utils')
