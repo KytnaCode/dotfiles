@@ -33,13 +33,13 @@
   };
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    kernelPackages = pkgs.linuxPackages_latest;
+  };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "arya-pc"; # Define your hostname.
 
@@ -58,9 +58,15 @@
 
   programs.firefox.enable = true;
 
-  services.displayManager.gdm.enable = true;
+  services = {
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
 
-  services.desktopManager.gnome.enable = true;
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
+    };
+  };
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -68,14 +74,6 @@
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
-
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;

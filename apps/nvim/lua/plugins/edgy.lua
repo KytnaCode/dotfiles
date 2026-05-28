@@ -14,7 +14,9 @@ return {
       {
         ft = 'help',
         size = { width = 0.4 },
-        filter = function(buf) return vim.bo[buf].buftype == 'help' end,
+        filter = function(buf)
+          return vim.bo[buf].buftype == 'help'
+        end,
       },
       {
         ft = 'git',

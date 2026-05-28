@@ -7,7 +7,9 @@ local default_opts = {
 
 --- @param extend vim.keymap.set.Opts?
 --- @return vim.keymap.set.Opts
-local function opts(extend) return vim.tbl_extend('force', default_opts, extend) end
+local function opts(extend)
+  return vim.tbl_extend('force', default_opts, extend)
+end
 
 -- Editing
 map('n', 'd', '"_d', opts({ desc = 'delete' }))

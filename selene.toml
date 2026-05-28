@@ -1,0 +1,5 @@
+std = "hyprland+vim"
+exclude = [".direnv/*"]
+
+[lints]
+mixed_table = "allow"

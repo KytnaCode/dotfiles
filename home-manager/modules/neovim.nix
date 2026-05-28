@@ -34,14 +34,11 @@ in {
 
   config = mkIf cfg.enable {
     programs.neovim = {
+      inherit (cfg) defaultEditor viAlias vimAlias;
+
       enable = true;
 
       package = my-neovim;
-
-      defaultEditor = cfg.defaultEditor;
-
-      viAlias = cfg.viAlias;
-      vimAlias = cfg.vimAlias;
 
       plugins = with pkgs.vimPlugins; [
         # Motion
