@@ -15,6 +15,8 @@
       buildInputs = with pkgs; [
         # Nix
         alejandra
+        statix
+        deadnix
         nixd
 
         # Git
@@ -24,6 +26,7 @@
         # Lua
         lua-language-server
         stylua
+        selene
 
         # Misc
         just
