@@ -27,10 +27,12 @@
         };
       };
 
-      hardware.pulseaudio.extraConfig = lib.mkIf cfg.sound.switchOnConnect ''
-        load-module module-switch-on-connect
-      '';
+      services.pulseaudio = {
+        extraConfig = lib.mkIf cfg.sound.switchOnConnect ''
+          load-module module-switch-on-connect
+        '';
 
-      services.pulseaudio.package = lib.mkDefault pkgs.pulseaudioFull;
+        package = lib.mkDefault pkgs.pulseaudioFull;
+      };
     };
 }
