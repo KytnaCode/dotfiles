@@ -2,6 +2,7 @@
 # All environment ZSH_CUSTOM_* variables are mean to be set in variablesFile to adjust platform dependent behaviours
 # like get antidote path.
 
+# Helpers
 source_if_exists() {
   if [[ -f "$1" ]]; then
     source "$1"
@@ -22,6 +23,7 @@ if (( $+commands[direnv] )); then
   eval "$(direnv hook zsh)"
 fi
 
+# Keybindings
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
@@ -32,7 +34,11 @@ bindkey "^[[1;5D" backward-word
 bindkey "^[OA" up-line-or-beginning-search
 bindkey "^[OB" down-line-or-beginning-search
 
+# Configuration
 COMPLETION_WAITING_DOTS="true"
+
+# Aliases
+alias zsh-plugin-reload='antidote bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.zsh'
 
 source_if_exists "$overridesFile"
 
