@@ -1,6 +1,8 @@
 return {
   'folke/edgy.nvim',
   event = 'VeryLazy',
+  --- @module "edgy.config"
+  --- @type Edgy.Config
   opts = {
     left = {
       {
@@ -21,6 +23,13 @@ return {
       {
         ft = 'gitcommit',
         size = { width = 0.4 },
+      },
+    },
+    --- @type (Edgy.View.Opts|string)[]
+    bottom = {
+      {
+        ft = 'trouble',
+        size = { height = 0.15 },
       },
     },
   },
