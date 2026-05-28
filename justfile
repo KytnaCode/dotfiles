@@ -10,3 +10,8 @@ nix-reload: nix-update
 fmt:
   nix fmt .
   stylua .
+
+lint:
+  statix check .
+  deadnix .
+  selene .
