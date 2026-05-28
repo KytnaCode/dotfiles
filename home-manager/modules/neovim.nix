@@ -57,6 +57,7 @@ in {
         cyberdream-nvim
 
         # Utils
+        trouble-nvim
         neo-tree-nvim
         vim-fugitive
         toggleterm-nvim
