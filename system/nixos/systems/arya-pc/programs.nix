@@ -21,6 +21,10 @@
       netcat-gnu
       jq
       efibootmgr
+
+      # Enable Qt wayland support
+      qt5.qtwayland
+      qt6.qtwayland
     ];
   };
 }
