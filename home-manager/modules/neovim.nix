@@ -62,6 +62,7 @@ in {
         vim-fugitive
         toggleterm-nvim
         conform-nvim
+        nvim-lint
 
         # Misc
         nui-nvim
@@ -79,8 +80,11 @@ in {
         nixd
 
         # Formatters & Linters
-        stylua
-        alejandra
+        stylua # Lua formatter
+        selene # Lua linter
+        alejandra # Nix formatter
+        deadnix # Nix linter
+        statix # Nix linter
       ];
 
       withPython3 = false;
