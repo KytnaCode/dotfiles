@@ -4,5 +4,4 @@ JBarberU/zsh-justfile
 zsh-users/zsh-completions
 reegnz/jq-zsh-plugin
 junegunn/fzf
-joknarf/complete-ng
 wehlando/efibootmgr-zsh-completion
