@@ -3,5 +3,5 @@ Tarrasch/zsh-bd
 JBarberU/zsh-justfile
 zsh-users/zsh-completions
 reegnz/jq-zsh-plugin
-junegunn/fzf
-wehlando/efibootmgr-zsh-completion
+junegunn/fzf kind:fpath
+wehlando/efibootmgr-zsh-completion kind:fpath
