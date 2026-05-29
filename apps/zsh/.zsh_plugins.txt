@@ -1,3 +1,4 @@
+mattmc3/ez-compinit
 akash329d/zsh-alias-finder
 Tarrasch/zsh-bd
 JBarberU/zsh-justfile

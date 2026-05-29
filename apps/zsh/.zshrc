@@ -41,5 +41,3 @@ COMPLETION_WAITING_DOTS="true"
 alias zsh-plugin-reload='antidote bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.zsh'
 
 source_if_exists "$overridesFile"
-
-
