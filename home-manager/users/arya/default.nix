@@ -2,6 +2,7 @@
   imports = with modules;
     [
       direnv
+      git
       hyprland
       kitty
       neovim

@@ -8,5 +8,6 @@
       plugins = self + "/zsh/.zsh_plugins.txt";
     };
     starship = self + "/starship/starship.toml";
+    git.config = self + "/git/config";
   };
 }

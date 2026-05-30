@@ -1,0 +1,19 @@
+[alias]
+co = checkout
+st = status
+a = add
+r = reset
+br = branch
+rb = rebase
+cont = rebase --continue
+
+[core]
+eol = lf
+
+[credential]
+helper = cache --timeout 21600
+helper = oauth
+
+[user]
+name = kytnacode
+email = kytnacode@gmail.com
