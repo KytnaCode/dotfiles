@@ -54,6 +54,7 @@ in {
         cyberdream-nvim
 
         # Utils
+        gitsigns-nvim
         trouble-nvim
         neo-tree-nvim
         vim-fugitive

@@ -34,8 +34,6 @@ map('n', [[<c-m-x>]], '<CMD>Bwipeout<CR>', opts({ desc = 'wipeout buffer' }))
 map('n', '<leader>gc', '<CMD>Git commit --verbose<CR>', opts({ desc = 'Commit stagged changes' }))
 map('n', '<leader>gn', '<CMD>Git commit --amend<CR>', opts({ desc = 'Commit amend' }))
 map('n', '<leader>gl', '<CMD>Git log<CR>', opts({ desc = 'Open git logs' }))
-map('n', '<leader>ga', '<CMD>Git add %<CR>', opts({ desc = 'Git add current file' }))
-map('n', '<leader>gr', '<CMD>Git reset %<CR>', opts({ desc = 'Git reset current file' }))
 
 -- Terminal
 map({ 'n', 't' }, [[<c-\>]], '<CMD>ToggleTerm direction=float<CR>', opts({ desc = 'toggle floating terminal' }))
