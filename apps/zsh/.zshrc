@@ -23,6 +23,10 @@ if (( $+commands[direnv] )); then
   eval "$(direnv hook zsh)"
 fi
 
+if (( $+commands[starship] )); then
+  eval "$(starship init zsh)"
+fi
+
 # Keybindings
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
