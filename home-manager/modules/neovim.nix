@@ -61,6 +61,7 @@ in {
         toggleterm-nvim
         conform-nvim
         nvim-lint
+        mini-nvim
 
         # Misc
         nui-nvim
