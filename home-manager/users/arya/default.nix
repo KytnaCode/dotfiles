@@ -11,6 +11,7 @@
     ]
     ++ [
       ./programs.nix
+      ./mime.nix
     ];
 
   programs.home-manager.enable = true;
