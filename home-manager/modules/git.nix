@@ -12,6 +12,6 @@
       git-credential-oauth
     ];
 
-    home.file.".config/git/config".source = apps.git.config;
+    home.file.".gitconfig".source = apps.git.config;
   };
 }
