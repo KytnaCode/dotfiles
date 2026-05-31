@@ -76,6 +76,7 @@ in {
         taplo
         lua-language-server
         nixd
+        kdePackages.qtdeclarative
 
         # Formatters & Linters
         stylua # Lua formatter
