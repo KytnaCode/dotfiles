@@ -1,4 +1,5 @@
 local servers = {
+  'gopls',
   'lua_ls',
   'jsonls',
   'taplo',
