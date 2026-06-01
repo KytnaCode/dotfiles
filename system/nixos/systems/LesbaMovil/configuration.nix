@@ -10,6 +10,7 @@
   imports =
     [
       ./programs.nix
+      ./hardware-configuration.nix
     ]
     ++ (with custom; [
       i18n
