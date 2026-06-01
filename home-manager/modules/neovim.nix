@@ -55,6 +55,7 @@ in {
         cyberdream-nvim
 
         # Utils
+        nvim-autopairs
         telescope-nvim
         telescope-fzf-native-nvim
         lspsaga-nvim
