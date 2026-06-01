@@ -23,5 +23,6 @@
   home.packages = with pkgs; [
     brave
     zotero
+    signal-desktop
   ];
 }
