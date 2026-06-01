@@ -55,6 +55,8 @@ in {
         cyberdream-nvim
 
         # Utils
+        telescope-nvim
+        telescope-fzf-native-nvim
         lspsaga-nvim
         gitsigns-nvim
         trouble-nvim

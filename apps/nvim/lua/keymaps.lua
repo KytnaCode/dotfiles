@@ -16,6 +16,20 @@ map('n', 'd', '"_d', opts({ desc = 'delete' }))
 map({ 'n', 'o' }, 'x', 'd', opts({ desc = 'cut' }))
 map('n', '<leader>rn', '<CMD>Lspsaga rename<CR>', opts({ desc = 'rename symbol' }))
 
+-- Pickers
+local builtin = require('telescope.builtin')
+map('n', '<leader>ff', builtin.find_files, opts({ desc = 'find files' }))
+map('n', '<leader>fg', builtin.live_grep, opts({ desc = 'live grep' }))
+map('n', '<leader>fl', builtin.buffers, opts({ desc = 'search buffers' }))
+map('n', '<leader>fc', builtin.git_commits, opts({ desc = 'search buffers' }))
+map(
+  'n',
+  '<leader>fb',
+  builtin.current_buffer_fuzzy_find,
+  opts({
+    desc = 'fuzzy find in current buffer',
+  })
+)
 -- File tree.
 map('n', '<leader>tt', '<CMD>Neotree toggle<CR>', opts({ desc = 'Toggle file tree' }))
 
