@@ -51,6 +51,7 @@ in {
         # UI
         edgy-nvim
         bufferline-nvim
+        tiny-inline-diagnostic-nvim
         cyberdream-nvim
 
         # Utils
