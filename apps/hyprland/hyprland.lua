@@ -23,6 +23,13 @@ hl.config({
 
 hl.bind('SUPER + SPACE', hl.dsp.exec_cmd('hyprctl switchxkblayout current next'))
 
+-- Notifications
+hl.on('hyprland.start', function()
+  hl.exec_cmd('swaync')
+end)
+
+hl.bind('SUPER + SHIFT + n', hl.dsp.exec_cmd('swaync-client -t -sw'))
+
 -- Apps
 local terminal = 'kitty'
 local browser = 'brave'
