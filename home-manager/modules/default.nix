@@ -5,5 +5,6 @@
   kitty = import ./kitty.nix {inherit apps;};
   neovim = import ./neovim.nix {inherit apps;};
   starship = import ./starship.nix {inherit apps;};
+  tmux = import ./tmux.nix {inherit apps;};
   zsh = import ./zsh.nix {inherit apps;};
 }

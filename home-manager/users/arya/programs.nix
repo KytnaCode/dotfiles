@@ -16,6 +16,8 @@
     zsh.enable = true;
 
     starship.enable = true;
+
+    tmux.enable = true;
   };
 
   home.packages = with pkgs; [

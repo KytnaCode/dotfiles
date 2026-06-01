@@ -9,5 +9,6 @@
     };
     starship = self + "/starship/starship.toml";
     git.config = self + "/git/config";
+    tmux = self + "/tmux";
   };
 }
