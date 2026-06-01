@@ -11,8 +11,8 @@ cont = rebase --continue
 eol = lf
 
 [credential]
-helper = cache --timeout 21600
-helper = oauth
+helper = manager 
+credentialStore = secretservice
 
 [user]
 name = kytnacode

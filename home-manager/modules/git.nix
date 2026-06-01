@@ -9,7 +9,7 @@
   config = lib.mkIf config.custom.programs.git.enable {
     home.packages = with pkgs; [
       git
-      git-credential-oauth
+      git-credential-manager
     ];
 
     home.file.".gitconfig".source = apps.git.config;
