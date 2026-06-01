@@ -22,3 +22,25 @@ cmd('BufWritePost', {
     require('lint').try_lint()
   end,
 })
+
+local number_group = 'RelativeNumber'
+
+group(number_group, { clear = true })
+
+cmd('ModeChanged', {
+  group = number_group,
+  desc = 'dynamically set relative number',
+  pattern = { '*:n', '*:v' },
+  callback = function()
+    vim.wo.relativenumber = true
+  end,
+})
+
+cmd('ModeChanged', {
+  group = number_group,
+  desc = 'dynamically set relative number',
+  pattern = { '*:i' },
+  callback = function()
+    vim.wo.relativenumber = false
+  end,
+})
