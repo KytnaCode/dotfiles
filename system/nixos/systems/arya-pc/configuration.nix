@@ -4,19 +4,21 @@
 {
   pkgs,
   dotfiles-hm,
-  modules,
+  custom,
   ...
 }: {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+  imports =
+    [
+      # Include the results of the hardware scan.
+      ./hardware-configuration.nix
 
-    ./programs.nix
-
-    modules.i18n
-    modules.sound
-    modules.bluetooth
-  ];
+      ./programs.nix
+    ]
+    ++ (with custom; [
+      i18n
+      sound
+      bluetooth
+    ]);
 
   home-manager = {
     useGlobalPkgs = true;

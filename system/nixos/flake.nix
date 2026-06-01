@@ -28,21 +28,31 @@
     dotfiles-hm,
     ...
   }: let
-    modules = import ./modules;
+    custom = import ./modules;
   in {
     # NOTE: 'nixos' is the default hostname
-    nixosConfigurations.arya-pc = let
-      system = "x86_64-linux";
-    in
-      nixpkgs.lib.nixosSystem {
-        inherit system;
+    nixosConfigurations = {
+      arya-pc = nixpkgs.lib.nixosSystem rec {
+        system = "x86_64-linux";
 
         modules = [
           home-manager.nixosModules.default
           ./systems/arya-pc/configuration.nix
         ];
 
-        specialArgs = {inherit system inputs dotfiles-hm modules;};
+        specialArgs = {inherit system inputs dotfiles-hm custom;};
       };
+
+      LesbaMovil = nixpkgs.lib.nixosSystem rec {
+        system = "x86_64-linux";
+
+        modules = [
+          home-manager.nixosModules.default
+          ./systems/LesbaMovil/configuration.nix
+        ];
+
+        specialArgs = {inherit system inputs dotfiles-hm custom;};
+      };
+    };
   };
 }
