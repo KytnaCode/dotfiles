@@ -86,6 +86,7 @@ in {
         alejandra # Nix formatter
         deadnix # Nix linter
         statix # Nix linter
+        golangci-lint # Go formatter and linter
       ];
 
       withPython3 = false;
