@@ -55,6 +55,7 @@ in {
         cyberdream-nvim
 
         # Utils
+        lspsaga-nvim
         gitsigns-nvim
         trouble-nvim
         neo-tree-nvim
@@ -65,6 +66,7 @@ in {
         mini-nvim
 
         # Misc
+        nvim-treesitter.withAllGrammars
         nui-nvim
         plenary-nvim
         nvim-web-devicons

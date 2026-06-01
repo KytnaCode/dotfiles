@@ -14,6 +14,7 @@ end
 -- Editing
 map('n', 'd', '"_d', opts({ desc = 'delete' }))
 map({ 'n', 'o' }, 'x', 'd', opts({ desc = 'cut' }))
+map('n', '<leader>rn', '<CMD>Lspsaga rename<CR>', opts({ desc = 'rename symbol' }))
 
 -- File tree.
 map('n', '<leader>tt', '<CMD>Neotree toggle<CR>', opts({ desc = 'Toggle file tree' }))
