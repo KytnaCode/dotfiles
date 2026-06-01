@@ -10,8 +10,8 @@
     home.packages = [pkgs.tmux];
 
     home.file = {
-      ".config/tmux".source = apps.tmux;
-      ".tmux/plugins/tpm".source = pkgs.fetchFromGitHub {
+      ".config/tmux/tmux.conf".source = apps.tmux + "/tmux.conf";
+      ".config/tmux/plugins/tpm".source = pkgs.fetchFromGitHub {
         owner = "tmux-plugins";
         repo = "tpm";
         rev = "e261deb1b47614eed3400089ce7197dc68acc4eb";
