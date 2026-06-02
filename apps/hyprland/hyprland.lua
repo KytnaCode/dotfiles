@@ -26,6 +26,7 @@ hl.bind('SUPER + SPACE', hl.dsp.exec_cmd('hyprctl switchxkblayout current next')
 -- Notifications
 hl.on('hyprland.start', function()
   hl.exec_cmd('swaync')
+  hl.exec_cmd('mpvpaper -vs -o "no-audio loop" ALL "$HOME/Videos/Wallpaper.mp4"')
 end)
 
 hl.bind('SUPER + SHIFT + n', hl.dsp.exec_cmd('swaync-client -t -sw'))

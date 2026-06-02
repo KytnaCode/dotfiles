@@ -9,6 +9,9 @@
   config = lib.mkIf config.custom.programs.hyprland.enable {
     home.file.".config/hypr".source = apps.hyprland;
 
-    home.packages = [pkgs.swaynotificationcenter];
+    home.packages = with pkgs; [
+      swaynotificationcenter
+      mpvpaper
+    ];
   };
 }
