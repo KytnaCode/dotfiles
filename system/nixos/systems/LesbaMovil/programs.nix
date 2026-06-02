@@ -6,6 +6,8 @@
     };
 
     zsh.enable = true;
+
+    steam.enable = true;
   };
 
   environment = {
