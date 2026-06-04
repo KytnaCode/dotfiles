@@ -8,6 +8,6 @@
   config = lib.mkIf config.custom.programs.starship.enable {
     programs.starship.enable = true;
 
-    home.file.".config/starship.toml".source = apps.starship;
+    xdg.configFile."starship.toml".source = apps.starship;
   };
 }

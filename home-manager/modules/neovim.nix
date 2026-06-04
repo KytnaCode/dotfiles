@@ -99,6 +99,6 @@ in {
       withRuby = false;
     };
 
-    home.file.".config/nvim".source = apps.nvim;
+    xdg.configFile."nvim".source = apps.nvim;
   };
 }

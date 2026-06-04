@@ -12,6 +12,6 @@
       nerd-fonts.jetbrains-mono
     ];
 
-    home.file.".config/kitty".source = apps.kitty;
+    xdg.configFile."kitty".source = apps.kitty;
   };
 }
