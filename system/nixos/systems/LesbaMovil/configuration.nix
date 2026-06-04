@@ -44,6 +44,7 @@
     builtins.elem (lib.getName pkg) [
       "steam-unwrapped"
       "steam"
+      "lunacy"
     ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

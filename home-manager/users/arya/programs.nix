@@ -24,5 +24,6 @@
     brave
     zotero
     signal-desktop
+    lunacy
   ];
 }
