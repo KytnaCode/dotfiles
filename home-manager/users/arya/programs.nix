@@ -25,5 +25,6 @@
     zotero
     signal-desktop
     lunacy
+    libnotify
   ];
 }
