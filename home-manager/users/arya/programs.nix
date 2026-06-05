@@ -26,5 +26,6 @@
     signal-desktop
     lunacy
     libnotify
+    obsidian
   ];
 }
