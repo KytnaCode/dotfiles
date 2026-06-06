@@ -27,5 +27,6 @@
     lunacy
     libnotify
     obsidian
+    btop
   ];
 }
