@@ -77,7 +77,23 @@ cmd('VimLeavePre', {
   group = session_group,
   desc = 'automatically store sessions',
   callback = function()
-    local shouldClose = function(buf)
+    local shouldCloseWin = function(win)
+      if win == nil then
+        return false
+      end
+
+      if vim.api.nvim_win_get_config(win).relative ~= '' then
+        return true
+      end
+
+      local buf = vim.api.nvim_win_get_buf(win)
+
+      if vim.bo[buf].filetype == 'neo-tree' then
+        return true
+      end
+    end
+
+    local shouldCloseBuf = function(buf)
       if vim.bo[buf].buftype ~= '' then
         return true
       end
@@ -91,6 +107,12 @@ cmd('VimLeavePre', {
 
     local is_session_empty = true
 
+    for _, win in ipairs(vim.api.nvim_list_wins()) do
+      if shouldCloseWin(win) then
+        vim.api.nvim_win_close(win, false)
+      end
+    end
+
     for _, buf in ipairs(vim.api.nvim_list_bufs()) do
       local is_empty = true
 
@@ -102,7 +124,7 @@ cmd('VimLeavePre', {
         is_empty = false
       end
 
-      if shouldClose(buf) then
+      if shouldCloseBuf(buf) then
         vim.api.nvim_buf_delete(buf, { force = true })
         is_empty = true
       end
