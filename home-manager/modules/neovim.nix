@@ -56,6 +56,7 @@ in {
         cyberdream-nvim
 
         # Utils
+        nvim-surround
         nvim-autopairs
         actions-preview-nvim
         telescope-nvim
