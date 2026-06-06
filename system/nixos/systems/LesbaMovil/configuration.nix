@@ -45,6 +45,7 @@
       "steam-unwrapped"
       "steam"
       "lunacy"
+      "obsidian"
     ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
