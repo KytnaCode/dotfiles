@@ -56,6 +56,7 @@ in {
 
         # Utils
         nvim-autopairs
+        actions-preview-nvim
         telescope-nvim
         telescope-fzf-native-nvim
         lspsaga-nvim
@@ -93,6 +94,9 @@ in {
         deadnix # Nix linter
         statix # Nix linter
         golangci-lint # Go formatter and linter
+
+        # Misc
+        delta
       ];
 
       withPython3 = false;

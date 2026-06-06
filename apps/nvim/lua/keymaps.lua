@@ -15,6 +15,7 @@ end
 map('n', 'd', '"_d', opts({ desc = 'delete' }))
 map({ 'n', 'o' }, 'x', 'd', opts({ desc = 'cut' }))
 map('n', '<leader>rn', '<CMD>Lspsaga rename<CR>', opts({ desc = 'rename symbol' }))
+map('n', '<leader>ca', require('actions-preview').code_actions, opts({ desc = 'code action' }))
 
 -- Pickers
 local builtin = require('telescope.builtin')
