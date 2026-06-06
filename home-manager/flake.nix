@@ -15,6 +15,9 @@
   in {
     # Users in ./users need to be not a module but a higher order function that accept `modules` and possibly other
     # internal parameters and return the final home-manager module.
-    homeManagerModules.arya = import ./users/arya {inherit modules;};
+    homeManagerModules = {
+      arya = import ./users/arya {inherit modules;};
+      sasa = import ./users/sasa {inherit modules;};
+    };
   };
 }
