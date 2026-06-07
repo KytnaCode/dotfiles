@@ -20,6 +20,8 @@
       fonts
     ]);
 
+  environment.pathsToLink = ["/share/xdg-desktop-portal" "/share/applications"];
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;

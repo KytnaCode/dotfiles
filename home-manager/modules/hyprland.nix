@@ -11,8 +11,6 @@
   options.custom.programs.hyprland.enable = lib.mkEnableOption "enable hyprland";
 
   config = lib.mkIf config.custom.programs.hyprland.enable {
-    xdg.configFile."hypr".source = apps.hyprland;
-
     home.packages = with pkgs; [
       swaynotificationcenter
       mpvpaper
@@ -20,8 +18,19 @@
       vicinae
     ];
 
-    xdg.configFile."systemd/user/vicinae.service" = {
-      source = "${pkgs.vicinae}/share/systemd/user/vicinae.service";
+    xdg.portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gnome
+      ];
+    };
+
+    xdg.configFile = {
+      "hypr".source = apps.hyprland;
+
+      "xdg-desktop-portal/hyprland-portals.conf".source = apps.xdg-desktop-portal.hyprland;
+
+      "systemd/user/vicinae.service".source = "${pkgs.vicinae}/share/systemd/user/vicinae.service";
     };
 
     home.activation.enableVicinae = lib.hm.dag.entryAfter ["writeBoundary"] ''

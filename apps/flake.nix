@@ -10,5 +10,6 @@
     starship = self + "/starship/starship.toml";
     git.config = self + "/git/config";
     tmux = self + "/tmux";
+    xdg-desktop-portal.hyprland = self + "/xdg-desktop-portal/hyprland-portals.conf";
   };
 }
