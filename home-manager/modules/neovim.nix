@@ -56,6 +56,7 @@ in {
         cyberdream-nvim
 
         # Utils
+        luasnip
         nvim-surround
         nvim-autopairs
         actions-preview-nvim
@@ -99,6 +100,7 @@ in {
 
         # Misc
         delta
+        luajitPackages.jsregexp
       ];
 
       withPython3 = false;

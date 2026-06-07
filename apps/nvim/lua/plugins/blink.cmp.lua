@@ -1,10 +1,17 @@
 return {
   'saghen/blink.cmp',
   version = '1.*',
+  dependencies = {
+    'L3MON4D3/LuaSnip',
+    version = '2.*',
+  },
   opts = {
     keymap = { preset = 'enter' },
 
+    snippets = { preset = 'luasnip' },
+
     sources = {
+      default = { 'lsp', 'path', 'snippets', 'buffer' },
       providers = {
         buffer = {
           opts = {

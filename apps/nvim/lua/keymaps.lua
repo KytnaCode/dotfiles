@@ -17,6 +17,8 @@ map({ 'n', 'o' }, 'x', 'd', opts({ desc = 'cut' }))
 map('n', '<leader>rn', '<CMD>Lspsaga rename<CR>', opts({ desc = 'rename symbol' }))
 map('n', '<leader>ca', require('actions-preview').code_actions, opts({ desc = 'code action' }))
 
+-- Snippets
+
 -- Pickers
 local builtin = require('telescope.builtin')
 map('n', '<leader>ff', builtin.find_files, opts({ desc = 'find files' }))
