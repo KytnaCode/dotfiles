@@ -61,6 +61,13 @@ hl.bind('SUPER + SHIFT + j', hl.dsp.window.move({ direction = 'd' }))
 hl.bind('SUPER + SHIFT + k', hl.dsp.window.move({ direction = 'u' }))
 hl.bind('SUPER + SHIFT + l', hl.dsp.window.move({ direction = 'r' }))
 
+local resizeStep = 20
+
+hl.bind('SUPER + ALT + h', hl.dsp.window.resize({ relative = true, x = -resizeStep, y = 0 }), { repeating = true })
+hl.bind('SUPER + ALT + j', hl.dsp.window.resize({ relative = true, x = 0, y = -resizeStep }), { repeating = true })
+hl.bind('SUPER + ALT + k', hl.dsp.window.resize({ relative = true, x = 0, y = resizeStep }), { repeating = true })
+hl.bind('SUPER + ALT + l', hl.dsp.window.resize({ relative = true, x = resizeStep, y = 0 }), { repeating = true })
+
 hl.bind('SUPER + SHIFT + q', hl.dsp.window.close())
 hl.bind('SUPER + SHIFT + x', hl.dsp.window.kill())
 
