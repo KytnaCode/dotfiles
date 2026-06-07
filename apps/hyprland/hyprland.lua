@@ -68,6 +68,8 @@ hl.bind('SUPER + v', hl.dsp.window.float())
 hl.bind('SUPER + f', hl.dsp.window.fullscreen({ mode = 'fullscreen' }))
 hl.bind('SUPER + z', hl.dsp.window.fullscreen({ mode = 'maximized' }))
 
+hl.bind('SUPER + mouse:273', hl.dsp.window.resize(), { mouse = true })
+
 -- Workspaces
 
 for i = 1, 9, 1 do
