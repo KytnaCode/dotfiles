@@ -8,6 +8,15 @@ return {
       transparent = true,
       italic_comments = true,
       cache = true,
+      extensions = {
+        blinkcmp = true,
+        gitsigns = true,
+        lazy = true,
+        leap = true,
+        mini = true,
+        telescope = true,
+        trouble = true,
+      },
     })
 
     vim.cmd.colorscheme('cyberdream')
