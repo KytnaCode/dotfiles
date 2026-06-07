@@ -1,4 +1,8 @@
-{apps, ...}: {
+{
+  apps,
+  inputs,
+  ...
+}: {
   lib,
   config,
   pkgs,
@@ -12,6 +16,7 @@
     home.packages = with pkgs; [
       swaynotificationcenter
       mpvpaper
+      inputs.hyprquickshot.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
   };
 }

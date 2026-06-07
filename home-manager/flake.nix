@@ -7,11 +7,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprquickshot = {
+      url = "github:jamdon2/hyprquickshot";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     apps.url = "../apps";
   };
 
-  outputs = {apps, ...}: let
-    modules = import ./modules {inherit apps;};
+  outputs = inputs @ {apps, ...}: let
+    modules = import ./modules {inherit apps inputs;};
   in {
     # Users in ./users need to be not a module but a higher order function that accept `modules` and possibly other
     # internal parameters and return the final home-manager module.

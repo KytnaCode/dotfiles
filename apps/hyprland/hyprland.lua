@@ -38,6 +38,9 @@ local browser = 'brave'
 hl.bind('SUPER + RETURN', hl.dsp.exec_cmd(terminal))
 hl.bind('SUPER + b', hl.dsp.exec_cmd(browser))
 
+-- Utils
+hl.bind('SUPER + p', hl.dsp.exec_cmd('hyprquickshot -n'))
+
 -- Windows
 hl.bind('SUPER + h', hl.dsp.focus({ direction = 'l' }))
 hl.bind('SUPER + j', hl.dsp.focus({ direction = 'd' }))
