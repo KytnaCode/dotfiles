@@ -102,6 +102,7 @@ in {
         # Misc
         delta
         luajitPackages.jsregexp
+        ripgrep
       ];
 
       withPython3 = false;
