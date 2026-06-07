@@ -8,6 +8,6 @@ return {
       cut_selection_keys = '<Tab>',
     })
 
-    require('luasnip.loaders.from_lua').lazy_load()
+    require('luasnip.loaders.from_lua').lazy_load({ paths = './snippets' })
   end,
 }
