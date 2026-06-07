@@ -77,6 +77,8 @@
       enable = true;
       pulse.enable = true;
     };
+
+    fprintd.enable = true;
   };
 
   hardware.graphics = {
