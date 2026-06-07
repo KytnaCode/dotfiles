@@ -26,7 +26,7 @@ return {
     },
 
     completion = {
-      ghost_text = { enabled = true },
+      ghost_text = { enabled = false },
     },
   },
 }
