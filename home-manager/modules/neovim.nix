@@ -49,6 +49,7 @@ in {
         nvim-lspconfig
 
         # UI
+        lualine-nvim
         fidget-nvim
         edgy-nvim
         bufferline-nvim
