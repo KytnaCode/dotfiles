@@ -13,6 +13,7 @@
     ++ [
       ./programs.nix
       ./mime.nix
+      ./fonts.nix
     ];
 
   programs.home-manager.enable = true;
