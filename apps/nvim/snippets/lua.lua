@@ -28,4 +28,35 @@ return {
       }
     )
   ),
+  s(
+    'if',
+    fmt(
+      [[
+      if {} then
+        {}
+      end
+      ]],
+      {
+        i(1),
+        d(2, get_visual),
+      }
+    )
+  ),
+  s(
+    'ifel',
+    fmt(
+      [[
+      if {} then
+        {}
+      else
+        {}
+      end
+      ]],
+      {
+        i(1),
+        i(0),
+        i(2),
+      }
+    )
+  ),
 }
