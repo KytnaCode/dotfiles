@@ -17,6 +17,7 @@
       i18n
       sound
       bluetooth
+      fonts
     ]);
 
   home-manager = {
@@ -31,6 +32,7 @@
       bluetooth.enable = true;
       sound.enable = true;
     };
+    fonts.enable = true;
   };
 
   # Use the systemd-boot EFI boot loader.
