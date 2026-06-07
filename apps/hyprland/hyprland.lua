@@ -41,6 +41,15 @@ hl.bind('SUPER + b', hl.dsp.exec_cmd(browser))
 -- Utils
 hl.bind('SUPER + p', hl.dsp.exec_cmd('hyprquickshot -n'))
 
+hl.bind('SUPER + d', hl.dsp.exec_cmd('vicinae toggle'))
+
+hl.layer_rule({
+  name = 'vicinae-blur',
+  blur = true,
+  ignore_alpha = 0,
+  match = { namespace = 'vicinae' },
+})
+
 -- Windows
 hl.bind('SUPER + h', hl.dsp.focus({ direction = 'l' }))
 hl.bind('SUPER + j', hl.dsp.focus({ direction = 'd' }))

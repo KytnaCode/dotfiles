@@ -17,6 +17,17 @@
       swaynotificationcenter
       mpvpaper
       inputs.hyprquickshot.packages.${pkgs.stdenv.hostPlatform.system}.default
+      vicinae
     ];
+
+    xdg.configFile."systemd/user/vicinae.service" = {
+      source = "${pkgs.vicinae}/share/systemd/user/vicinae.service";
+    };
+
+    home.activation.enableVicinae = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      if ! ${pkgs.systemd}/bin/systemctl --user --quiet is-active vicinae.service; then
+        ${pkgs.systemd}/bin/systemctl --user enable --now vicinae.service
+      fi
+    '';
   };
 }
