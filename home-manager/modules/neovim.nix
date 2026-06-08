@@ -85,6 +85,7 @@ in {
       extraPackages = with pkgs; [
         # Language Servers
         vscode-json-languageserver
+        yaml-language-server
         gopls
         taplo
         lua-language-server

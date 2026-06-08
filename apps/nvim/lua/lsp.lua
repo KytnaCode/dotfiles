@@ -1,10 +1,11 @@
 local servers = {
   'gopls',
-  'lua_ls',
   'jsonls',
-  'taplo',
-  'qmlls',
+  'lua_ls',
   'nixd',
+  'qmlls',
+  'taplo',
+  'yamlls',
 }
 
 for _, server in pairs(servers) do
