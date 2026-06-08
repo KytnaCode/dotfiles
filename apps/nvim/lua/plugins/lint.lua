@@ -4,7 +4,7 @@ return {
     require('lint').linters_by_ft = {
       lua = { 'selene' },
       nix = { 'deadnix', 'statix' },
-      go = { 'golangci-lint' },
+      go = { 'golangcilint' },
     }
   end,
 }
