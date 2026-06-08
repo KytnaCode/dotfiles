@@ -18,6 +18,7 @@
       sound
       bluetooth
       fonts
+      networking
     ]);
 
   environment.pathsToLink = ["/share/xdg-desktop-portal" "/share/applications"];
@@ -35,6 +36,7 @@
       sound.enable = true;
     };
     fonts.enable = true;
+    networking.enable = true;
   };
 
   # Use the systemd-boot EFI boot loader.
@@ -56,15 +58,8 @@
 
   networking.hostName = "LesbaMovil"; # Define your hostname.
 
-  # Configure network connections interactively with nmcli or nmtui.
-  networking.networkmanager.enable = true;
-
   # Set your time zone.
   time.timeZone = "America/Mazatlan";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;

@@ -3,4 +3,5 @@
   bluetooth = ./bluetooth.nix;
   sound = ./sound.nix;
   fonts = ./fonts.nix;
+  networking = ./networking.nix;
 }
