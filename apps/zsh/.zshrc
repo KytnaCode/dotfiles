@@ -43,5 +43,6 @@ COMPLETION_WAITING_DOTS="true"
 
 # Aliases
 alias zsh-plugin-reload='antidote bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.zsh'
+alias useflake='echo "use_flake" > .envrc'
 
 source_if_exists "$overridesFile"
