@@ -18,6 +18,8 @@
     starship.enable = true;
 
     tmux.enable = true;
+
+    zellij.enable = true;
   };
 
   home.packages = with pkgs; [
