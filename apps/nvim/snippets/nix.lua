@@ -31,4 +31,14 @@ return {
     d(1, get_visual),
   }),
   s('slinux', { t('x86_64-linux') }),
+  s('devsh', {
+    t({ 'pkgs.mkShellNoCC {', '' }),
+    i(0),
+    t({ '', '}' }),
+  }),
+  s('devshcc', {
+    t({ 'pkgs.mkShell {', '' }),
+    i(0),
+    t({ '', '}' }),
+  }),
 }
