@@ -30,4 +30,5 @@ return {
     t({ '', 'in ' }),
     d(1, get_visual),
   }),
+  s('slinux', { t('x86_64-linux') }),
 }
