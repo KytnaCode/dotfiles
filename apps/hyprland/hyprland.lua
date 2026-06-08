@@ -14,6 +14,12 @@ hl.monitor({
   scale = 1,
 })
 
+hl.config({
+  xwayland = {
+    force_zero_scaling = true,
+  },
+})
+
 -- Keyboard
 hl.config({
   input = {
