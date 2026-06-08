@@ -41,6 +41,10 @@ bindkey "^[OB" down-line-or-beginning-search
 # Configuration
 COMPLETION_WAITING_DOTS="true"
 
+## Case insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu select
+
 # Aliases
 alias zsh-plugin-reload='antidote bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.zsh'
 alias useflake='echo "use_flake" > .envrc'
