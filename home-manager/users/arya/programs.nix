@@ -17,8 +17,6 @@
 
     starship.enable = true;
 
-    tmux.enable = true;
-
     zellij.enable = true;
   };
 

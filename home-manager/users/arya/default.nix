@@ -7,7 +7,6 @@
       kitty
       neovim
       starship
-      tmux
       zellij
       zsh
     ]
