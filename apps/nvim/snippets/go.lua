@@ -1,0 +1,182 @@
+local ls = require('luasnip')
+local fmta = require('luasnip.extras.fmt').fmta
+local s = ls.snippet
+local i = ls.insert_node
+local d = ls.dynamic_node
+local get_visual = require('luasnip-helpers').get_visual
+
+return {
+  s(
+    'main',
+    fmta(
+      [[
+  func main() {
+    <>
+  }
+  ]],
+      {
+        i(0),
+      }
+    )
+  ),
+  s(
+    'fn',
+    fmta(
+      [[
+  func <>(<>) <> {
+    <>
+  }
+  ]],
+      {
+        i(1, 'name'),
+        i(2),
+        i(3),
+        d(4, get_visual),
+      }
+    )
+  ),
+  s(
+    'if',
+    fmta(
+      [[
+  if <> {
+    <>
+  }
+  ]],
+      {
+        i(1),
+        d(2, get_visual),
+      }
+    )
+  ),
+  s(
+    'ifel',
+    fmta(
+      [[
+  if <> {
+    <>
+  } else {
+    <>
+  }
+  ]],
+      {
+        i(1),
+        i(0),
+        i(2),
+      }
+    )
+  ),
+  s(
+    'ife',
+    fmta(
+      [[
+  if err != nil {
+    <>
+  }
+  ]],
+      {
+        i(0),
+      }
+    )
+  ),
+  s(
+    'ifei',
+    fmta(
+      [[
+  if err := <>; err != nil {
+    <>
+  }
+  ]],
+      {
+        d(1, get_visual),
+        i(0),
+      }
+    )
+  ),
+  s(
+    'go',
+    fmta(
+      [[
+    go func() {
+      <>
+    }()
+  ]],
+      {
+        d(1, get_visual),
+      }
+    )
+  ),
+  s(
+    'dfr',
+    fmta(
+      [[
+    defer <> 
+  ]],
+      {
+        d(1, get_visual),
+      }
+    )
+  ),
+  s('def', {
+    i(1, 'x'),
+    d(2, get_visual),
+  }),
+  s(
+    'for',
+    fmta(
+      [[
+  for {
+    <>
+  }
+  ]],
+      {
+        i(0),
+      }
+    )
+  ),
+  s(
+    'forr',
+    fmta(
+      [[
+  for range <> {
+    <>
+  }
+  ]],
+      {
+        i(1),
+        i(0),
+      }
+    )
+  ),
+  s(
+    'fore',
+    fmta(
+      [[
+  for <>, <> := range <> {
+    <>
+  }
+  ]],
+      {
+        i(1, 'index'),
+        i(2, 'value'),
+        i(3),
+        i(0),
+      }
+    )
+  ),
+  s(
+    'sel',
+    fmta(
+      [[
+  select {
+    case <>:
+      <>
+  }
+  ]],
+      {
+        i(1),
+        i(0),
+      }
+    )
+  ),
+}
