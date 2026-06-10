@@ -60,6 +60,7 @@ in {
         luasnip
         nvim-surround
         nvim-autopairs
+        nvim-ts-autotag
         actions-preview-nvim
         telescope-nvim
         telescope-fzf-native-nvim
