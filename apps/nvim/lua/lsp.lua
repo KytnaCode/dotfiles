@@ -5,6 +5,7 @@ local servers = {
   'nixd',
   'qmlls',
   'taplo',
+  'html',
   'yamlls',
 }
 
