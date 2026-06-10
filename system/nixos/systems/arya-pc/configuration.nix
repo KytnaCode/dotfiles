@@ -59,8 +59,6 @@
   # Set your time zone.
   time.timeZone = "America/Mazatlan";
 
-  programs.firefox.enable = true;
-
   services = {
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
