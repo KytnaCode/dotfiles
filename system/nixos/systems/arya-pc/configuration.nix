@@ -3,6 +3,7 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 {
   pkgs,
+  lib,
   dotfiles-hm,
   custom,
   ...
@@ -47,6 +48,12 @@
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
+
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "lunacy"
+      "obsidian"
+    ];
 
   # Set your time zone.
   time.timeZone = "America/Mazatlan";
