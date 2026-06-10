@@ -3,24 +3,32 @@
   lib,
   ...
 }: {
-  options.custom.networking.enable = lib.mkEnableOption "enable networking";
+  options.custom.networking = {
+    enable = lib.mkEnableOption "enable networking";
+    enableWireless = lib.mkEnableOption "enable wireless networking";
+  };
 
-  config = lib.mkIf config.custom.networking.enable {
-    networking.networkmanager = {
-      enable = true;
-      wifi.backend = "iwd";
-    };
+  config = let
+    inherit (lib) mkIf;
 
-    networking.wireless.iwd = {
-      enable = true;
-      settings = {
-        Network = {
-          EnableIPv6 = true;
-        };
-        Settings = {
-          AutoConnect = true;
+    cfg = config.custom.networking;
+  in
+    mkIf cfg.enable {
+      networking.networkmanager = {
+        enable = true;
+        wifi.backend = "iwd";
+      };
+
+      networking.wireless.iwd = mkIf cfg.enableWireless {
+        enable = true;
+        settings = {
+          Network = {
+            EnableIPv6 = true;
+          };
+          Settings = {
+            AutoConnect = true;
+          };
         };
       };
     };
-  };
 }

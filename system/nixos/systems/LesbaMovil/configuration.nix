@@ -36,7 +36,10 @@
       sound.enable = true;
     };
     fonts.enable = true;
-    networking.enable = true;
+    networking = {
+      enable = true;
+      enableWireless = true;
+    };
   };
 
   # Use the systemd-boot EFI boot loader.

@@ -20,6 +20,7 @@
       sound
       bluetooth
       fonts
+      networking
     ]);
 
   home-manager = {
@@ -35,6 +36,7 @@
       sound.enable = true;
     };
     fonts.enable = true;
+    networking.enable = true;
   };
 
   # Use the systemd-boot EFI boot loader.
@@ -47,9 +49,6 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   networking.hostName = "arya-pc"; # Define your hostname.
-
-  # Configure network connections interactively with nmcli or nmtui.
-  networking.networkmanager.enable = true;
 
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
