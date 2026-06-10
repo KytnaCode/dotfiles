@@ -49,5 +49,8 @@ zstyle ':completion:*' menu select
 alias zsh-plugin-reload='antidote bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.zsh'
 alias useflake='echo "use_flake" > .envrc'
 alias jrctl='journalctl -xeb'
+alias todayd='mkdir "$(date -I)"'
+alias todayf='touch "$(date -I)"'
+alias cdtoday='cd "$(date -I)"'
 
 source_if_exists "$overridesFile"
