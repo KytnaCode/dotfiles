@@ -9,6 +9,7 @@ cont = rebase --continue
 
 [core]
 eol = lf
+excludesfile = ~/.gitignore
 
 [credential]
 helper = manager 

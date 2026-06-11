@@ -12,6 +12,9 @@
       git-credential-manager
     ];
 
-    home.file.".gitconfig".source = apps.git.config;
+    home.file = {
+      ".gitconfig".source = apps.git.config;
+      ".gitignore".source = apps.git.ignorefile;
+    };
   };
 }
