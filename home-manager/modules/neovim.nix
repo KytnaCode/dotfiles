@@ -53,6 +53,7 @@ in {
         fidget-nvim
         edgy-nvim
         bufferline-nvim
+        lsp_signature-nvim
         tiny-inline-diagnostic-nvim
         cyberdream-nvim
 
