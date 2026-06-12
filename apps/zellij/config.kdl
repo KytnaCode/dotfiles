@@ -246,7 +246,6 @@ load_plugins {
 pane_frames false
 auto_layout false 
 serialize_pane_viewport true
-default_layout "compact"
 copy_command "wl-copy"                    // wayland
 copy_on_select false
 show_startup_tips false
