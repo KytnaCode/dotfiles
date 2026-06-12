@@ -27,6 +27,9 @@
       # Enable Qt wayland support
       qt5.qtwayland
       qt6.qtwayland
+
+      # System
+      pwvucontrol
     ];
   };
 }
