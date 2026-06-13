@@ -112,10 +112,13 @@ return {
       d(1, get_visual),
     })
   ),
-  s('def', {
-    i(1, 'x'),
-    d(2, get_visual),
-  }),
+  s(
+    'def',
+    fmta('<> := <>', {
+      i(1, 'x'),
+      d(2, get_visual),
+    })
+  ),
   s(
     'for',
     fmta(
