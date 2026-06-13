@@ -16,12 +16,6 @@ map('n', 'd', '"_d', opts({ desc = 'delete' }))
 map({ 'n', 'o' }, 'x', 'd', opts({ desc = 'cut' }))
 map('n', '<leader>rn', '<CMD>Lspsaga rename<CR>', opts({ desc = 'rename symbol' }))
 map('n', '<leader>ca', require('actions-preview').code_actions, opts({ desc = 'code action' }))
-map({ 'n', 'i' }, '<C-k>', function()
-  require('lsp_signature').toggle_key()
-end, opts({ desc = 'toggle signature', silent = true }))
-map({ 'n', 'i' }, '<C-j>', function()
-  require('lsp_signature').select_signature_key()
-end, opts({ desc = 'select signature', silent = true }))
 
 -- Snippets
 
