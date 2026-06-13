@@ -108,14 +108,9 @@ return {
   ),
   s(
     'dfr',
-    fmta(
-      [[
-    defer <> 
-  ]],
-      {
-        d(1, get_visual),
-      }
-    )
+    fmta('defer <>', {
+      d(1, get_visual),
+    })
   ),
   s('def', {
     i(1, 'x'),
