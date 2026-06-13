@@ -1,4 +1,4 @@
-{modules, ...}: {...}: {
+{modules, ...}: {lib, ...}: {
   imports = with modules;
     [
       direnv
@@ -17,6 +17,12 @@
     ];
 
   programs.home-manager.enable = true;
+
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "lunacy"
+      "obsidian"
+    ];
 
   nix.registry.templates = {
     exact = true;

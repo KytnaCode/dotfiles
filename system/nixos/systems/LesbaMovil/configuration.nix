@@ -24,7 +24,7 @@
   environment.pathsToLink = ["/share/xdg-desktop-portal" "/share/applications"];
 
   home-manager = {
-    useGlobalPkgs = true;
+    useGlobalPkgs = false;
     useUserPackages = true;
     users.arya = dotfiles-hm.homeManagerModules.arya;
   };
@@ -53,8 +53,6 @@
     builtins.elem (lib.getName pkg) [
       "steam-unwrapped"
       "steam"
-      "lunacy"
-      "obsidian"
     ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
