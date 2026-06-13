@@ -28,5 +28,7 @@
     libnotify
     obsidian
     btop
+    zoxide
+    fzf
   ];
 }

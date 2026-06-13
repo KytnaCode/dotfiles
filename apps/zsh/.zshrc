@@ -27,6 +27,10 @@ if (( $+commands[starship] )); then
   eval "$(starship init zsh)"
 fi
 
+if (( $+commands[zoxide] )); then
+  eval "$(zoxide init zsh)"
+fi
+
 # Keybindings
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
