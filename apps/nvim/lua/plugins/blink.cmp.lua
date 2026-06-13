@@ -27,6 +27,18 @@ return {
 
     completion = {
       ghost_text = { enabled = false },
+
+      menu = {
+        draw = {
+          components = {
+            kind_icon = {
+              text = function(ctx)
+                return require('lspkind').symbol_map[ctx.kind] or ''
+              end,
+            },
+          },
+        },
+      },
     },
   },
 }

@@ -47,6 +47,7 @@ in {
         # Lsp
         blink-cmp
         nvim-lspconfig
+        lspkind-nvim
 
         # UI
         lualine-nvim
