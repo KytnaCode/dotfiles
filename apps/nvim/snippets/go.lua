@@ -2,6 +2,7 @@ local ls = require('luasnip')
 local fmta = require('luasnip.extras.fmt').fmta
 local s = ls.snippet
 local i = ls.insert_node
+local t = ls.text_node
 local d = ls.dynamic_node
 local get_visual = require('luasnip-helpers').get_visual
 
@@ -235,4 +236,5 @@ return {
       }
     )
   ),
+  s('cxbg', { t('context.Background()') }),
 }
