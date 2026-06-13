@@ -50,6 +50,7 @@ in {
         lspkind-nvim
 
         # UI
+        glance-nvim
         lualine-nvim
         fidget-nvim
         edgy-nvim

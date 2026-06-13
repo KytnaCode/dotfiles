@@ -16,6 +16,10 @@ map('n', 'd', '"_d', opts({ desc = 'delete' }))
 map({ 'n', 'o' }, 'x', 'd', opts({ desc = 'cut' }))
 map('n', '<leader>rn', '<CMD>Lspsaga rename<CR>', opts({ desc = 'rename symbol' }))
 map('n', '<leader>ca', require('actions-preview').code_actions, opts({ desc = 'code action' }))
+map('n', 'rD', '<CMD>Glance definitions<CR>')
+map('n', 'rR', '<CMD>Glance references<CR>')
+map('n', 'rY', '<CMD>Glance type_definitions<CR>')
+map('n', 'rM', '<CMD>Glance implementations<CR>')
 
 -- Snippets
 
