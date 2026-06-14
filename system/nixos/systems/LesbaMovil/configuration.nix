@@ -29,6 +29,8 @@
     users.arya = dotfiles-hm.homeManagerModules.arya;
   };
 
+  services.logind.settings.Login.HandleLidSwitch = "ignore";
+
   custom = {
     i18n.enable = true;
     hardware = {
