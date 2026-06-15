@@ -22,6 +22,7 @@
     builtins.elem (lib.getName pkg) [
       "lunacy"
       "obsidian"
+      "spotify"
     ];
 
   nix.registry.templates = {

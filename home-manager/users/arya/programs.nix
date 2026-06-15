@@ -37,5 +37,6 @@
     zoxide
     fzf
     podman-compose
+    spotify
   ];
 }
