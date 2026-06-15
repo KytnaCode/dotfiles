@@ -20,7 +20,11 @@
     zellij.enable = true;
   };
 
-  services.hyprpolkitagent.enable = true;
+  services = {
+    hyprpolkitagent.enable = true;
+
+    podman.enable = true;
+  };
 
   home.packages = with pkgs; [
     brave
@@ -32,5 +36,6 @@
     btop
     zoxide
     fzf
+    podman-compose
   ];
 }
