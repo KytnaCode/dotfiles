@@ -38,5 +38,6 @@
     fzf
     podman-compose
     spotify
+    anki
   ];
 }
