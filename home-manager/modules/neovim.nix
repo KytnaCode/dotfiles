@@ -92,6 +92,7 @@ in {
         yaml-language-server
         gopls
         taplo
+        typescript-language-server
         lua-language-server
         nixd
         kdePackages.qtdeclarative

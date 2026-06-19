@@ -3,6 +3,7 @@ local servers = {
   'jsonls',
   'lua_ls',
   'nixd',
+  'ts_ls',
   'qmlls',
   'taplo',
   'html',
