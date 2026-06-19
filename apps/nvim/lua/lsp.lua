@@ -1,4 +1,5 @@
 local servers = {
+  'cssls',
   'gopls',
   'jsonls',
   'lua_ls',
