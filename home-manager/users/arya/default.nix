@@ -7,6 +7,7 @@
       kitty
       neovim
       starship
+      registries
       zellij
       zsh
     ]
@@ -25,18 +26,7 @@
       "spotify"
     ];
 
-  nix.registry.templates = {
-    exact = true;
-    from = {
-      type = "indirect";
-      id = "templates";
-    };
-    to = {
-      type = "github";
-      owner = "kytnacode";
-      repo = "templates";
-    };
-  };
+  custom.registries.templates.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
