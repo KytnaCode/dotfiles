@@ -104,6 +104,7 @@ in {
         deadnix # Nix linter
         statix # Nix linter
         golangci-lint # Go formatter and linter
+        prettierd # Javascript & Typescrit formatter
 
         # Misc
         delta

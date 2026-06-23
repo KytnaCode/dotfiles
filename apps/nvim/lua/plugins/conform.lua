@@ -1,3 +1,9 @@
+local javascript_formatters = {
+  'prettierd',
+  'prettier',
+  stop_after_first = true,
+}
+
 return {
   'stevearc/conform.nvim',
   event = { 'BufWritePre' },
@@ -9,6 +15,10 @@ return {
       lua = { 'stylua' },
       nix = { 'alejandra' },
       go = { 'golangci-lint' },
+      javascript = javascript_formatters,
+      javascriptreact = javascript_formatters,
+      typescript = javascript_formatters,
+      typescriptreact = javascript_formatters,
     },
     format_on_save = {
       timeout_ms = 500,
