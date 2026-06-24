@@ -39,7 +39,7 @@ hl.bind('SUPER + SHIFT + n', hl.dsp.exec_cmd('swaync-client -t -sw'))
 
 -- Apps
 local terminal = 'kitty'
-local browser = 'brave'
+local browser = 'floorp'
 
 hl.bind('SUPER + RETURN', hl.dsp.exec_cmd(terminal))
 hl.bind('SUPER + b', hl.dsp.exec_cmd(browser))

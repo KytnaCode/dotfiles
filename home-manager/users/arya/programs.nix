@@ -28,6 +28,7 @@
 
   home.packages = with pkgs; [
     brave
+    floorp-bin
     zotero
     signal-desktop
     lunacy
