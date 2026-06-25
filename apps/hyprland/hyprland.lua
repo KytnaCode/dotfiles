@@ -66,7 +66,7 @@ local autostart_applications = {
 }
 
 hl.on('hyprland.start', function()
-  for _, app in ipairs(autostart_applications) do
+  for _, app in pairs(autostart_applications) do
     hl.exec_cmd(app.cmd, app.rules)
   end
 end)
