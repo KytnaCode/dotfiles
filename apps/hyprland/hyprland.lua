@@ -41,6 +41,10 @@ hl.bind('SUPER + SHIFT + n', hl.dsp.exec_cmd('swaync-client -t -sw'))
 local terminal = 'kitty'
 local browser = 'floorp'
 
+local function launch(name, pwa_id)
+  return string.format('%s --name %s --start-ssb {%s}', browser, name, pwa_id)
+end
+
 hl.bind('SUPER + RETURN', hl.dsp.exec_cmd(terminal))
 hl.bind('SUPER + b', hl.dsp.exec_cmd(browser))
 
@@ -55,6 +59,12 @@ local autostart_applications = {
     cmd = browser,
     rules = {
       workspace = 2,
+    },
+  },
+  whatsapp = {
+    cmd = launch('whatsapp', '20a75a85-da7c-4d68-9366-402ab2d2313a'),
+    rules = {
+      workspace = 3,
     },
   },
   anki = {
