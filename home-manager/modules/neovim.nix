@@ -114,6 +114,7 @@ in {
 
       withPython3 = false;
       withRuby = false;
+      withNodeJs = true;
     };
 
     xdg.configFile."nvim".source = apps.nvim;
