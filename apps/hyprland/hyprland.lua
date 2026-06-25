@@ -44,6 +44,33 @@ local browser = 'floorp'
 hl.bind('SUPER + RETURN', hl.dsp.exec_cmd(terminal))
 hl.bind('SUPER + b', hl.dsp.exec_cmd(browser))
 
+local autostart_applications = {
+  terminal = {
+    cmd = terminal,
+    rules = {
+      workspace = 1,
+    },
+  },
+  browser = {
+    cmd = browser,
+    rules = {
+      workspace = 2,
+    },
+  },
+  anki = {
+    cmd = 'anki',
+    rules = {
+      workspace = 4,
+    },
+  },
+}
+
+hl.on('hyprland.start', function()
+  for _, app in ipairs(autostart_applications) do
+    hl.exec_cmd(app.cmd, app.rules)
+  end
+end)
+
 -- Utils
 hl.bind('SUPER + p', hl.dsp.exec_cmd('hyprquickshot -n'))
 
