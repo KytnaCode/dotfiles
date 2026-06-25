@@ -105,6 +105,7 @@ in {
         statix # Nix linter
         golangci-lint # Go formatter and linter
         prettierd # Javascript & Typescrit formatter
+        eslint # Javascript & Typescript linter
 
         # Misc
         delta
