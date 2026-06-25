@@ -53,5 +53,6 @@
     btop # Resource monitor.
     libnotify # notify-send command.
     podman-compose # Containers.
+    wl-clipboard # Copy and paste from terminal.
   ];
 }
