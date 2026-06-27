@@ -89,6 +89,7 @@ in {
       extraPackages = with pkgs; [
         # Language Servers
         vscode-langservers-extracted
+        tailwindcss-language-server
         yaml-language-server
         gopls
         taplo

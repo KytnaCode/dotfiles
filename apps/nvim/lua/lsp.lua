@@ -1,13 +1,14 @@
 local servers = {
   'cssls',
   'gopls',
+  'html',
   'jsonls',
   'lua_ls',
   'nixd',
-  'ts_ls',
   'qmlls',
+  'tailwindcss',
   'taplo',
-  'html',
+  'ts_ls',
   'yamlls',
 }
 
