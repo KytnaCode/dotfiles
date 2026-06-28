@@ -20,15 +20,6 @@ hl.config({
   },
 })
 
--- Keyboard
-hl.config({
-  input = {
-    kb_layout = 'us,latam',
-  },
-})
-
-hl.bind('SUPER + SPACE', hl.dsp.exec_cmd('hyprctl switchxkblayout current next'))
-
 -- Notifications
 hl.on('hyprland.start', function()
   hl.exec_cmd('swaync')
