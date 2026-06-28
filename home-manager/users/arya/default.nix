@@ -3,6 +3,7 @@
     [
       direnv
       git
+      input
       hyprland
       kitty
       neovim
@@ -26,7 +27,14 @@
       "spotify"
     ];
 
-  custom.registries.templates.enable = true;
+  custom = {
+    registries.templates.enable = true;
+
+    input.fcitx5 = {
+      enable = true;
+      japaneseKeyboard = true;
+    };
+  };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
