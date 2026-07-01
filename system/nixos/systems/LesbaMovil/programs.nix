@@ -8,6 +8,11 @@
     zsh.enable = true;
 
     steam.enable = true;
+
+    localsend = {
+      enable = true;
+      openFirewall = true;
+    };
   };
 
   environment = {
