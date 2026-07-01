@@ -7,3 +7,4 @@ vim.o.relativenumber = true
 vim.o.clipboard = 'unnamedplus'
 vim.o.signcolumn = 'yes:1'
 vim.o.mouse = ''
+vim.o.winborder = 'rounded'
