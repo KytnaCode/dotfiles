@@ -77,6 +77,34 @@ return {
       },
     },
 
+    fuzzy = {
+      sorts = {
+        function(a, b)
+          local kinds = vim.lsp.protocol.CompletionItemKind
+
+          local kind_a = a.kind
+          local kind_b = b.kind
+
+          local sort = require('blink.cmp.fuzzy.sort')
+
+          if kind_a == kinds.Field then
+            if kind_b == kinds.Field then
+              return sort.score(a, b)
+            end
+
+            return true
+          else
+            if kind_b == kinds.Field then
+              return false
+            end
+
+            return sort.score(a, b)
+          end
+        end,
+        'sort_text',
+      },
+    },
+
     completion = {
       documentation = { window = { border = 'rounded' } },
 
