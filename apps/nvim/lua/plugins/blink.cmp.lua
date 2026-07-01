@@ -26,9 +26,12 @@ return {
     },
 
     completion = {
+      documentation = { window = { border = 'rounded' } },
+
       ghost_text = { enabled = false },
 
       menu = {
+        border = 'rounded',
         draw = {
           components = {
             kind_icon = {
