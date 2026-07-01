@@ -235,7 +235,7 @@ serialize_pane_viewport true
 copy_command "wl-copy"                    // wayland
 copy_on_select false
 show_startup_tips false
-post_command_discovery_hook "echo \"$SHELL -ic \"\\$RESURRECT_COMMAND\"\""
+post_command_discovery_hook "echo \"$SHELL -ic \"$RESURRECT_COMMAND\"\""
 
 
 web_client {
