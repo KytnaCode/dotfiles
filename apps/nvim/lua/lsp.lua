@@ -1,8 +1,8 @@
 local servers = {
   'cssls',
   'gopls',
-  'html',
   'hls',
+  'html',
   'jsonls',
   'lua_ls',
   'nixd',
