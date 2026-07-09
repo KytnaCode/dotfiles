@@ -2,6 +2,7 @@ local servers = {
   'cssls',
   'gopls',
   'html',
+  'hls',
   'jsonls',
   'lua_ls',
   'nixd',
