@@ -6,6 +6,9 @@
 }:
 with lib; let
   cfg = config.custom.programs.neovim;
+
+  # Custom neovim package that allow plugins to be managed by Lazy.nvim but installed by nix,
+  # this way is more portable and I can easily reuse my neovim config in other distros.
   my-neovim = pkgs.symlinkJoin {
     inherit (pkgs.neovim-unwrapped) meta passthru lua;
 
@@ -38,87 +41,96 @@ in {
 
       enable = true;
 
-      package = my-neovim;
+      package = my-neovim; # Use custom neovim package defined above.
 
       plugins = with pkgs.vimPlugins; [
         # Motion
-        leap-nvim
+        leap-nvim # My favorite motion plugin.
 
         # Lsp
-        blink-cmp
-        nvim-lspconfig
-        lspkind-nvim
+        blink-cmp # Completion.
+        nvim-lspconfig # LSP config.
+        lspkind-nvim # Add vscode-like lspkind indicators to completion menu.
 
         # UI
-        glance-nvim
-        lualine-nvim
-        fidget-nvim
-        edgy-nvim
-        bufferline-nvim
-        lsp_signature-nvim
-        tiny-inline-diagnostic-nvim
-        cyberdream-nvim
+        glance-nvim # GoTo, References, etc previewer.
+        lualine-nvim # Status line.
+        fidget-nvim # TODO: not yet configured.
+        edgy-nvim # Better layout managment. I cannot live without this.
+        bufferline-nvim # I rarely use the buffer line, but makes me feel more comfortable.
+        lsp_signature-nvim ## Show lsp_signature while writting.
+        tiny-inline-diagnostic-nvim # Inline lsp diagnostics.
+        cyberdream-nvim # My neovim theme.
 
         # Utils
-        luasnip
-        nvim-surround
-        nvim-autopairs
-        nvim-ts-autotag
-        actions-preview-nvim
-        telescope-nvim
-        telescope-fzf-native-nvim
-        lspsaga-nvim
-        gitsigns-nvim
-        trouble-nvim
-        neo-tree-nvim
-        vim-fugitive
-        toggleterm-nvim
-        conform-nvim
-        nvim-lint
-        mini-nvim
+        luasnip # Snippet support.
+        nvim-surround # Fast surround keymaps.
+        nvim-autopairs # Autopairs.
+        nvim-ts-autotag # Autopairs for html, jsx and tsx tags.
+        actions-preview-nvim # Previewer for code actions.
+        telescope-nvim # Fuzzy finder.
+        telescope-fzf-native-nvim # Native fzf implementation for telescope-nvim.
+        lspsaga-nvim # A bunch of lsp utilities.
+        gitsigns-nvim # Git utils.
+        trouble-nvim # Panel for diagnostics.
+        neo-tree-nvim # File tree.
+        vim-fugitive # Useful Git features.
+        toggleterm-nvim # Used for floating term.
+        conform-nvim # Auto run formatters.
+        nvim-lint # Auto run linters.
+        mini-nvim # A bunch of QoL utilities.
 
         # Misc
-        nvim-treesitter.withAllGrammars
-        nui-nvim
-        plenary-nvim
-        nvim-web-devicons
-        bufdelete-nvim
-        SchemaStore-nvim
+        nvim-treesitter.withAllGrammars # Treesitter grammars.
+        nui-nvim # UI library, required by other plugins.
+        plenary-nvim # Utility library, required by other plugins.
+        nvim-web-devicons # Use Nerdfont icons in UI.
+        bufdelete-nvim # Delete buffer without mess window layout.
+        SchemaStore-nvim # Get json and yaml schemas from SchemaStore.
       ];
 
       extraPackages = with pkgs; [
         # Language Servers
-        vscode-langservers-extracted
-        tailwindcss-language-server
-        yaml-language-server
-        gopls
-        taplo
-        typescript-language-server
-        lua-language-server
-        nixd
-        kdePackages.qtdeclarative
+        nixd # Nix.
+        typescript-language-server # Javascript & Typescript.
+        gopls # Go.
+        lua-language-server # Lua.
+        kdePackages.qtdeclarative # QML.
+        tailwindcss-language-server # Tailwind classes.
+        taplo # TOML.
+        vscode-langservers-extracted # HTML, CSS and others.
+        yaml-language-server # YAML.
 
         # Formatters & Linters
-        stylua # Lua formatter
-        selene # Lua linter
-        alejandra # Nix formatter
-        deadnix # Nix linter
-        statix # Nix linter
-        golangci-lint # Go formatter and linter
-        prettierd # Javascript & Typescript formatter
-        eslint_d # Javascript & Typescript linter
+
+        ## Nix
+        alejandra # Formatter
+        deadnix # Linter
+        statix # Linter
+
+        ## JS & TS.
+        eslint_d # Javascript & Typescript Linter.
+        prettierd # Javascript & Typescript Formatter.
+
+        ## Go
+        golangci-lint # Formatter and Linter.
+
+        ## Lua
+        selene # Linter.
+        stylua # Formatter.
 
         # Misc
-        delta
-        luajitPackages.jsregexp
-        ripgrep
+        delta # Required by actions-preview-nvim.
+        luajitPackages.jsregexp # Required by luasnip.
+        ripgrep # Fast grep.
       ];
 
+      withNodeJs = true;
       withPython3 = false;
       withRuby = false;
-      withNodeJs = true;
     };
 
+    # Copy dotfiles.
     xdg.configFile."nvim".source = apps.nvim;
   };
 }
