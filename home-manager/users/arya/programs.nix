@@ -49,6 +49,7 @@
     fzf # Fuzzy search.
     zoxide # Smart cd
     harper # Spell checker.
+    jq # Work with JSON in terminal.
 
     # System
     btop # Resource monitor.
