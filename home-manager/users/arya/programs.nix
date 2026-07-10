@@ -48,6 +48,7 @@
     # Util
     fzf # Fuzzy search.
     zoxide # Smart cd
+    harper # Spell checker.
 
     # System
     btop # Resource monitor.
