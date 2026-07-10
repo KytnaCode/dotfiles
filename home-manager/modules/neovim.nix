@@ -100,6 +100,7 @@ in {
         taplo # TOML.
         vscode-langservers-extracted # HTML, CSS and others.
         yaml-language-server # YAML.
+        harper # Spell checker.
 
         # Formatters & Linters
 

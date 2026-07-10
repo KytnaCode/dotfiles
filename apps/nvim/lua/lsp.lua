@@ -1,6 +1,7 @@
 local servers = {
   'cssls',
   'gopls',
+  'harper_ls',
   'hls',
   'html',
   'jsonls',
