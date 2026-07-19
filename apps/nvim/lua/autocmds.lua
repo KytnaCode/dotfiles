@@ -32,6 +32,10 @@ cmd('ModeChanged', {
   desc = 'dynamically set relative number',
   pattern = { '*:n', '*:v' },
   callback = function()
+    if vim.wo.number == false then
+      return
+    end
+
     vim.wo.relativenumber = true
   end,
 })
@@ -41,6 +45,10 @@ cmd('ModeChanged', {
   desc = 'dynamically set relative number',
   pattern = { '*:i' },
   callback = function()
+    if vim.wo.number == false then
+      return
+    end
+
     vim.wo.relativenumber = false
   end,
 })
