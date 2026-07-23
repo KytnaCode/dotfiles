@@ -101,6 +101,7 @@ in {
         vscode-langservers-extracted # HTML, CSS and others.
         yaml-language-server # YAML.
         harper # Spell checker.
+        python3Packages.python-lsp-server # Python.
 
         # Formatters & Linters
 
@@ -119,6 +120,9 @@ in {
         ## Lua
         selene # Linter.
         stylua # Formatter.
+
+        # Python
+        ruff
 
         # Misc
         delta # Required by actions-preview-nvim.
