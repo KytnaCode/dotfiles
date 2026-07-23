@@ -15,3 +15,6 @@ lint:
   statix check .
   deadnix .
   selene .
+
+fetch:
+  ./scripts/.venv/bin/python3 scripts/fetch-files remote-files.yml

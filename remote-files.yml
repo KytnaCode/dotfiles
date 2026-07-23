@@ -1,0 +1,6 @@
+files:
+  - repo: "https://github.com/kytnacode/yume-kitty"
+    rev: "5b1423f69b0cca3aa4fafaabcd8dd3e5fcab8db5"
+    path: "yume.conf"
+    sha256: "6aa62fa290115dbdd7307f11dabc972892ed6d8856a6a32c6fd7ef0123ccab60"
+    target: "apps/kitty/theme.conf"
