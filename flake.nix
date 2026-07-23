@@ -28,6 +28,9 @@
         stylua
         selene
 
+        # Python
+        python3
+
         # Misc
         just
       ];
