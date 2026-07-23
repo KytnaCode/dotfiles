@@ -12,6 +12,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    yume = {
+      url = "github:kytnacode/yume";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     apps.url = "../apps";
   };
 

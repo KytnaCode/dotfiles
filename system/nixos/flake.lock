@@ -22,7 +22,8 @@
         "hyprquickshot": "hyprquickshot",
         "nixpkgs": [
           "nixpkgs"
-        ]
+        ],
+        "yume": "yume"
       },
       "locked": {
         "path": "../../home-manager",
@@ -131,6 +132,27 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "yume": {
+      "inputs": {
+        "nixpkgs": [
+          "dotfiles-hm",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784821907,
+        "narHash": "sha256-aN43yOqdUf/gWi1xoS6T7M8Zxc7MmBmnDdKfWlIXxdw=",
+        "owner": "kytnacode",
+        "repo": "yume",
+        "rev": "94d54fbb8730b3579897511663a9cec1f146a604",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kytnacode",
+        "repo": "yume",
         "type": "github"
       }
     }

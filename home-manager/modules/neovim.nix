@@ -1,4 +1,8 @@
-{apps, ...}: {
+{
+  apps,
+  inputs,
+  ...
+}: {
   pkgs,
   lib,
   config,
@@ -60,7 +64,7 @@ in {
         bufferline-nvim # I rarely use the buffer line, but makes me feel more comfortable.
         lsp_signature-nvim ## Show lsp_signature while writing.
         tiny-inline-diagnostic-nvim # Inline lsp diagnostics.
-        cyberdream-nvim # My neovim theme.
+        inputs.yume.packages.${pkgs.stdenv.hostPlatform.system}.default # My neovim theme.
 
         # Utils
         luasnip # Snippet support.
