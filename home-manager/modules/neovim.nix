@@ -56,9 +56,9 @@ in {
         glance-nvim # GoTo, References, etc previewer.
         lualine-nvim # Status line.
         fidget-nvim # TODO: not yet configured.
-        edgy-nvim # Better layout managment. I cannot live without this.
+        edgy-nvim # Better layout management. I cannot live without this.
         bufferline-nvim # I rarely use the buffer line, but makes me feel more comfortable.
-        lsp_signature-nvim ## Show lsp_signature while writting.
+        lsp_signature-nvim ## Show lsp_signature while writing.
         tiny-inline-diagnostic-nvim # Inline lsp diagnostics.
         cyberdream-nvim # My neovim theme.
 
