@@ -2,28 +2,22 @@ return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = {
-    component_separators = {
-      left = '',
-      right = '',
-    },
-    section_separators = {
-      left = '',
-      right = '',
+    options = {
+      theme = 'yume',
+      component_separators = '|',
+      section_separators = { left = '', right = '' },
     },
     sections = {
-      lualine_a = { 'mode' },
-      lualine_b = { 'branch diff diagnostics' },
-      lualine_c = { 'filename' },
-      lualine_x = { 'encoding' },
-      lualine_y = { 'filetype' },
-      lualine_z = { 'location' },
-    },
-    extensions = {
-      'fugitive',
-      'lazy',
-      'neo-tree',
-      'toggleterm',
-      'trouble',
+      lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
+      lualine_b = { 'filename', 'branch' },
+      lualine_c = {
+        '%=', --[[ add your center components here in place of this comment ]]
+      },
+      lualine_x = {},
+      lualine_y = { 'filetype', 'progress' },
+      lualine_z = {
+        { 'location', separator = { right = '' }, left_padding = 2 },
+      },
     },
   },
 }
