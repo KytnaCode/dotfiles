@@ -40,7 +40,7 @@
     # Communication
     signal-desktop # Messaging app.
 
-    # Enterteinment
+    # Entertainment
     spotify # I cannot live without music.
 
     # Studying
