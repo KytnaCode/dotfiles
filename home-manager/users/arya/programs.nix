@@ -35,6 +35,7 @@
     lunacy # UI Design.
     obsidian # Note taking.
     zotero # Academic research.
+    libreoffice # Office Suite.
 
     # Communication
     signal-desktop # Messaging app.
