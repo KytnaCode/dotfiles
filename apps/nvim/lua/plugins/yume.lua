@@ -6,6 +6,7 @@ return {
     require('yume').setup({
       integrations = {
         neotree = true,
+        bufferline = true,
       },
     })
 
