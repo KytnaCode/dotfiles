@@ -19,6 +19,8 @@
 
     starship.enable = true; # Shell theme.
 
+    tmux.enable = true;
+
     zellij.enable = true; # Terminal multiplexer.
   };
 

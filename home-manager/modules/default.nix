@@ -10,6 +10,7 @@
   neovim = import ./neovim.nix {inherit apps inputs;};
   registries = import ./registries.nix {};
   starship = import ./starship.nix {inherit apps;};
+  tmux = import ./tmux.nix {inherit apps;};
   zellij = import ./zellij.nix {inherit apps;};
   zsh = import ./zsh.nix {inherit apps;};
 }

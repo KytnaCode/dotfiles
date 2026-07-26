@@ -9,6 +9,7 @@
       neovim
       starship
       registries
+      tmux
       zellij
       zsh
     ]
