@@ -45,12 +45,12 @@ map({ 'n', 'x', 'o' }, 's', '<Plug>(leap)', opts({ desc = 'Leap within window' }
 map('n', 'S', '<Plug>(leap-from-window)', opts({ desc = 'Leap from window' }))
 
 -- Buffers.
-map('n', [[<c-,>]], '<CMD>BufferLineCyclePrev<CR>', opts({ desc = 'Previous buffer' }))
-map('n', [[<c-.>]], '<CMD>BufferLineCycleNext<CR>', opts({ desc = 'Next buffer' }))
-map('n', [[<c-m-,>]], '<CMD>BufferLineMovePrev<CR>', opts({ desc = 'Move current buffer left' }))
-map('n', [[<c-m-.>]], '<CMD>BufferLineMoveNext<CR>', opts({ desc = 'Move current buffer right' }))
-map('n', [[<c-x>]], '<CMD>Bdelete<CR>', opts({ desc = 'delete buffer' }))
-map('n', [[<c-m-x>]], '<CMD>Bwipeout<CR>', opts({ desc = 'wipeout buffer' }))
+map('n', [[<m-,>]], '<CMD>BufferLineCyclePrev<CR>', opts({ desc = 'Previous buffer' }))
+map('n', [[<m-.>]], '<CMD>BufferLineCycleNext<CR>', opts({ desc = 'Next buffer' }))
+map('n', [[<m-<>]], '<CMD>BufferLineMovePrev<CR>', opts({ desc = 'Move current buffer left' }))
+map('n', [[<m->>]], '<CMD>BufferLineMoveNext<CR>', opts({ desc = 'Move current buffer right' }))
+map('n', [[<m-x>]], '<CMD>Bdelete<CR>', opts({ desc = 'delete buffer' }))
+map('n', [[<m-X>]], '<CMD>Bwipeout<CR>', opts({ desc = 'wipeout buffer' }))
 
 -- Git
 map('n', '<leader>gc', '<CMD>Git commit --verbose<CR>', opts({ desc = 'Commit stagged changes' }))
