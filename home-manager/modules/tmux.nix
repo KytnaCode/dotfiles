@@ -12,5 +12,14 @@
     ];
 
     xdg.configFile."tmux".source = apps.tmux;
+
+    home.file.".tmux/plugins/tpm".source = let
+      tpm = pkgs.fetchFromGitHub {
+        owner = "tmux-plugins";
+        repo = "tpm";
+        rev = "e261deb1b47614eed3400089ce7197dc68acc4eb";
+        sha256 = "sha256-oRKUZNyJYQXlkeQfbEYiltUEBpvdwn2SoEBWHVUNmrA=";
+      };
+    in "${tpm}/";
   };
 }
