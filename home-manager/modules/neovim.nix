@@ -112,6 +112,7 @@ in {
 
         ## Shell.
         shfmt
+        shellcheck
 
         ## Nix
         alejandra # Formatter

@@ -10,6 +10,7 @@ return {
       typescript = { 'eslint_d' },
       typescriptreact = { 'eslint_d' },
       python = { 'ruff' },
+      sh = { 'shellcheck' },
     }
   end,
 }
