@@ -95,6 +95,7 @@ in {
 
       extraPackages = with pkgs; [
         # Language Servers
+        bash-language-server # Bash.
         nixd # Nix.
         typescript-language-server # Javascript & Typescript.
         gopls # Go.
