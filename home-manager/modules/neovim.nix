@@ -110,6 +110,9 @@ in {
 
         # Formatters & Linters
 
+        ## Shell.
+        shfmt
+
         ## Nix
         alejandra # Formatter
         deadnix # Linter

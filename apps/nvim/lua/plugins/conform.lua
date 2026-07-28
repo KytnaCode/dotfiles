@@ -35,6 +35,7 @@ return {
       typescript = javascript_formatters,
       typescriptreact = javascript_formatters,
       python = { 'ruff_format', 'ruff_fix' },
+      sh = { 'shfmt' },
     },
     format_on_save = {
       timeout_ms = 500,
