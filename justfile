@@ -17,4 +17,4 @@ lint:
   selene .
 
 fetch:
-  ./scripts/.venv/bin/python3 scripts/fetch-files remote-files.yml
+  ./scripts/.venv/bin/python3 scripts/fetch-files.py remote-files.yml
