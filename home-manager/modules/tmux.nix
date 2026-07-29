@@ -10,6 +10,11 @@
     home.packages = with pkgs; [
       tmux
       gitmux
+
+      # Required by muxile.
+      websocat
+      jq
+      qrencode
     ];
 
     xdg.configFile."tmux".source = apps.tmux;
