@@ -7,8 +7,9 @@
   options.custom.programs.tmux.enable = lib.mkEnableOption "enable tmux configuration";
 
   config = lib.mkIf config.custom.programs.tmux.enable {
-    home.packages = [
-      pkgs.tmux
+    home.packages = with pkgs; [
+      tmux
+      gitmux
     ];
 
     xdg.configFile."tmux".source = apps.tmux;
