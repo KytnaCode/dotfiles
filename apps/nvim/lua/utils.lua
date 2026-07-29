@@ -13,4 +13,14 @@ function M.print_table(table, ident)
   end
 end
 
+function M.has_value(table, value)
+  for _, v in ipairs(table) do
+    if value == v then
+      return true
+    end
+  end
+
+  return false
+end
+
 return M

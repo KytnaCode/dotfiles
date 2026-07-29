@@ -1,3 +1,4 @@
+local utils = require('utils')
 local group = vim.api.nvim_create_augroup
 local cmd = vim.api.nvim_create_autocmd
 
@@ -101,8 +102,20 @@ cmd('VimLeavePre', {
       end
     end
 
+    local excluded_file_type = {
+      'neo-tree',
+      'help',
+      'git',
+      'gitcommit',
+      'trouble',
+    }
+
     local shouldCloseBuf = function(buf)
       if vim.bo[buf].buftype ~= '' then
+        return true
+      end
+
+      if utils.has_value(excluded_file_type, vim.bo[buf].filetype) then
         return true
       end
 
