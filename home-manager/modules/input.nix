@@ -27,7 +27,6 @@ in {
       };
 
       home.sessionVariables = {
-        GTK_IM_MODULE = "fcitx";
         QT_IM_MODULE = "fcitx";
         XMODIFIERS = "@im=fcitx";
         GLFW_IM_MODULE = "ibus";
