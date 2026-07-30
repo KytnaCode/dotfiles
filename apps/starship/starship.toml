@@ -1,2 +1,233 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+#"$schema" = 'https://starship.rs/config-schema.json'
 
+add_newline = true
+
+format = """
+[](carnation_pink)\
+[($username )($hostname )$directory](fg:alabaster_pink bg:carnation_pink)\
+[](carnation_pink)\
+$bun\
+$golang\
+$python\
+( [](white_rose_dust)\
+$git_branch\
+$git_state\
+[](white_rose_dust))\
+$cmd_duration\
+$status\
+$fill\
+$battery\
+$git_commit\
+$nix_shell
+$character
+"""
+
+palette = "yume"
+
+[battery]
+full_symbol = "󰁹 "
+charging_symbol = "󰂄 "
+empty_symbol = "󰂎 "
+discharging_symbol = "󰂃 "
+
+[[battery.display]]
+threshold = 20
+discharging_symbol = "󰥇"
+style = "coral_pink"
+
+[[battery.display]]
+threshold = 30
+discharging_symbol = "󰁼"
+style = "cream_chiffon"
+
+[[battery.display]]
+threshold = 40
+discharging_symbol = "󰁽"
+style = "cream_chiffon"
+
+[[battery.display]]
+threshold = 50
+discharging_symbol = "󰁾"
+style = "cream_chiffon"
+
+[[battery.display]]
+threshold = 60
+discharging_symbol = "󰁿"
+style = "cream_chiffon"
+
+[[battery.display]]
+threshold = 70
+discharging_symbol = "󰂀"
+style = "cream_chiffon"
+
+[[battery.display]]
+threshold = 80
+discharging_symbol = "󰂁"
+style = "hint_of_mint"
+
+[[battery.display]]
+threshold = 90
+discharging_symbol = "󰂂"
+style = "hint_of_mint"
+
+[[battery.display]]
+threshold = 100
+discharging_symbol = "󰁹"
+style = "hint_of_mint"
+
+[character]
+format = "$symbol "
+success_symbol = "[](hint_of_mint)"
+error_symbol = "[](bold coral_pink)"
+
+[fill]
+symbol = " "
+
+[username]
+show_always = false
+format = "[$user]($style)"
+style_root = "$style_user"
+style_user = "bold fg:alabaster_pink bg:carnation_pink"
+
+[hostname]
+format = "[at $hostname]($style)"
+ssh_only = true
+style = "fg:alabaster_pink bg:carnation_pink"
+
+[directory]
+format = "[on $path ]($style)[$read_only]($read_only_style) "
+style = "fg:alabaster_pink bg:carnation_pink"
+read_only_style = "bold $style"
+
+[bun]
+format = """
+ [](white_rose_dust)\
+[ via bun ($version) ]($style)\
+[](white_rose_dust)\
+"""
+style = "fg:text bg:white_rose_dust"
+
+[cmd_duration]
+format = " [took $duration]($style)"
+style = "text"
+show_notifications = true
+min_time_to_notify = 30000
+
+[git_branch]
+format = "[ on $symbol$branch(:$remote_branch) ]($style)"
+style = "fg:text bg:white_rose_dust"
+
+[git_state]
+format = '[\($state( $progress_current/$progress_total)\)]($style)'
+style = 'bold fg:info bg:white_rose_dust'
+
+[git_commit]
+format = '[\($hash\)]($style)'
+style = "subtext"
+
+[golang]
+format = """
+ [](white_rose_dust)\
+[ via Go ($version) ]($style)\
+[](white_rose_dust)\
+"""
+style = "fg:text bg:white_rose_dust"
+
+[nix_shell]
+format = """
+[](white_rose_dust)\
+[$state( \\($name\\) )]($style)\
+[](white_rose_dust)\
+"""
+style = "fg:text bg:white_rose_dust"
+
+[python]
+format = """
+ [](white_rose_dust)\
+[ via Python ($version) ]($style)\
+[](white_rose_dust)\
+"""
+style = "fg:text bg:white_rose_dust"
+
+[status]
+format = " [exit code: $status]($style) "
+disabled = false
+style = "bold fg:errpr"
+
+[palettes.yume]
+# Pinks
+hot_magenta = '#E92E98'
+neon_orchid = '#F351AD'
+carnation_pink = '#F978C1'
+bubblegum_pink = '#FCA7D7'
+cotton_candy = '#FFE2F2'
+
+# Purples
+vivid_amethyst = '#AD31D9'
+bright_orchid = '#C355EA'
+psychedelic_purple = '#D47BF4'
+pastel_lavender = '#E5A9FA'
+pale_thistle = '#F7E3FE'
+
+# Reds
+electric_crimson = '#FA3149'
+watermelon_red = '#FC5569'
+coral_pink = '#FC5569'
+soft_salmon = '#FEA8B2'
+blush_whisper = '#FFE3E6'
+
+# Greens
+hint_of_mint = '#82EA7D'
+celadon_mist = '#9BEE97'
+pale_pistachio = '#B4F2B1'
+soft_mint = '#CDF7CB'
+light_matcha = '#E6FBE5'
+
+# Yellows
+cream_chiffon = '#FFBB00'
+pale_buttercream = '#FFCA39'
+chiffon_yellow = '#FFD664'
+soft_primrose = '#FFDC7B'
+pastel_canary = '#FFEAB2'
+
+# Blues
+bright_periwinkle = '#9B86F8'
+soft_lavender_blue = '#AF9EF9'
+pastel_indigo = '#C3B6FB'
+sweet_iris = '#D7CFFC'
+glacial_blue = '#EBE7FE'
+
+# Magenta
+# psychedelic_purple
+light_orchid = '#DD95F6'
+bright_lilac = '#E5B0F8'
+pale_heather = '#EECAFB'
+white_orchid = '#F6E5FD'
+
+# Cyan
+bright_turquoise = '#66E7E7'
+electric_aquamarine = '#85ECEC'
+pale_cyan = '#A3F1F1'
+ice_blue = '#C2F5F5'
+water_vapor = '#E0FAFA'
+
+# Bases
+alabaster_pink = '#FAEFF5'
+white_rose_dust = '#F5DFEA'
+male_pauve_mist = '#F0CFE0'
+soft_orchid_pink = '#EBBFD5'
+pastel_rose_quartz = '#E6AFCB'
+antique_rose = '#B88CA2'
+dusty_rose_wood = '#8A697A'
+muted_eggplant = '#5C4651'
+dark_plum_charcoal = '#2E2329'
+
+# Foreground
+text = '#2E2329'    # dark_plum_charcoal
+subtext = '#8A697A' # dusty_rose_wood
+
+# Semantic
+success = '#82EA7D' # hint_of_mint
+warning = '#FFBB00' # cream_chiffon
+error = '#FA3149'   # electric_crimson
+info = '#F978C1'    # carnation_pink
