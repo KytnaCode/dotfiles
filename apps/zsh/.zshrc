@@ -23,6 +23,10 @@ if (( $+commands[direnv] )); then
   eval "$(direnv hook zsh)"
 fi
 
+if (( $+commands[bun] )); then
+  eval "$(bun completions)"
+fi
+
 if (( $+commands[starship] )); then
   eval "$(starship init zsh)"
 fi
