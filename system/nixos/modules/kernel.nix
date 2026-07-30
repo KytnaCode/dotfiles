@@ -29,5 +29,19 @@
       "fs.protected_fifos" = 2;
       "fs.protected_regular" = 2;
     };
+
+    boot.kernelParams = [
+      "slab_nomerge"
+      "init_on_alloc=1"
+      "init_on_free=1"
+      "page_alloc.shuffle=1"
+      "pti=on"
+      "randomize_kstack_offset=on"
+      "vsyscall=none"
+      "debugfs=off"
+      "lockdown=confidentiality"
+      "quiet"
+      "loglevel=0"
+    ];
   };
 }
