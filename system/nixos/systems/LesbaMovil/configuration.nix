@@ -19,6 +19,7 @@
       bluetooth
       fonts
       networking
+      kernel
     ]);
 
   environment.pathsToLink = ["/share/xdg-desktop-portal" "/share/applications"];
@@ -42,6 +43,7 @@
       enable = true;
       enableWireless = true;
     };
+    kernel.hardening.enable = true;
   };
 
   # Use the systemd-boot EFI boot loader.

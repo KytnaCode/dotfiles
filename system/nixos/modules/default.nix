@@ -3,5 +3,6 @@
   bluetooth = ./bluetooth.nix;
   sound = ./sound.nix;
   fonts = ./fonts.nix;
+  kernel = ./kernel.nix;
   networking = ./networking.nix;
 }
