@@ -19,6 +19,10 @@ return {
         end,
       },
       {
+        ft = 'aerial',
+        size = { width = 0.4 },
+      },
+      {
         ft = 'git',
         size = { width = 0.35 },
       },

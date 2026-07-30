@@ -20,6 +20,7 @@ map('n', 'rD', '<CMD>Glance definitions<CR>')
 map('n', 'rR', '<CMD>Glance references<CR>')
 map('n', 'rY', '<CMD>Glance type_definitions<CR>')
 map('n', 'rM', '<CMD>Glance implementations<CR>')
+map('n', '<leader>a', '<CMD>AerialToggle!<CR>', opts({ desc = 'toggle aerial' }))
 
 -- Snippets
 

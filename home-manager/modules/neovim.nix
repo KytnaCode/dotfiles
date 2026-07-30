@@ -57,6 +57,7 @@ in {
         lspkind-nvim # Add vscode-like lspkind indicators to completion menu.
 
         # UI
+        aerial-nvim
         glance-nvim # GoTo, References, etc previewer.
         lualine-nvim # Status line.
         fidget-nvim # TODO: not yet configured.
