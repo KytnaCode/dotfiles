@@ -18,6 +18,7 @@ return {
 
     require('mini.sessions').setup({
       autoread = true,
+      autowrite = false,
     })
   end,
 }
