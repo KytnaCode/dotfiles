@@ -118,11 +118,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785021931,
-        "narHash": "sha256-uV1kuPZSvlauOGwup8xAEUVnnmnvOWOFL/U57w73tTs=",
+        "lastModified": 1785535116,
+        "narHash": "sha256-wwkJZrUmWpDXbBIdbYnvYE7NiOYRseooRg264ywScXo=",
         "owner": "kytnacode",
         "repo": "yume",
-        "rev": "fe494aadff5a9006dada25dc21e27d5a88b20a93",
+        "rev": "500d38b13128c65451732ef176bc4490b54beccb",
         "type": "github"
       },
       "original": {
