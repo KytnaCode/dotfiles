@@ -6,6 +6,9 @@ return {
         url = '',
       },
       schemas = require('schemastore').yaml.schemas(),
+      format = {
+        enable = false,
+      },
     },
   },
 }
