@@ -131,7 +131,7 @@ in {
         selene # Linter.
         stylua # Formatter.
 
-        # Python
+        ## Python
         ruff
 
         # Misc
