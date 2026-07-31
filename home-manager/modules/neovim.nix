@@ -134,6 +134,9 @@ in {
         ## Python
         ruff
 
+        ## YAML.
+        yamlfmt
+
         # Misc
         delta # Required by actions-preview-nvim.
         luajitPackages.jsregexp # Required by luasnip.
