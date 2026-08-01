@@ -36,6 +36,7 @@ return {
       typescriptreact = javascript_formatters,
       python = { 'ruff_format', 'ruff_fix' },
       sh = { 'shfmt' },
+      yaml = { 'yamlfmt' },
     },
     format_on_save = {
       timeout_ms = 500,
