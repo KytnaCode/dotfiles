@@ -1,6 +1,8 @@
 {pkgs, ...}: {
   # Managed by custom modules.
   custom.programs = {
+    bat.enable = true;
+
     direnv.enable = true; # direnv and nix-direnv.
 
     git.enable = true; # VCS.

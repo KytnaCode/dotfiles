@@ -1,6 +1,7 @@
 {modules, ...}: {lib, ...}: {
   imports = with modules;
     [
+      bat
       direnv
       git
       input

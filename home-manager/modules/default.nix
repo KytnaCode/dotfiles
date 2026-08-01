@@ -2,6 +2,7 @@
   apps,
   inputs,
 }: {
+  bat = import ./bat.nix {inherit apps;};
   direnv = ./direnv.nix;
   git = import ./git.nix {inherit apps;};
   input = ./input.nix;

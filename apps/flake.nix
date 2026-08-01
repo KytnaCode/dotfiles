@@ -1,5 +1,6 @@
 {
   outputs = {self, ...}: {
+    bat = self + "/bat";
     nvim = self + "/nvim";
     kitty = self + "/kitty";
     hyprland = self + "/hyprland";
