@@ -41,4 +41,5 @@ return {
     i(0),
     t({ '', '}' }),
   }),
+  s('eachsystem', t('eachSystem = f: nixpkgs.lib.genAttrs systems (system: f (import nixpkgs {inherit system;}));')),
 }
