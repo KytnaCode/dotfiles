@@ -240,4 +240,20 @@ return {
   s('cxsig', {
     t('ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt)', 'defer cancel()'),
   }),
+  s(
+    'test',
+    fmta(
+      [[
+    func Test<>(t *testing.T) {
+      t.Parallel()
+
+      <>
+    }
+    ]],
+      {
+        i(1),
+        i(0),
+      }
+    )
+  ),
 }
