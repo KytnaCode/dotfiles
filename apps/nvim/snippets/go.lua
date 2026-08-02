@@ -237,11 +237,7 @@ return {
     )
   ),
   s('cxbg', { t('context.Background()') }),
-  s(
-    'cxsig',
-    { t([[
-    ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt)
-    defer cancel()
-  ]]) }
-  ),
+  s('cxsig', {
+    t('ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt)', 'defer cancel()'),
+  }),
 }
