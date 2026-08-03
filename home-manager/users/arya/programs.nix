@@ -30,6 +30,8 @@
     hyprpolkitagent.enable = true; # Enable hyprpolkitagent.
 
     podman.enable = true; # Enable podman for development.
+
+    ssh-agent.enable = true;
   };
 
   home.packages = with pkgs; [
