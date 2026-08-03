@@ -1,4 +1,5 @@
 require('options')
+require('filetype')
 require('lsp')
 require('keymaps')
 require('commands')
