@@ -108,6 +108,7 @@ in {
         yaml-language-server # YAML.
         harper # Spell checker.
         python3Packages.python-lsp-server # Python.
+        systemd-lsp # Systemd units.
 
         # Formatters & Linters
 
