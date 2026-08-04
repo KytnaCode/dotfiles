@@ -57,6 +57,7 @@
     zoxide # Smart cd
     harper # Spell checker.
     jq # Work with JSON in terminal.
+    sshfs # Very handy for editing remote files.
 
     # System
     btop # Resource monitor.
