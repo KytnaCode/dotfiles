@@ -2,15 +2,15 @@
   imports = with modules;
     [
       bat
-      ssh
       direnv
       git
-      input
       hyprland
+      input
       kitty
       neovim
-      starship
       registries
+      ssh
+      starship
       tmux
       zellij
       zsh
