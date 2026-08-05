@@ -23,6 +23,8 @@ with lib; let
       wrapProgram $out/bin/nvim --set NEOVIM_SYSTEM_MANAGED_PLUGINS_PATH "${pkgs.vimUtils.packDir config.programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start"
     '';
   };
+
+  block-sort-nvim = inputs.block-sort-nvim.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
   options.custom.programs.neovim = {
     enable = mkEnableOption "use dotfiles' neovim configuration";
@@ -68,6 +70,7 @@ in {
         inputs.yume.packages.${pkgs.stdenv.hostPlatform.system}.default # My neovim theme.
 
         # Utils
+        block-sort-nvim # Sort blocks of code (flake input, not from nixpkgs)
         luasnip # Snippet support.
         nvim-surround # Fast surround keymaps.
         nvim-autopairs # Autopairs.

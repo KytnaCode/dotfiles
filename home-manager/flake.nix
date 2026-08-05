@@ -17,6 +17,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    block-sort-nvim = {
+      url = "github:kytnacode/block-sort.nvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     apps.url = "../apps";
   };
 

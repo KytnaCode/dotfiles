@@ -11,6 +11,26 @@
       },
       "parent": []
     },
+    "block-sort-nvim": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785973152,
+        "narHash": "sha256-S5qhMHADJRf1lKrBtzJ89cmptgYm9P7PmYEO8CDQdvA=",
+        "owner": "kytnacode",
+        "repo": "block-sort.nvim",
+        "rev": "92d6668138260aa39aaefa6dc3c46d807eb1d56d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kytnacode",
+        "repo": "block-sort.nvim",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -90,6 +110,7 @@
     "root": {
       "inputs": {
         "apps": "apps",
+        "block-sort-nvim": "block-sort-nvim",
         "home-manager": "home-manager",
         "hyprquickshot": "hyprquickshot",
         "nixpkgs": "nixpkgs",
