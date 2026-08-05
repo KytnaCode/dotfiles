@@ -7,8 +7,8 @@
 
     git.enable = true; # VCS.
 
-    # My main editor.
     neovim = {
+      # My main editor.
       enable = true;
       defaultEditor = true; # Set EDITOR environment variable.
     };
@@ -58,10 +58,10 @@
 
     # Util
     fzf # Fuzzy search.
-    zoxide # Smart cd
     harper # Spell checker.
     jq # Work with JSON in terminal.
     sshfs # Very handy for editing remote files.
+    zoxide # Smart cd
 
     # System
     btop # Resource monitor.
