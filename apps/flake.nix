@@ -13,6 +13,7 @@
       config = self + "/git/config";
       ignorefile = self + "/git/global.gitignore";
     };
+    ssh = self + "/ssh/config";
     tmux = self + "/tmux";
     xdg-desktop-portal.hyprland = self + "/xdg-desktop-portal/hyprland-portals.conf";
     zellij = self + "/zellij";

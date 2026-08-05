@@ -2,6 +2,7 @@
   imports = with modules;
     [
       bat
+      ssh
       direnv
       git
       input

@@ -17,6 +17,12 @@
 
     hyprland.enable = true; # Window manager.
 
+    ssh = {
+      enable = true; # Enable ssh config.
+      sshfs.enable = true; # Install sshfs.
+      ssh-agent.enable = true; # Enable ssh-agent.
+    };
+
     zsh.enable = true; # My shell.
 
     starship.enable = true; # Shell theme.
@@ -30,8 +36,6 @@
     hyprpolkitagent.enable = true; # Enable hyprpolkitagent.
 
     podman.enable = true; # Enable podman for development.
-
-    ssh-agent.enable = true;
   };
 
   home.packages = with pkgs; [
