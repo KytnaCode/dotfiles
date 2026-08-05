@@ -14,12 +14,12 @@
       ./hardware-configuration.nix
     ]
     ++ (with custom; [
-      i18n
-      sound
       bluetooth
       fonts
-      networking
+      i18n
       kernel
+      networking
+      sound
     ]);
 
   environment.pathsToLink = ["/share/xdg-desktop-portal" "/share/applications"];
