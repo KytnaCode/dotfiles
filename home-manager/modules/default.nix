@@ -7,6 +7,7 @@
   git = import ./git.nix {inherit apps;};
   input = ./input.nix;
   hyprland = import ./hyprland.nix {inherit apps inputs;};
+  ssh = import ./ssh.nix {inherit apps;};
   kitty = import ./kitty.nix {inherit apps;};
   neovim = import ./neovim.nix {inherit apps inputs;};
   registries = import ./registries.nix {};

@@ -16,9 +16,9 @@
     lib.mkIf conf.enable {
       home.packages =
         [
-          pkgs.ssh
+          pkgs.openssh
         ]
-        ++ (lib.optional conf.sshfs.enable [pkgs.sshfs]);
+        ++ (lib.optional conf.sshfs.enable pkgs.sshfs);
 
       services.ssh-agent.enable = lib.mkIf conf.ssh-agent.enable true;
 
