@@ -10,6 +10,7 @@ local servers = {
   'nixd',
   'pylsp',
   'qmlls',
+  'sqls',
   'systemd_lsp',
   'tailwindcss',
   'taplo',

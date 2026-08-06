@@ -112,6 +112,7 @@ in {
         harper # Spell checker.
         python3Packages.python-lsp-server # Python.
         systemd-lsp # Systemd units.
+        sqls # SQL language server.
 
         # Formatters & Linters
 
