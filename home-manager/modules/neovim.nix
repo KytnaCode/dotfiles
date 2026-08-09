@@ -113,6 +113,7 @@ in {
         python3Packages.python-lsp-server # Python.
         systemd-lsp # Systemd units.
         sqls # SQL language server.
+        nginx-language-server # NGINX configuration files.
 
         # Formatters & Linters
 
