@@ -261,6 +261,7 @@ return {
   s('cancel', {
     t('defer cancel()'),
   }),
+  s('errCh', fmta('errCh := make(chan error, <>)', { i(1, 1) })),
   s(
     'bListenAndServe',
     fmta([[
