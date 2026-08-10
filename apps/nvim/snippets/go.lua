@@ -256,4 +256,9 @@ return {
       }
     )
   ),
+  s('cxcan', fmta('ctx, cancel := context.WithCancel(<>)', { i(1) })),
+  s('cxtime', fmta('ctx, cancel := context.WithTimeout(<>, <>)', { i(1), i(2) })),
+  s('cancel', {
+    t('defer cancel()'),
+  }),
 }
