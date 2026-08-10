@@ -261,4 +261,32 @@ return {
   s('cancel', {
     t('defer cancel()'),
   }),
+  s(
+    'bListenAndServe',
+    fmta([[
+  func ListenAndServe(ctx context.Context, serv *http.Server, shutdownTimeout time.Duration) error {
+    ctx, cancel := context.WithCancel(ctx)
+    defer cancel()
+
+    errCh := make(chan error, 1)
+
+    go func() {
+      <-ctx.Done()
+
+      shutdownCtx, cancel := context.WithTimeout(context.Background(), shutdownTimeout)
+      defer cancel()
+
+      errCh <- serv.Shutdown(shutdownCtx)
+      )
+    }()
+
+    err := serv.ListenAndServe()
+    if errors.Is(err, http.ErrServerClosed) {
+      err = nil
+    }
+
+    return errors.Join(err, <-errCh)
+  }
+  ]])
+  ),
 }
