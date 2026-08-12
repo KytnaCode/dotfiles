@@ -1,0 +1,191 @@
+// configuration constants.
+const (
+ keyLen  = 32
+ saltLen = 16
+ variant = "argon2id"
+)
+                                                                                              
+// ErrInvalidHash is returned if the given hash string doesn't match PHC format, uses a
+// hashing algorithm different of argon2id or uses an unsupported argon2 version.
+var ErrInvalidHash = errors.New("invalid hash string format")
+                                                                                              
+// defaultConfig contains the RFC parameter recommendation for memory constrained
+// environments.
+var defaultConfig = &config{
+	time:        3,
+	memory:      64 * 1024,
+	parallelism: 4,
+}
+                                                                                              
+// config contains argon2id parameters.
+type config struct {
+	time, memory uint32
+	parallelism  uint8
+}
+                                                                                              
+// Hash hashes a password with a secure key derivation function and return a string
+// representation suitable for storage in a database, file, etc.
+func Hash(clearText []byte) string {
+	salt := genSalt(saltLen)
+                                                                                              
+	conf := defaultConfig
+                                                                                              
+	rawHash := hash(clearText, salt, conf)
+                                                                                              
+	return formatHash(rawHash, salt, conf)
+}
+                                                                                              
+// hash is a wrapper over [argon2.IDKey] that takes a [config].
+func hash(clearText, salt []byte, conf *config) []byte {
+	return argon2.IDKey(clearText, salt, conf.time, conf.memory, conf.parallelism, keyLen)
+}
+                                                                                              
+// Verify verifies if a clear text matches a hash string representation. An error is returned
+// if hashString has an invalid format, if the hash string is valid but doesn't match text,
+// then no error but a false value is returned.
+func Verify(clearText []byte, hashString string) (bool, error) {
+	key, salt, conf, err := scanHash(hashString)
+	if err != nil {
+		return false, err
+	}
+                                                                                              
+	computedKey := hash(clearText, salt, conf)
+                                                                                              
+	return subtle.ConstantTimeCompare(key, computedKey) == 1, nil
+}
+                                                                                              
+// formatHash returns a PHC-formatted string for the given key, salt and configuration.
+func formatHash(key, salt []byte, conf *config) string {
+	encodedKey := base64.RawStdEncoding.EncodeToString(key)
+                                                                                              
+	encodedSalt := base64.RawStdEncoding.EncodeToString(salt)
+                                                                                              
+	return fmt.Sprintf(
+		"$%v$v=%v$m=%v,t=%v,p=%v$%v$%v",
+		variant,
+		argon2.Version,
+		conf.memory,
+		conf.time,
+		conf.parallelism,
+		encodedSalt,
+		encodedKey,
+	)
+}
+                                                                                              
+// scanHash takes a PHC-formatted string and extracts the key, salt and configuration
+// parameters from it. Returns [ErrInvalidHash] if hash string is malformed.
+func scanHash(hashString string) (key, salt []byte, conf *config, err error) {
+  // 1.       2.                3.                4.             5.
+	// $argon2id$v=<argon2-version$m=<m>,t=<t>,p=<p>$<base-64-salt>$<base-64-key>
+  const expectedComponents = 5
+                                                                                              
+	components := strings.Split(hashString, "$")
+                                                                                              
+  // Minus one because, as the PHC string starts by one dollar sign before the first
+  // component, the first part returned by [strings.split] will me empty.
+	if len(components)-1 != expectedComponents {
+		return nil, nil, nil, fmt.Errorf(
+		  "expected five dollar sign separated components: %w",
+		  ErrInvalidHash,
+		)
+	}
+                                                                                              
+  // Remove empty part.
+	components = components[1:]
+                                                                                              
+	actualVariant := components[0]
+                                                                                              
+  // Only accept argon2id keys.
+	if actualVariant != variant {
+		return nil, nil, nil, fmt.Errorf(
+		  "expected an argon2id hash: got: '%v': %w",
+      actualVariant,
+		  ErrInvalidHash,
+		)
+	}
+                                                                                              
+  // Match argon2 version.
+	version, err := getVersion(components[1])
+	if err != nil {
+		return nil, nil, nil, err
+	}
+                                                                                              
+	if version != argon2.Version {
+		return nil, nil, nil, fmt.Errorf("unsupported argon2 version: %w", ErrInvalidHash)
+	}
+                                                                                              
+	conf = new(config)
+                                                                                              
+	_, err = fmt.Sscanf(
+	  components[2],
+	  "m=%v,t=%v,p=%v",
+	  &conf.memory,
+	  &conf.time,
+	  &conf.parallelism,
+	)
+	if err != nil {
+		return nil, nil, nil, fmt.Errorf(
+		  "invalid parameters component format: %w: %w",
+      ErrInvalidHash,
+      err,
+		)
+	}
+                                                                                              
+	rawSalt, err := base64.RawStdEncoding.DecodeString(components[3])
+	if err != nil {
+		return nil, nil, nil, fmt.Errorf(
+		  "invalid salt in hash string: %w: %w",
+      ErrInvalidHash,
+		  err,
+		)
+	}
+                                                                                              
+	rawKey, err := base64.RawStdEncoding.DecodeString(components[4])
+	if err != nil {
+		return nil, nil, nil, fmt.Errorf(
+		  "invalid key in hash string: %w: %w",
+		  ErrInvalidHash,
+      err,
+		)
+	}
+                                                                                              
+	return rawKey, rawSalt, conf, nil
+}
+                                                                                              
+// getVersion extracts version number from second PHC component.
+func getVersion(versionComponent string) (int, error) {
+	parts := strings.Split(versionComponent, "=")
+                                                                                              
+  // first    second
+  // v     =  1
+	const expectedParts = 2
+                                                                                              
+	if len(parts) != expectedParts {
+		return 0, fmt.Errorf("invalid version component in hash string: %w", ErrInvalidHash)
+	}
+                                                                                              
+	if parts[0] != "v" {
+		return 0, fmt.Errorf("invalid version component in hash string: %w", ErrInvalidHash)
+	}
+                                                                                              
+	v, err := strconv.ParseInt(versionComponent, 10, 64)
+	if err != nil {
+		return 0, fmt.Errorf(
+		  "couldn't parse version number in hash string: %w: %w",
+      ErrInvalidHash,
+      err,
+		)
+	}
+                                                                                              
+	return int(v), nil
+}
+                                                                                              
+// genSalt generates a cryptographically secure salt of the given length.
+func genSalt(saltLen uint32) []byte {
+	salt := make([]byte, saltLen)
+                                                                                              
+  // [crypto/rand.Read] never returns an error.
+	_, _ = rand.Read(salt)
+                                                                                              
+	return salt
+}

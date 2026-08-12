@@ -4,7 +4,9 @@ local s = ls.snippet
 local i = ls.insert_node
 local t = ls.text_node
 local d = ls.dynamic_node
-local get_visual = require('luasnip-helpers').get_visual
+local helpers = require('luasnip-helpers')
+local get_visual = helpers.get_visual
+local read_block = helpers.read_block
 
 return {
   s(
@@ -261,33 +263,7 @@ return {
   s('cancel', {
     t('defer cancel()'),
   }),
-  s('errCh', fmta('errCh := make(chan error, <>)', { i(1, 1) })),
-  s(
-    'bListenAndServe',
-    fmta([[
-  func ListenAndServe(ctx context.Context, serv *http.Server, shutdownTimeout time.Duration) error {
-    ctx, cancel := context.WithCancel(ctx)
-    defer cancel()
-
-    errCh := make(chan error, 1)
-
-    go func() {
-      <-ctx.Done()
-
-      shutdownCtx, cancel := context.WithTimeout(context.Background(), shutdownTimeout)
-      defer cancel()
-
-      errCh <- serv.Shutdown(shutdownCtx)
-      )
-    }()
-
-    err := serv.ListenAndServe()
-    if errors.Is(err, http.ErrServerClosed) {
-      err = nil
-    }
-
-    return errors.Join(err, <-errCh)
-  }
-  ]])
-  ),
+  s('errCh', fmta('errCh := make(chan error, <>)', { i(1, '1') })),
+  s('bListenAndServe', fmta(read_block('go', 'listen_and_serve', '<>'), {})),
+  s('bArgon2id', fmta(read_block('go', 'argon2id', '<>'), {})),
 }
