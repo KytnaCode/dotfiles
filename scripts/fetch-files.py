@@ -1,9 +1,11 @@
-import sys
-from pathlib import Path
 import io
+import shutil
+import sys
+from hashlib import sha256
+from pathlib import Path
+
 import yaml
 from git import Repo
-from hashlib import sha256
 
 local_dir = ".fetch-files"
 
@@ -23,7 +25,7 @@ def main():
 
 
 def get_file(file):
-    repo = clone_or_get_repo(file["repo"])
+    repo = get_repo(file["repo"])
 
     commit = repo.commit(file["rev"])
 
@@ -61,11 +63,11 @@ def get_file(file):
     return
 
 
-def clone_or_get_repo(url: str):
+def get_repo(url: str):
     repo_path: Path = Path(local_dir).joinpath(url)
 
     if repo_path.exists():
-        return Repo(repo_path)
+        shutil.rmtree(repo_path)
 
     return Repo.clone_from(url, repo_path)
 
