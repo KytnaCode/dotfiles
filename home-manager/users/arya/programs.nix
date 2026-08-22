@@ -65,6 +65,7 @@
 
     # System
     bluetui # Bluetooth tui.
+    impala # Network tui.
     btop # Resource monitor.
     libnotify # notify-send command.
     podman-compose # Containers.
