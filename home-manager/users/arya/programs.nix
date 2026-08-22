@@ -49,6 +49,7 @@
 
     # Communication
     signal-desktop # Messaging app.
+    discord # Messaging app.
 
     # Entertainment
     spotify # I cannot live without music.

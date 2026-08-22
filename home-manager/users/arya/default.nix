@@ -28,6 +28,7 @@
       "lunacy"
       "obsidian"
       "spotify"
+      "discord"
     ];
 
   custom = {
