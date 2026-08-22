@@ -23,6 +23,7 @@
       extraPortals = with pkgs; [
         xdg-desktop-portal-gnome
       ];
+      config.common.default = "*";
     };
 
     xdg.configFile = {
