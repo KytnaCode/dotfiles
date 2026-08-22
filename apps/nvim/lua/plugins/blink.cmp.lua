@@ -79,6 +79,7 @@ return {
 
     fuzzy = {
       sorts = {
+        'score',
         function(a, b)
           local kinds = vim.lsp.protocol.CompletionItemKind
 
