@@ -64,6 +64,7 @@
     zoxide # Smart cd
 
     # System
+    bluetui # Bluetooth tui.
     btop # Resource monitor.
     libnotify # notify-send command.
     podman-compose # Containers.
