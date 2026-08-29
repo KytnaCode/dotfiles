@@ -46,6 +46,7 @@
     obsidian # Note taking.
     zotero # Academic research.
     libreoffice # Office Suite.
+    manuskript # Novel writing software.
 
     # Communication
     signal-desktop # Messaging app.
