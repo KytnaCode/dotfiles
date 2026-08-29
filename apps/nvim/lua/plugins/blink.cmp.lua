@@ -130,6 +130,12 @@ return {
           },
         },
       },
+
+      accept = {
+        auto_brackets = {
+          enabled = false,
+        },
+      },
     },
   },
 }
