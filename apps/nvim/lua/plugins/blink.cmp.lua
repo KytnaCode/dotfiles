@@ -60,6 +60,15 @@ return {
       },
     },
 
+    cmdline = {
+      enabled = true,
+      completion = {
+        ghost_text = {
+          enabled = true,
+        },
+      },
+    },
+
     snippets = { preset = 'luasnip' },
 
     sources = {
