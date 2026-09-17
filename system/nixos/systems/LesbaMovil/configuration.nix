@@ -27,7 +27,11 @@
   home-manager = {
     useGlobalPkgs = false;
     useUserPackages = true;
-    users.arya = dotfiles-hm.homeManagerModules.arya;
+
+    users = {
+      arya = dotfiles-hm.homeManagerModules.arya;
+      sasa = dotfiles-hm.homeManagerModules.sasa;
+    };
   };
 
   services.logind.settings.Login.HandleLidSwitch = "ignore";
@@ -68,7 +72,10 @@
 
   services = {
     displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
+    desktopManager = {
+      gnome.enable = true;
+      plasma6.enable = true;
+    };
 
     fprintd.enable = true;
   };
@@ -78,13 +85,20 @@
     enable32Bit = true;
   };
 
-  users.users.arya = {
-    isNormalUser = true;
-    extraGroups = ["wheel"];
-    shell = pkgs.zsh;
-    packages = with pkgs; [
-      vim
-    ];
+  users.users = {
+    arya = {
+      isNormalUser = true;
+      extraGroups = ["wheel"];
+      shell = pkgs.zsh;
+      packages = with pkgs; [
+        vim
+      ];
+    };
+
+    sasa = {
+      isNormalUser = true;
+      shell = pkgs.zsh;
+    };
   };
 
   # This option defines the first version of NixOS you have installed on this particular machine,

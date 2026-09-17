@@ -1,11 +1,19 @@
 {modules, ...}: {...}: {
-  imports =
+  imports = with modules;
     [
-      modules.zsh
+      input
+      kitty
+      starship
+      zsh
     ]
     ++ [
       ./programs.nix
     ];
+
+  custom.input.fcitx5 = {
+    enable = true;
+    japaneseKeyboard = true;
+  };
 
   programs.home-manager.enable = true;
 
