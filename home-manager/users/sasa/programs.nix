@@ -7,6 +7,7 @@
     builtins.elem (lib.getName pkg) [
       "code"
       "discord"
+      "discord-unwrapped"
       "geogebra"
       "google-chrome"
       "spotify"
@@ -59,6 +60,6 @@
 
     # Programming
     python3
-    (vscode-fhsWithPackages (p: with p; [python3]))
+    (vscode.fhsWithPackages (p: with p; [python3 bubblewrap]))
   ];
 }

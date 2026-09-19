@@ -29,6 +29,7 @@
       "obsidian"
       "spotify"
       "discord"
+      "discord-unwrapped"
     ];
 
   custom = {
