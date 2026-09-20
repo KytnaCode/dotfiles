@@ -64,6 +64,9 @@ local autostart_applications = {
       workspace = 4,
     },
   },
+  ibus = {
+    cmd = 'ibus start --type wayland',
+  },
 }
 
 hl.on('hyprland.start', function()

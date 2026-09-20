@@ -17,6 +17,7 @@
       bluetooth
       fonts
       i18n
+      input
       kernel
       networking
       sound
@@ -38,6 +39,19 @@
 
   custom = {
     i18n.enable = true;
+    input = {
+      enable = true;
+
+      fcitx5 = {
+        enable = false;
+        japaneseKeyboard = true;
+      };
+
+      ibus = {
+        enable = true;
+        japaneseKeyboard = true;
+      };
+    };
     hardware = {
       bluetooth.enable = true;
       sound.enable = true;

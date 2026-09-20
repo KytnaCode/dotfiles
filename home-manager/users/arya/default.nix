@@ -36,7 +36,7 @@
     registries.templates.enable = true;
 
     input.fcitx5 = {
-      enable = true;
+      enable = false;
       japaneseKeyboard = true;
     };
   };

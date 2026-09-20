@@ -11,7 +11,7 @@
     ];
 
   custom.input.fcitx5 = {
-    enable = true;
+    enable = false;
     japaneseKeyboard = true;
   };
 
