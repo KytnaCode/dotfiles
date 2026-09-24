@@ -30,7 +30,7 @@ hl.bind('SUPER + SHIFT + n', hl.dsp.exec_cmd('swaync-client -t -sw'))
 
 -- Apps
 local terminal = 'kitty'
-local browser = 'floorp'
+local browser = 'brave'
 
 local function launch(name, pwa_id)
   return string.format('%s --name %s --start-ssb {%s}', browser, name, pwa_id)
