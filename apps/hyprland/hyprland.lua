@@ -119,4 +119,8 @@ hl.bind('SUPER + mouse:273', hl.dsp.window.resize(), { mouse = true })
 for i = 1, 9, 1 do
   hl.bind('SUPER + ' .. i, hl.dsp.focus({ workspace = i }))
   hl.bind('SUPER + SHIFT + ' .. i, hl.dsp.window.move({ workspace = i, follow = true }))
+  hl.workspace_rule({
+    workspace = tostring(i),
+    persistent = true,
+  })
 end
