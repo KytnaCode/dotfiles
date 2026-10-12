@@ -20,12 +20,6 @@ hl.config({
   },
 })
 
--- Notifications
-hl.on('hyprland.start', function()
-  hl.exec_cmd('swaync')
-  hl.exec_cmd('mpvpaper -vs -o "no-audio loop" ALL "$HOME/Videos/Wallpaper.mp4"')
-end)
-
 hl.bind('SUPER + SHIFT + n', hl.dsp.exec_cmd('swaync-client -t -sw'))
 
 -- Apps
@@ -36,6 +30,12 @@ hl.bind('SUPER + RETURN', hl.dsp.exec_cmd(terminal))
 hl.bind('SUPER + b', hl.dsp.exec_cmd(browser))
 
 local autostart_applications = {
+  swaync = {
+    cmd = 'swaync',
+  },
+  wallpaper = {
+    cmd = 'mpvpaper -vs -d "no-audio loop" ALL "$HOME/Videos/Wallpaper.mp4"',
+  },
   terminal = {
     cmd = terminal,
     rules = {
