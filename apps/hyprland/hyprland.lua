@@ -23,35 +23,47 @@ hl.config({
 hl.bind('SUPER + SHIFT + n', hl.dsp.exec_cmd('swaync-client -t -sw'))
 
 -- Apps
-local terminal = 'kitty'
-local browser = 'brave'
+local apps = {
+  terminal = 'kitty',
+  browser = 'brave',
+  notification_daemon = 'swaync',
+  wallpaper_daemon = 'mpvpaper -vs -d "no-audio loop" ALL "$HOME/Videos/Wallpaper.mp4"',
+  flashcards_app = 'anki',
+  note_taking_app = 'obsidian',
+}
 
-hl.bind('SUPER + RETURN', hl.dsp.exec_cmd(terminal))
-hl.bind('SUPER + b', hl.dsp.exec_cmd(browser))
+hl.bind('SUPER + RETURN', hl.dsp.exec_cmd(apps.terminal))
+hl.bind('SUPER + b', hl.dsp.exec_cmd(apps.browser))
 
 local autostart_applications = {
-  swaync = {
-    cmd = 'swaync',
+  notification_daemon = {
+    cmd = apps.notification_daemon,
   },
   wallpaper = {
-    cmd = 'mpvpaper -vs -d "no-audio loop" ALL "$HOME/Videos/Wallpaper.mp4"',
+    cmd = apps.wallpaper_daemon,
   },
   terminal = {
-    cmd = terminal,
+    cmd = apps.terminal,
     rules = {
       workspace = 1,
     },
   },
   browser = {
-    cmd = browser,
+    cmd = apps.browser,
     rules = {
       workspace = 2,
     },
   },
-  anki = {
-    cmd = 'anki',
+  note_taking = {
+    cmd = apps.note_taking_app,
     rules = {
       workspace = 4,
+    },
+  },
+  flashcards = {
+    cmd = apps.flashcards_app,
+    rules = {
+      workspace = 5,
     },
   },
   ibus = {
