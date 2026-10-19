@@ -47,6 +47,7 @@
     zotero # Academic research.
     libreoffice # Office Suite.
     manuskript # Novel writing software.
+    zettlr # Academic writing software.
 
     # Communication
     signal-desktop # Messaging app.
