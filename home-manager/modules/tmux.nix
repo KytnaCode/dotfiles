@@ -11,6 +11,9 @@
       tmux
       gitmux
 
+      # Required by tmux easy motion.
+      python3
+
       # Required by muxile.
       websocat
       jq
