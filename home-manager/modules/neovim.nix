@@ -110,7 +110,7 @@ in {
         vscode-langservers-extracted # HTML, CSS and others.
         yaml-language-server # YAML.
         harper # Spell checker.
-        python3Packages.python-lsp-server # Python.
+        basedpyright # Python.
         systemd-lsp # Systemd units.
         sqls # SQL language server.
         nginx-language-server # NGINX configuration files.
