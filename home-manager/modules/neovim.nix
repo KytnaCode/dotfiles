@@ -70,6 +70,7 @@ in {
         inputs.yume.packages.${pkgs.stdenv.hostPlatform.system}.default # My neovim theme.
 
         # Utils
+        snacks-nvim
         block-sort-nvim # Sort blocks of code (flake input, not from nixpkgs)
         luasnip # Snippet support.
         nvim-surround # Fast surround keymaps.
