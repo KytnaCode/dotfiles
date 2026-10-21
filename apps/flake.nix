@@ -12,6 +12,7 @@
     starship = self + "/starship/starship.toml";
     tmux = self + "/tmux";
     xdg-desktop-portal.hyprland = self + "/xdg-desktop-portal/hyprland-portals.conf";
+    yamlfmt = self + "/yamlfmt";
     zellij = self + "/zellij";
     zsh = {
       zshrc = self + "/zsh/.zshrc";

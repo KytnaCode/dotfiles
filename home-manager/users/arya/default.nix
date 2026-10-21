@@ -12,6 +12,7 @@
       ssh
       starship
       tmux
+      yamlfmt
       zellij
       zsh
     ]

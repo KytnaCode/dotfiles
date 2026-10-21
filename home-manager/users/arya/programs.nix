@@ -7,15 +7,15 @@
 
     git.enable = true; # VCS.
 
+    hyprland.enable = true; # Window manager.
+
+    kitty.enable = true; # Terminal emulator.
+
     neovim = {
       # My main editor.
       enable = true;
       defaultEditor = true; # Set EDITOR environment variable.
     };
-
-    kitty.enable = true; # Terminal emulator.
-
-    hyprland.enable = true; # Window manager.
 
     ssh = {
       enable = true; # Enable ssh config.
@@ -23,13 +23,18 @@
       ssh-agent.enable = true; # Enable ssh-agent.
     };
 
-    zsh.enable = true; # My shell.
-
     starship.enable = true; # Shell theme.
 
     tmux.enable = true; # Better terminal multiplexer.
 
+    yamlfmt = {
+      enable = true;
+      globalConfig = true;
+    };
+
     zellij.enable = false; # Terminal multiplexer.
+
+    zsh.enable = true; # My shell.
   };
 
   services = {
