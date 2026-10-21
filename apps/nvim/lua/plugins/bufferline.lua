@@ -10,8 +10,15 @@ return {
       },
       diagnostics = 'nvim_lsp',
       close_command = 'Bdelete: %d',
-      right_mouse_command = 'Bdelete: %d',
-      middle_mouse_command = 'Bwipeout: %d',
+      right_mouse_command = function(bufnr)
+        Snacks.bufdelete(bufnr)
+      end,
+      middle_mouse_command = function(bufnr)
+        Snacks.bufdelete({
+          buf = bufnr,
+          wipe = true,
+        })
+      end,
       offsets = {
         {
           filetype = 'neo-tree',

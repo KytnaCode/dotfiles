@@ -94,7 +94,6 @@ in {
         nui-nvim # UI library, required by other plugins.
         plenary-nvim # Utility library, required by other plugins.
         nvim-web-devicons # Use Nerdfont icons in UI.
-        bufdelete-nvim # Delete buffer without mess window layout.
         SchemaStore-nvim # Get json and yaml schemas from SchemaStore.
       ];
 

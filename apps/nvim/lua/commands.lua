@@ -27,13 +27,9 @@ end, {
 local sessions = require('mini.sessions')
 
 cmd('RestartSession', function()
-  sessions.delete(nil, { force = true })
+  pcall(sessions.delete, nil, { force = true })
 
-  local bufs = vim.api.nvim_list_bufs()
-
-  for _, bufnr in ipairs(bufs) do
-    vim.api.nvim_buf_delete(bufnr, { force = true })
-  end
+  Snacks.bufdelete.all()
 end, {
   nargs = 0,
   desc = 'Delete session and close all bufers',
