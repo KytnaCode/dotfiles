@@ -48,6 +48,8 @@
     libreoffice # Office Suite.
     manuskript # Novel writing software.
     zettlr # Academic writing software.
+    filen-desktop # Cloud storage.
+    filen-cli # Cloud storage.
 
     # Communication
     signal-desktop # Messaging app.
