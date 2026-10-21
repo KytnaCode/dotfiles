@@ -45,7 +45,7 @@
     lunacy # UI Design.
     obsidian # Note taking.
     zotero # Academic research.
-    libreoffice # Office Suite.
+    onlyoffice-desktopeditors # Office suite.
     manuskript # Novel writing software.
     zettlr # Academic writing software.
     filen-desktop # Cloud storage.
