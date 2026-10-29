@@ -72,6 +72,8 @@
     jq # Work with JSON in terminal.
     sshfs # Very handy for editing remote files.
     zoxide # Smart cd
+    beanquery # Required by obsidian's plugin "beancount ledger".
+    beanprice # Same as above.
 
     # System
     bluetui # Bluetooth tui.
