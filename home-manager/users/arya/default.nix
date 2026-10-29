@@ -31,8 +31,12 @@
       "spotify"
       "discord"
       "discord-unwrapped"
-      "firefox-esr-140-bin-unwrapped"
+      "firefox-esr-140-bin-unwrapped" # TODO: Remove after upgrade to Zotero 11.
     ];
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "firefox-esr-140-bin-unwrapped-140.17.0esr" # TODO: Remove after upgrade to Zotero 11.
+  ];
 
   custom = {
     registries.templates.enable = true;
