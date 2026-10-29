@@ -85,5 +85,6 @@
     podman-compose # Containers.
     wl-clipboard # Copy and paste from terminal.
     libsecret
+    texliveBasic
   ];
 }
