@@ -31,6 +31,7 @@
       "spotify"
       "discord"
       "discord-unwrapped"
+      "firefox-esr-140-bin-unwrapped"
     ];
 
   custom = {
