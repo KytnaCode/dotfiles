@@ -32,7 +32,6 @@
     krita # Drawing software.
     libreoffice-qt6 # Office suite.
     manuskript # Novel writhing app.
-    openshot-qt # Video editor.
     scribus # Publishing software.
     thunderbird # Email client.
 
