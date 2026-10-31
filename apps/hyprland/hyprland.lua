@@ -1,4 +1,6 @@
 -- Load modules.
+local apps = require('apps')
+
 require('window_rules').setup_window_rules()
 
 -- Monitors
@@ -24,60 +26,8 @@ hl.config({
 
 hl.bind('SUPER + SHIFT + n', hl.dsp.exec_cmd('swaync-client -t -sw'))
 
--- Apps
-local apps = {
-  terminal = 'kitty',
-  browser = 'brave',
-  notification_daemon = 'swaync',
-  wallpaper_daemon = 'mpvpaper -vs -d "no-audio loop" ALL "$HOME/Videos/Wallpaper.mp4"',
-  flashcards_app = 'anki',
-  note_taking_app = 'obsidian',
-}
-
 hl.bind('SUPER + RETURN', hl.dsp.exec_cmd(apps.terminal))
 hl.bind('SUPER + b', hl.dsp.exec_cmd(apps.browser))
-
-local autostart_applications = {
-  notification_daemon = {
-    cmd = apps.notification_daemon,
-  },
-  wallpaper = {
-    cmd = apps.wallpaper_daemon,
-  },
-  terminal = {
-    cmd = apps.terminal,
-    rules = {
-      workspace = 1,
-    },
-  },
-  browser = {
-    cmd = apps.browser,
-    rules = {
-      workspace = 2,
-    },
-  },
-  note_taking = {
-    cmd = apps.note_taking_app,
-    rules = {
-      workspace = 4,
-    },
-  },
-  flashcards = {
-    cmd = apps.flashcards_app,
-    rules = {
-      workspace = 5,
-    },
-  },
-  ibus = {
-    cmd = 'ibus start --type wayland',
-  },
-}
-
-hl.on('hyprland.start', function()
-  for _, app in pairs(autostart_applications) do
-    hl.exec_cmd(app.cmd, app.rules)
-  end
-end)
 
 -- Utils
 hl.bind('SUPER + p', hl.dsp.exec_cmd('hyprquickshot -n'))
