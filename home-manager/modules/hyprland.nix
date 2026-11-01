@@ -22,14 +22,17 @@
       enable = true;
       extraPortals = with pkgs; [
         xdg-desktop-portal-gnome
+        xdg-desktop-portal-hyprland
+        xdg-desktop-portal-termfilechooser
       ];
-      config.common.default = "*";
     };
 
     xdg.configFile = {
       "hypr".source = apps.hyprland;
 
       "xdg-desktop-portal/hyprland-portals.conf".source = apps.xdg-desktop-portal.hyprland;
+
+      "xdg-desktop-portal-termfilechooser".source = apps.filechooser;
 
       "systemd/user/vicinae.service".source = "${pkgs.vicinae}/share/systemd/user/vicinae.service";
     };

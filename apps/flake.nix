@@ -1,6 +1,7 @@
 {
   outputs = {self, ...}: {
     bat = self + "/bat";
+    filechooser = self + "/xdg-desktop-portal-filechooser";
     git = {
       config = self + "/git/config";
       ignorefile = self + "/git/global.gitignore";

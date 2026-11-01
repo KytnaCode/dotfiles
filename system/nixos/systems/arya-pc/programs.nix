@@ -9,7 +9,7 @@
   };
 
   environment = {
-    pathsToLink = ["/share/zsh"];
+    pathsToLink = ["/share/zsh" "/share/xdg-desktop-portal" "/share/applications"];
 
     sessionVariables.NIXOS_OZONE_WL = "1";
 
