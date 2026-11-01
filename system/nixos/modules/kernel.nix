@@ -40,7 +40,7 @@
         "randomize_kstack_offset=on"
         "vsyscall=none"
         "debugfs=off"
-        "lockdown=confidentiality"
+        # "lockdown=confidentiality" # Error on boot after upgrade to Linux 7.3.0.
         "quiet"
         "loglevel=0"
       ];
