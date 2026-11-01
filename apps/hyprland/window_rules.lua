@@ -49,9 +49,29 @@ local window_rules = {
     float = true,
     size = '750 650',
   },
-}
 
-local M = {}
+  -- Obsidian
+  {
+    name = 'Obsidian Settings',
+    match = {
+      initial_class = '^md.obsidian.Obsidian$',
+      initial_title = '^Settings - .*$',
+    },
+    center = true,
+    float = true,
+    size = '750 650',
+  },
+  {
+    name = 'Obsidian Community Plugins',
+    match = {
+      initial_class = '^md.obsidian.Obsidian$',
+      initial_title = '^Community plugins - .*$',
+    },
+    center = true,
+    float = true,
+    size = '850 700',
+  },
+}
 
 for _, rule in ipairs(window_rules) do
   hl.window_rule(rule)
