@@ -71,6 +71,18 @@ local window_rules = {
     float = true,
     size = '850 700',
   },
+
+  -- File chooser
+  {
+    name = 'File chooser',
+    match = {
+      initial_class = '^kitty$',
+      initial_title = '^File Chooser$',
+    },
+    center = true,
+    float = true,
+    size = '1000 600',
+  },
 }
 
 for _, rule in ipairs(window_rules) do
