@@ -1,5 +1,6 @@
 -- Load modules.
 require('window_rules').setup_window_rules()
+require('keymaps')
 
 -- Monitors
 hl.monitor({
