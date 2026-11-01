@@ -53,10 +53,6 @@ local window_rules = {
 
 local M = {}
 
-function M.setup_window_rules()
-  for _, rule in ipairs(window_rules) do
-    hl.window_rule(rule)
-  end
+for _, rule in ipairs(window_rules) do
+  hl.window_rule(rule)
 end
-
-return M

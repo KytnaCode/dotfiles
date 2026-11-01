@@ -1,5 +1,5 @@
 -- Load modules.
-require('window_rules').setup_window_rules()
+require('window_rules')
 require('keymaps')
 require('autostart')
 
