@@ -13,6 +13,7 @@
     tmux = self + "/tmux";
     xdg-desktop-portal.hyprland = self + "/xdg-desktop-portal/hyprland-portals.conf";
     yamlfmt = self + "/yamlfmt";
+    yazi = self + "/yazi";
     zellij = self + "/zellij";
     zsh = {
       zshrc = self + "/zsh/.zshrc";

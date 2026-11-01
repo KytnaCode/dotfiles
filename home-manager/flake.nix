@@ -22,6 +22,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    yazi.url = "github:sxyazi/yazi";
+
     apps.url = "../apps";
   };
 

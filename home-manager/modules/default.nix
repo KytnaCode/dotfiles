@@ -14,6 +14,7 @@
   starship = import ./starship.nix {inherit apps;};
   tmux = import ./tmux.nix {inherit apps;};
   yamlfmt = import ./yamlfmt.nix {inherit apps;};
+  yazi = import ./yazi.nix {inherit apps inputs;};
   zellij = import ./zellij.nix {inherit apps;};
   zsh = import ./zsh.nix {inherit apps;};
 }

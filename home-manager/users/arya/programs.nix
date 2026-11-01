@@ -32,6 +32,8 @@
       globalConfig = true;
     };
 
+    yazi.enable = true;
+
     zellij.enable = false; # Terminal multiplexer.
 
     zsh.enable = true; # My shell.

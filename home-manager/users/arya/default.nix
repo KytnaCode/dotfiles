@@ -13,6 +13,7 @@
       starship
       tmux
       yamlfmt
+      yazi
       zellij
       zsh
     ]
