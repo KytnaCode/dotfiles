@@ -36,14 +36,8 @@ local autostart_applications = {
   },
 }
 
-local M = {}
-
-function M.setup_autostart_apps()
-  hl.on('hyprland.start', function()
-    for _, app in pairs(autostart_applications) do
-      hl.dispatch(hl.dsp.exec_cmd(app.cmd, app.rules))
-    end
-  end)
-end
-
-return M
+hl.on('hyprland.start', function()
+  for _, app in pairs(autostart_applications) do
+    hl.dispatch(hl.dsp.exec_cmd(app.cmd, app.rules))
+  end
+end)

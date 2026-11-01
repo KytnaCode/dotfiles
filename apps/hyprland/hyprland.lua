@@ -1,6 +1,7 @@
 -- Load modules.
 require('window_rules').setup_window_rules()
 require('keymaps')
+require('autostart')
 
 -- Monitors
 hl.monitor({
