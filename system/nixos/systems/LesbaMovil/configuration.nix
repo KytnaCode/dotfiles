@@ -43,12 +43,12 @@
       enable = true;
 
       fcitx5 = {
-        enable = false;
+        enable = true;
         japaneseKeyboard = true;
       };
 
       ibus = {
-        enable = true;
+        enable = false;
         japaneseKeyboard = true;
       };
     };
