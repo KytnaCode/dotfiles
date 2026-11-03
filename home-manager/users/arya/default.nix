@@ -39,6 +39,11 @@
     "firefox-esr-140-bin-unwrapped-140.17.0esr" # TODO: Remove after upgrade to Zotero 11.
   ];
 
+  nix.settings = {
+    extra-substituters = ["https://yazi.cachix.org"];
+    extra-trusted-public-keys = ["yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="];
+  };
+
   custom = {
     registries.templates.enable = true;
 
