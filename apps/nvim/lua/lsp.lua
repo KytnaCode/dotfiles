@@ -2,7 +2,7 @@ local servers = {
   'bashls',
   'cssls',
   'gopls',
-  'harper_ls',
+  -- 'harper_ls',
   'hls',
   'html',
   'jsonls',
