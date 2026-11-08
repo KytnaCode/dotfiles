@@ -34,6 +34,7 @@ return {
       nix = { 'alejandra' },
       python = { 'ruff_format', 'ruff_fix' },
       sh = { 'shfmt' },
+      tex = { 'tex-fmt' },
       typescript = javascript_formatters,
       typescriptreact = javascript_formatters,
       yaml = { 'yamlfmt' },

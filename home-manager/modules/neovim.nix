@@ -128,6 +128,9 @@ in {
         eslint_d # Javascript & Typescript Linter.
         prettierd # Javascript & Typescript Formatter.
 
+        ## Latex
+        tex-fmt # Latex formatter.
+
         ## Lua
         selene # Linter.
         stylua # Formatter.
