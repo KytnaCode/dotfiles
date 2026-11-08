@@ -151,6 +151,7 @@ in {
         delta # Required by actions-preview-nvim.
         luajitPackages.jsregexp # Required by luasnip.
         ripgrep # Fast grep.
+        zathura # PDF viewer.
       ];
 
       withNodeJs = true;
