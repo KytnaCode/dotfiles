@@ -55,74 +55,74 @@ in {
 
         # Lsp
         blink-cmp # Completion.
-        nvim-lspconfig # LSP config.
         lspkind-nvim # Add vscode-like lspkind indicators to completion menu.
+        nvim-lspconfig # LSP config.
 
         # UI
         aerial-nvim
-        glance-nvim # GoTo, References, etc previewer.
-        lualine-nvim # Status line.
-        fidget-nvim # TODO: not yet configured.
-        edgy-nvim # Better layout management. I cannot live without this.
         bufferline-nvim # I rarely use the buffer line, but makes me feel more comfortable.
-        lsp_signature-nvim ## Show lsp_signature while writing.
-        tiny-inline-diagnostic-nvim # Inline lsp diagnostics.
+        edgy-nvim # Better layout management. I cannot live without this.
+        fidget-nvim # TODO: not yet configured.
+        glance-nvim # GoTo, References, etc previewer.
         inputs.yume.packages.${pkgs.stdenv.hostPlatform.system}.default # My neovim theme.
+        lsp_signature-nvim ## Show lsp_signature while writing.
+        lualine-nvim # Status line.
+        tiny-inline-diagnostic-nvim # Inline lsp diagnostics.
 
         # Utils
-        vimtex # Better latex support.
-        snacks-nvim
-        block-sort-nvim # Sort blocks of code (flake input, not from nixpkgs)
-        luasnip # Snippet support.
-        nvim-surround # Fast surround keymaps.
-        nvim-autopairs # Autopairs.
-        nvim-ts-autotag # Autopairs for html, jsx and tsx tags.
         actions-preview-nvim # Previewer for code actions.
-        telescope-nvim # Fuzzy finder.
-        telescope-fzf-native-nvim # Native fzf implementation for telescope-nvim.
-        lspsaga-nvim # A bunch of lsp utilities.
-        gitsigns-nvim # Git utils.
-        trouble-nvim # Panel for diagnostics.
-        neo-tree-nvim # File tree.
-        vim-fugitive # Useful Git features.
-        toggleterm-nvim # Used for floating term.
+        block-sort-nvim # Sort blocks of code (flake input, not from nixpkgs)
         conform-nvim # Auto run formatters.
-        nvim-lint # Auto run linters.
+        gitsigns-nvim # Git utils.
+        lspsaga-nvim # A bunch of lsp utilities.
+        luasnip # Snippet support.
         mini-nvim # A bunch of QoL utilities.
+        neo-tree-nvim # File tree.
+        nvim-autopairs # Autopairs.
+        nvim-lint # Auto run linters.
+        nvim-surround # Fast surround keymaps.
+        nvim-ts-autotag # Autopairs for html, jsx and tsx tags.
+        snacks-nvim
+        telescope-fzf-native-nvim # Native fzf implementation for telescope-nvim.
+        telescope-nvim # Fuzzy finder.
+        toggleterm-nvim # Used for floating term.
+        trouble-nvim # Panel for diagnostics.
+        vim-fugitive # Useful Git features.
+        vimtex # Better latex support.
 
         # Misc
-        ltex_extra-nvim # Handle LanguageTool code actions.
-        nvim-treesitter.withAllGrammars # Treesitter grammars.
-        nui-nvim # UI library, required by other plugins.
-        plenary-nvim # Utility library, required by other plugins.
-        nvim-web-devicons # Use Nerdfont icons in UI.
         SchemaStore-nvim # Get json and yaml schemas from SchemaStore.
+        ltex_extra-nvim # Handle LanguageTool code actions.
+        nui-nvim # UI library, required by other plugins.
+        nvim-treesitter.withAllGrammars # Treesitter grammars.
+        nvim-web-devicons # Use Nerdfont icons in UI.
+        plenary-nvim # Utility library, required by other plugins.
       ];
 
       extraPackages = with pkgs; [
         # Language Servers
+        basedpyright # Python.
         bash-language-server # Bash.
-        nixd # Nix.
-        typescript-language-server # Javascript & Typescript.
         gopls # Go.
-        lua-language-server # Lua.
+        harper # Spell checker.
         kdePackages.qtdeclarative # QML.
+        ltex-ls-plus # LanguageTool support.
+        lua-language-server # Lua.
+        nginx-language-server # NGINX configuration files.
+        nixd # Nix.
+        sqls # SQL language server.
+        systemd-lsp # Systemd units.
         tailwindcss-language-server # Tailwind classes.
         taplo # TOML.
+        typescript-language-server # Javascript & Typescript.
         vscode-langservers-extracted # HTML, CSS and others.
         yaml-language-server # YAML.
-        harper # Spell checker.
-        basedpyright # Python.
-        systemd-lsp # Systemd units.
-        sqls # SQL language server.
-        nginx-language-server # NGINX configuration files.
-        ltex-ls-plus # LanguageTool support.
 
         # Formatters & Linters
 
         ## Shell.
-        shfmt
         shellcheck
+        shfmt
 
         ## Nix
         alejandra # Formatter
