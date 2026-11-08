@@ -114,6 +114,7 @@ in {
         systemd-lsp # Systemd units.
         tailwindcss-language-server # Tailwind classes.
         taplo # TOML.
+        texlab # Latex.
         typescript-language-server # Javascript & Typescript.
         vscode-langservers-extracted # HTML, CSS and others.
         yaml-language-server # YAML.

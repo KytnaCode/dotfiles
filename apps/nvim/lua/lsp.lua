@@ -17,6 +17,7 @@ local servers = {
   'systemd_lsp',
   'tailwindcss',
   'taplo',
+  'texlab',
   'ts_ls',
   'yamlls',
 }
