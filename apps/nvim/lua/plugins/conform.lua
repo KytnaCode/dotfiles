@@ -27,15 +27,15 @@ return {
   ---@type conform.setupOpts
   opts = {
     formatters_by_ft = {
-      lua = { 'stylua' },
-      nix = { 'alejandra' },
       go = { 'golangci-lint' },
       javascript = javascript_formatters,
       javascriptreact = javascript_formatters,
-      typescript = javascript_formatters,
-      typescriptreact = javascript_formatters,
+      lua = { 'stylua' },
+      nix = { 'alejandra' },
       python = { 'ruff_format', 'ruff_fix' },
       sh = { 'shfmt' },
+      typescript = javascript_formatters,
+      typescriptreact = javascript_formatters,
       yaml = { 'yamlfmt' },
     },
     format_on_save = {
