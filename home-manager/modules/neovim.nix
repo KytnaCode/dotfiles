@@ -121,28 +121,28 @@ in {
 
         # Formatters & Linters
 
-        ## Shell.
-        shellcheck
-        shfmt
+        ## Go
+        golangci-lint # Formatter and Linter.
+
+        ## JS & TS.
+        eslint_d # Javascript & Typescript Linter.
+        prettierd # Javascript & Typescript Formatter.
+
+        ## Lua
+        selene # Linter.
+        stylua # Formatter.
 
         ## Nix
         alejandra # Formatter
         deadnix # Linter
         statix # Linter
 
-        ## JS & TS.
-        eslint_d # Javascript & Typescript Linter.
-        prettierd # Javascript & Typescript Formatter.
-
-        ## Go
-        golangci-lint # Formatter and Linter.
-
-        ## Lua
-        selene # Linter.
-        stylua # Formatter.
-
         ## Python
         ruff
+
+        ## Shell.
+        shellcheck
+        shfmt
 
         ## YAML.
         yamlfmt
