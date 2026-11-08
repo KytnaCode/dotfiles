@@ -9,6 +9,7 @@ return {
       additionalRules = {
         motherTongue = 'es',
       },
+      languageToolHttpServerUri = 'http://localhost:8081/',
       enabled = {
         -- Markup Languages
         'bibtex',
