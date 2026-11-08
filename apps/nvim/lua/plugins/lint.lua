@@ -9,6 +9,7 @@ return {
       nix = { 'deadnix', 'statix' },
       python = { 'ruff' },
       sh = { 'shellcheck' },
+      tex = { 'chktex' },
       typescript = { 'eslint_d' },
       typescriptreact = { 'eslint_d' },
     }

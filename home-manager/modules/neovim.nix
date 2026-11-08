@@ -130,6 +130,7 @@ in {
 
         ## Latex
         tex-fmt # Latex formatter.
+        texlivePackages.chktex
 
         ## Lua
         selene # Linter.
