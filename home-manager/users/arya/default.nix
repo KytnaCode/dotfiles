@@ -7,6 +7,7 @@
       hyprland
       input
       kitty
+      languagetool
       neovim
       registries
       ssh
@@ -51,6 +52,8 @@
       enable = false;
       japaneseKeyboard = true;
     };
+
+    services.language-tool.enable = true;
   };
 
   # This value determines the Home Manager release that your configuration is

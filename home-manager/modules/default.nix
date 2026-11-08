@@ -8,6 +8,7 @@
   hyprland = import ./hyprland.nix {inherit apps inputs;};
   input = ./input.nix;
   kitty = import ./kitty.nix {inherit apps;};
+  languagetool = ./languagetool.nix;
   neovim = import ./neovim.nix {inherit apps inputs;};
   registries = import ./registries.nix {};
   ssh = import ./ssh.nix {inherit apps;};
