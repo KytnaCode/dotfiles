@@ -4,4 +4,11 @@ return {
       load_langs = { 'en-US', 'es' },
     })
   end,
+  settings = {
+    ltex = {
+      additionalRules = {
+        motherTongue = 'es',
+      },
+    },
+  },
 }
