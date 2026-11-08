@@ -91,6 +91,7 @@ in {
         mini-nvim # A bunch of QoL utilities.
 
         # Misc
+        ltex_extra-nvim # Handle LanguageTool code actions.
         nvim-treesitter.withAllGrammars # Treesitter grammars.
         nui-nvim # UI library, required by other plugins.
         plenary-nvim # Utility library, required by other plugins.
@@ -115,6 +116,7 @@ in {
         systemd-lsp # Systemd units.
         sqls # SQL language server.
         nginx-language-server # NGINX configuration files.
+        ltex-ls-plus # LanguageTool support.
 
         # Formatters & Linters
 

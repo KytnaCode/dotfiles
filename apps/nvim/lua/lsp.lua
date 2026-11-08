@@ -9,6 +9,7 @@ local servers = {
   'lua_ls',
   'nginx_language_server',
   'nixd',
+  'ltex_plus',
   -- 'pylsp',
   'basedpyright',
   'qmlls',
