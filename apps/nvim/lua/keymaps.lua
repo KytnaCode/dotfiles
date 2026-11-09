@@ -50,8 +50,10 @@ map('n', [[<m-,>]], '<CMD>BufferLineCyclePrev<CR>', opts({ desc = 'Previous buff
 map('n', [[<m-.>]], '<CMD>BufferLineCycleNext<CR>', opts({ desc = 'Next buffer' }))
 map('n', [[<m-<>]], '<CMD>BufferLineMovePrev<CR>', opts({ desc = 'Move current buffer left' }))
 map('n', [[<m->>]], '<CMD>BufferLineMoveNext<CR>', opts({ desc = 'Move current buffer right' }))
-map('n', [[<m-x>]], '<CMD>Bdelete<CR>', opts({ desc = 'delete buffer' }))
-map('n', [[<m-X>]], '<CMD>Bwipeout<CR>', opts({ desc = 'wipeout buffer' }))
+map('n', [[<m-x>]], Snacks.bufdelete.delete, opts({ desc = 'delete buffer' }))
+map('n', [[<m-X>]], function()
+  Snacks.bufdelete.delete({ wipe = true })
+end, opts({ desc = 'wipeout buffer' }))
 
 -- Git
 map('n', '<leader>gc', '<CMD>Git commit --verbose<CR>', opts({ desc = 'Commit stagged changes' }))
